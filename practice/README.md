@@ -1,1 +1,0 @@
-# tankouideal.github.io
