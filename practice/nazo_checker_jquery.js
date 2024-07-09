@@ -4,10 +4,9 @@ function AnswerCheck(form){
     $(form).find('button[type=submit]').prop('disabled', true);
     // 入力欄に入っている文字列を拾う
     send_text = $(form).children("input[type=text]")[0].value;
-    // console.log("./answer/"+form.name+send_text+".txt");
     // 入力欄が空のとき、送信せず、エラーメッセージを出す
     if(send_text.length == 0){
-      // $(form).next(".result").text("入力欄が空です");
+    $(form).next(".result").text("入力欄が空です");
       return false;
     }
 
