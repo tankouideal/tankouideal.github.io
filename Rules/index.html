@@ -1,0 +1,28 @@
+<html>
+
+<title>
+  単項イデアルの1枚謎  
+</title>
+  
+<head>
+  <h1 style="text-align:center"><br>Web謎制作練習のための1枚謎です</h1>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><!-- jquery -->
+  <script src="./nazo_checker_jquery.js"></script><!-- nazo_checker.js -->
+  <link href="./nazo_checker.css" rel="stylesheet" type="text/css"><!-- nazo_checker.css -->
+</head>
+  
+<body>
+  
+  <div style="text-align:center">
+  <img style="text-align:center" src= "nazo.png" width="640" height="360" border="1">
+  </div>
+  
+  <div class="nazoform">
+    <form name="sample1" onsubmit="AnswerCheck(this);return false;">
+      <input type="text" name="input" placeholder="ひらがなで入力">
+      <button type="submit">送信</button>
+    </form>
+  <div class="result"></div>
+</body>  
+  
+</html>
