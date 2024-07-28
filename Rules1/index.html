@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ルールのページ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .rule-box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .rule-box::before {
+            content: "ルール";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .highlight-red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="rule-box">
+        <p>・問いは全部で<span class="highlight-red">さんもん</span>あります。</p>
+        <p>・このページの問いの答えは、<span class="highlight-red">ないと</span>から<span class="highlight-red">きんぐ</span>まで最短で向かったときに通る文字列です。</p>
+    </div>
+</body>
+</html>
