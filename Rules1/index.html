@@ -34,8 +34,9 @@
             height: 100vh; /* ビューポートの高さに合わせる */
         }
         img {
-            width: 500px; 
-            height: 500px; 
+            max-width: 100%; /* 画像の幅を親要素の100%に制限 */
+            height: auto; /* 高さは幅に合わせて自動調整 */
+            max-height: 500px; /* 最大高さを500pxに設定 */
         }
         .title {
             font-size: 2em; /* フォントサイズを大きく設定 */
