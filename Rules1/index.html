@@ -30,19 +30,19 @@
         }
         .image-container {
             position: relative;
-            width: 80vw; /* Adjust width as needed */
-            max-width: 500px; /* Max width for larger screens */
-            padding-top: 100%; /* This makes the container square */
-            background-color: #fff; /* Optional: background color for better visibility */
-            overflow: hidden; /* Ensures no overflow */
+            width: 80vw; /* コンテナの幅を画面幅の80%に設定 */
+            max-width: 500px; /* 最大幅を500pxに設定 */
+            aspect-ratio: 1 / 1; /* 高さを幅と同じにして正方形に */
+            background-color: #fff; /* オプション: 背景色を設定 */
+            overflow: hidden; /* コンテナからはみ出た部分を隠す */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .image-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the container */
+            object-fit: cover; /* 画像をコンテナに合わせてトリミング */
         }
         .title {
             text-align: center; /* 中央揃え */
