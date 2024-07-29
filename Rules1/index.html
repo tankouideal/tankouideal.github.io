@@ -28,14 +28,28 @@
         .highlight-red {
             color: red;
         }
+        .container {
+            display: flex;
+            justify-content: center; /* 横方向の中央配置 */
+            height: 100vh; /* ビューポートの高さに合わせる */
+        }
+        img {
+            max-width: 100%; /* 画像が画面サイズに合わせてリサイズされるように */
+            height: auto; /* 高さは自動調整 */
+        }
+    </style>
     </style>
 </head>
 <body>
     <div class="rule-box">
-        <p>・問いは全部で<span class="highlight-red">さんもん</span>あります。</p>
-        <p>・このページの問いの答えは、<span class="highlight-red">ないと</span>から<span class="highlight-red">きんぐ</span>まで最短で向かったときに通る文字列です。</p>
-        <p>・このページの画像の<span class="highlight-red">きいろ</span>の壁は通り抜けられます。</p>
+        <p>・謎は全部で<span class="highlight-red">さんもん</span>あります。</p>
+        <p>・このページの謎の答えは、<span class="highlight-red">ないと</span>から<span class="highlight-red">きんぐ</span>まで最短で向かったときに通る文字列です。</p>
+        <p>・画像の<span class="highlight-red">きいろ</span>の壁は通り抜けられます。</p>
         <p>・「<span class="highlight-red">あくせる</span>」と<span class="highlight-red">さいご</span>に回答して正解することができれば、その時点でクリアです。</p>
+    </div>
+    <div>問一</div>
+    <div class="container">
+        <img src="toiichi    .png" alt="中央に配置された画像">
     </div>
 </body>
 </html>
