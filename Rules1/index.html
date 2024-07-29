@@ -28,8 +28,11 @@
         .highlight-red {
             color: red;
         }
-       .image-container {
-            position: relative;
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 中央揃え */
             width: 80vw; /* コンテナの幅を画面幅の80%に設定 */
             max-width: 500px; /* 最大幅を500pxに設定 */
             aspect-ratio: 1 / 1; /* 高さを幅と同じにして正方形に */
@@ -37,7 +40,7 @@
             overflow: hidden; /* コンテナからはみ出た部分を隠す */
             display: flex;
             align-items: center;
-            justify-content: center; /* 横方向にも中央揃え */
+            justify-content: center; /* 画像を中央に配置 */
         }
         .image-container img {
             max-width: 100%; /* 画像の幅をコンテナの最大幅に制限 */
