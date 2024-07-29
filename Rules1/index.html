@@ -28,13 +28,21 @@
         .highlight-red {
             color: red;
         }
-        .container {
-            display: flex;
-            justify-content: center; /* 横方向の中央配置 */
-            height: 100vh; /* ビューポートの高さに合わせる */
+        .image-container {
+            position: relative;
+            width: 80vw; /* Adjust width as needed */
+            max-width: 500px; /* Max width for larger screens */
+            padding-top: 100%; /* This makes the container square */
+            background-color: #fff; /* Optional: background color for better visibility */
+            overflow: hidden; /* Ensures no overflow */
         }
-        img {
-            width: 90%; max-width: 500px; height: auto
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container */
         }
         .title {
             text-align: center; /* 中央揃え */
@@ -51,7 +59,7 @@
         <p>・「<span class="highlight-red">あくせる</span>」と<span class="highlight-red">さいご</span>に回答して正解することができれば、その時点でクリアです。</p>
     </div>
     <div class="title">問一</div>
-    <div class="container">
+    <div class="image-container">
         <img src="toiichi.png" alt="中央に配置された画像">
     </div>
 </body>
