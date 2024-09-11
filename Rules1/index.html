@@ -25,7 +25,7 @@
             font-weight: bold;
             border: 1px solid black;
         }
-       .image-container {
+        .image-container {
             position: absolute;
             left: 50%;
             transform: translateX(-50%); /* 横方向に中央揃え */
@@ -47,12 +47,18 @@
             text-align: center; /* 中央揃え */
             font-size: 1.5em; /* フォントサイズを大きく設定 */
             color: #000; /* テキストの色 */
-    </style>
+        }
+        input[type="text"] {
+            font-size: 1em;
+            padding: 2px 5px;
+            width: 100px;
+            margin: 0 5px;
+        }
     </style>
 </head>
 <body>
     <div class="rule-box">
-        <p>あかい丸からあおい丸まで最短で進んだとき、通った文字列が答え</p>
+        <p>あかい丸<input type="text" id="red" name="red">からあおい丸<input type="text" id="blue" name="blue">まで最短で進んだとき、通った文字列が答え</p>
     </div>
     <div class="title">謎1</div>
     <div class="image-container">
