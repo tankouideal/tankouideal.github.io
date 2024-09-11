@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ルールが変えられる謎解き</title>
+    <title>ルールを埋める謎解き</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,7 +16,7 @@
             position: relative;
         }
         .rule-box::before {
-            content: "変えられないルール";
+            content: "基本ルール";
             position: absolute;
             top: -10px;
             left: 10px;
@@ -40,14 +40,16 @@
 </head>
 <body>
     <div>
-        <p>このサイトはWeb謎解きサイト「ルールが変えられる謎解き」です。</p>
-        <p>まずは、「変えられないルール」を説明します。</p>
+        <p>このサイトはWeb謎解きサイト「ルールを埋める謎解き」です。</p>
+        <p>まずは、基本ルールを説明します。</p>
     </div>
     <div class="rule-box">
-        <p>・全ての入力はひらがなで行ってください。</p>
-        <p>・ゲーム開始後、「変えられるルール」が表示されます。謎に正解すると、ルールに<span class="highlight-red">あかじ</span>で書かれたひらがなのうち、直前の謎の答えに使用したひらがなを変更することができます。</p>
-        <p>例：ルール内に「<span class="highlight-red">ごりら</span>」とある状態で「りんご」と正解した場合、ルール内の「<span class="highlight-red">ごりら</span>」のうち「ご」と「り」が次のページで変更可能になります。</p>
-        <p>・ルール内のひらがなの文字数を変えることはできません。</p>
+        <p>・ゲームを開始すると、全5問の謎が出題されます。</p>
+        <p>・各謎には謎を解くための「解き方のルール」が存在しますが、この「解き方のルール」には穴が空いており、
+            まずはそれらの穴に「ワード」を選択して埋めることでルールを完成させる必要があります</p>
+
+        <p>・ソースコードの閲覧は禁止です。</p>
+        <p>・ソースコードの閲覧は禁止です。</p>
         <p>・ルールは常に日本語として成立している必要があります。</p>
         <p>・ソースコードの閲覧は禁止です。</p>
     </div>
