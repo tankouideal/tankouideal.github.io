@@ -67,7 +67,17 @@
     　　.textbox-below::placeholder {
         color: gray;
   　　  }
-</style>
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        #result-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="rule-box">
@@ -77,6 +87,31 @@
     <div class="image-container">
         <img src="toiichi.png" alt="中央に配置された画像">
     </div>
-    <input type="text" class="textbox-below" placeholder="ひらがなかカタカナで入力">
+    <div class="button-container">
+        <input type="text" class="textbox-below" id="third" placeholder="ひらがなかカタカナで入力">
+        <button onclick="checkAnswer()">送信</button>
+    </div>
+    <div id="result-message"></div>
+
+    <script>
+        function checkAnswer() {
+            // 各テキストボックスの値を取得
+            const red = document.getElementById('red').value;
+            const blue = document.getElementById('blue').value;
+            const third = document.getElementById('third').value;
+
+            // 文字列を繋ぎ合わせる
+            const combined = red + blue + third;
+
+            // 正しい答えと比較
+            if (combined === 'あかあおすたーと') {
+                // 正解の場合、指定のURLに遷移
+                window.location.href = 'https://tankouideal.github.io/Rules2/';
+            } else {
+                // 不正解の場合、エラーメッセージを表示
+                document.getElementById('result-message').innerText = '不正解です';
+            }
+        }
+    </script>
 </body>
 </html>
