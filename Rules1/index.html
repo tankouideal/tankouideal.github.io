@@ -26,9 +26,6 @@
             border: 1px solid black;
         }
         .image-container {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
             width: 80vw;
             max-width: 450px;
             aspect-ratio: 1 / 1;
@@ -37,6 +34,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto; /* 画像を中央揃え */
         }
         .image-container img {
             max-width: 100%;
@@ -50,12 +48,11 @@
         }
         input[type="text"] {
             font-size: 1em;
-            padding: 2px 5px;
+            padding: 5px;
             width: 100px;
             margin: 0 5px;
         }
         .textbox-below {
-            display: inline-block;
             font-size: 1em;
             padding: 5px;
             width: 200px;
@@ -67,7 +64,7 @@
         }
         .button-container {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         #result-message {
             color: red;
