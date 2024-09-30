@@ -1,3 +1,4 @@
+コードをコピーする
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -26,10 +27,10 @@
             border: 1px solid black;
         }
         .image-container {
-            width: 80vw;
-            max-width: 450px;
-            aspect-ratio: 1 / 1; /* 正方形 */
-            background-color: #f0f0f0; /* 薄い灰色の背景 */
+            width: 85vw; /* サイズを少し大きくする */
+            max-width: 500px; /* 最大幅も少し増やす */
+            aspect-ratio: 1 / 1;
+            background-color: #f0f0f0;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -67,27 +68,9 @@
     <p>設定ができたら、「設定完了」のボタンを押してください。</p>
     <div class="rule-box">
         <p>「１２」が
-            <select id="word1">
-                <option value=""></option>
-                <option value="あか">あか</option>
-                <option value="あお">あお</option>
-                <option value="き">き</option>
-                <option value="いろ">いろ</option>
-                <option value="はな">はな</option>
-                <option value="した">した</option>
-                <option value="め">め</option>
-            </select>
+            <select id="word1"></select>
             、「３」が
-            <select id="word2">
-                <option value=""></option>
-                <option value="あか">あか</option>
-                <option value="あお">あお</option>
-                <option value="き">き</option>
-                <option value="いろ">いろ</option>
-                <option value="はな">はな</option>
-                <option value="した">した</option>
-                <option value="め">め</option>
-            </select>
+            <select id="word2"></select>
             を表すとき、４５６５が答え。
         </p>
     </div>
@@ -100,20 +83,34 @@
     <div id="result-message"></div>
 
     <script>
+        // 選択肢を定義
+        const options = ['あか', 'あお', 'き', 'いろ', 'はな', 'した', 'め'];
+
+        // セレクトボックスに選択肢を追加する関数
+        function populateSelect(id) {
+            const select = document.getElementById(id);
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                select.appendChild(opt);
+            });
+        }
+
+        // ページ読み込み時にセレクトボックスに選択肢を追加
+        window.onload = function() {
+            populateSelect('word1');
+            populateSelect('word2');
+        };
+
         function checkAnswer() {
-            // 各セレクトボックスの値を取得
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
-
-            // 文字列を繋ぎ合わせる
             const combined = word1 + word2;
 
-            // 正しい答えと比較
             if (combined === 'あおき') {
-                // 正解の場合、指定のURLに遷移
                 window.location.href = 'https://tankouideal.github.io/seikai2/';
             } else {
-                // 不正解の場合、エラーメッセージを表示
                 document.getElementById('result-message').innerText = '不正解です';
             }
         }
