@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ルールを埋める謎解き</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .rule-box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .rule-box::before {
+            content: "基本ルール";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .highlight-red {
+            color: red;
+        }
+        .underline-link {
+            text-decoration: underline;
+            color: blue; /* 色を青に設定 */
+            cursor: pointer; /* マウスカーソルをポインタに変更 */
+        }
+        .underline-link:hover {
+            color: darkblue; /* ホバー時の色を変更 */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>このサイトはWeb謎解きサイト「正解にする謎解き」です。</p>
+        <p>まずは、基本ルールを説明します。</p>
+    </div>
+    <div class="rule-box">
+        <p>・ゲームを開始すると、全7問の謎が出題されます。</p>
+        <p>・各謎には謎を解くための「問題文」と「画像」が存在します。</p>
+        <p>・「問題文」に「ワード」を適切に埋めて、7問の謎の答えを全て「せいかい」にしてください。</p>
+        <p>・「ワード」としては「あか」「あお」「き」「いろ」「はな」「した」「め」の7個のワードが使えます。</p>
+        <p>・同じワードを複数回使っても構いません。</p>
+    </div>
+    <p>なお、プレイ環境としては、スマートフォンかpcを想定しています。</p>
+    <p>また、ソースコードの閲覧は禁止です。</p>
+    <p>
+        <a href="https://tankouideal.github.io/seikai/start" class="underline-link">ここをクリックするとゲームが開始します</a>
+    </p>
+    </div>
+</body>
+</html>
