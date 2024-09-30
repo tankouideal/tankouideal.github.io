@@ -65,8 +65,8 @@
 <body>
     <div class="rule-box">
         <p>あかい丸
-            <select id="red" name="red">
-                <option value="">選択</option>
+            <select id="red" name="word1">
+                <option value=""></option>
                 <option value="あか">あか</option>
                 <option value="あお">あお</option>
                 <option value="き">き</option>
@@ -76,8 +76,8 @@
                 <option value="め">め</option>
             </select>
             からあおい丸
-            <select id="blue" name="blue">
-                <option value="">選択</option>
+            <select id="blue" name="word2">
+                <option value=""></option>
                 <option value="あか">あか</option>
                 <option value="あお">あお</option>
                 <option value="き">き</option>
@@ -101,16 +101,16 @@
     <script>
         function checkAnswer() {
             // 各セレクトボックスの値を取得
-            const red = document.getElementById('red').value;
-            const blue = document.getElementById('blue').value;
+            const word1 = document.getElementById('word1').value;
+            const word2 = document.getElementById('word2').value;
 
             // 文字列を繋ぎ合わせる
-            const combined = red + blue;
+            const combined = word1 + word2;
 
             // 正しい答えと比較
-            if (combined === 'あかあお') {
+            if (combined === 'あおき') {
                 // 正解の場合、指定のURLに遷移
-                window.location.href = 'https://tankouideal.github.io/Rules2/';
+                window.location.href = 'https://tankouideal.github.io/seikai2/';
             } else {
                 // 不正解の場合、エラーメッセージを表示
                 document.getElementById('result-message').innerText = '不正解です';
