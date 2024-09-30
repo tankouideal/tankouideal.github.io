@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謎1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .rule-box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .rule-box::before {
+            content: "問題文";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            background-color: #fff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        .title {
+            text-align: center;
+            font-size: 1.5em;
+            color: #000;
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #result-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rule-box">
+        <p>あかい丸
+            <select id="red" name="red">
+                <option value="">選択</option>
+                <option value="あか">あか</option>
+                <option value="あお">あお</option>
+                <option value="き">き</option>
+                <option value="いろ">いろ</option>
+                <option value="はな">はな</option>
+                <option value="した">した</option>
+                <option value="め">め</option>
+            </select>
+            からあおい丸
+            <select id="blue" name="blue">
+                <option value="">選択</option>
+                <option value="あか">あか</option>
+                <option value="あお">あお</option>
+                <option value="き">き</option>
+                <option value="いろ">いろ</option>
+                <option value="はな">はな</option>
+                <option value="した">した</option>
+                <option value="め">め</option>
+            </select>
+            まで最短で進んだとき、通った文字列が答え
+        </p>
+    </div>
+    <div class="title">謎1</div>
+    <div class="image-container">
+        <img src="toiichi.png" alt="中央に配置された画像">
+    </div>
+    <div class="button-container">
+        <button onclick="checkAnswer()">設定完了</button>
+    </div>
+    <div id="result-message"></div>
+
+    <script>
+        function checkAnswer() {
+            // 各セレクトボックスの値を取得
+            const red = document.getElementById('red').value;
+            const blue = document.getElementById('blue').value;
+
+            // 文字列を繋ぎ合わせる
+            const combined = red + blue;
+
+            // 正しい答えと比較
+            if (combined === 'あかあお') {
+                // 正解の場合、指定のURLに遷移
+                window.location.href = 'https://tankouideal.github.io/Rules2/';
+            } else {
+                // 不正解の場合、エラーメッセージを表示
+                document.getElementById('result-message').innerText = '不正解です';
+            }
+        }
+    </script>
+</body>
+</html>
