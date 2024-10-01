@@ -64,6 +64,11 @@
             margin-top: 20px;
             font-weight: bold;
         }
+        a {
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +91,7 @@
     </div>
     <div id="result-message"></div>
     <p>
-        <a href="#" onclick="showHint()">ヒント</a>
+        <a href="#" onclick="toggleHint()">ヒント</a>
     </p>
     <div id="hint-message"></div>
 
@@ -123,9 +128,14 @@
             }
         }
 
-        // ヒントを表示する関数
-        function showHint() {
-            document.getElementById('hint-message').innerText = 'Aは赤です';
+        // ヒントの表示/非表示を切り替える関数
+        function toggleHint() {
+            const hintMessage = document.getElementById('hint-message');
+            if (hintMessage.innerText === '') {
+                hintMessage.innerText = 'Aは赤です';
+            } else {
+                hintMessage.innerText = '';
+            }
         }
     </script>
 </body>
