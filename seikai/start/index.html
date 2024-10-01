@@ -60,9 +60,10 @@
             margin-top: 10px;
         }
         #hint-message {
-            color: green;
+            text-align: center;
             margin-top: 20px;
             font-weight: bold;
+            font-size: 1.5em;
         }
         a {
             text-decoration: underline;
@@ -91,7 +92,7 @@
     </div>
     <div id="result-message"></div>
     <p>
-        <a href="#" onclick="toggleHint()">ヒント</a>
+        <a href="#" onclick="toggleHint(event)">ヒント</a>
     </p>
     <div id="hint-message"></div>
 
@@ -129,7 +130,8 @@
         }
 
         // ヒントの表示/非表示を切り替える関数
-        function toggleHint() {
+        function toggleHint(event) {
+            event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
                 hintMessage.innerText = 'Aは赤です';
