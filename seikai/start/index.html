@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #dcdcdc;
+            background-color: #caeeac;
         }
         .rule-box {
             border: 2px solid black;
@@ -60,6 +60,11 @@
             text-align: center;
             margin-top: 10px;
         }
+        #hint-message {
+            color: green;
+            margin-top: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +86,12 @@
         <button onclick="checkAnswer()">設定完了</button>
     </div>
     <div id="result-message"></div>
+
+    <!-- ヒント部分の追加 -->
+    <p>
+        <a href="#" onclick="showHint()">ヒント</a>
+    </p>
+    <div id="hint-message"></div>
 
     <script>
         // 選択肢を定義
@@ -113,6 +124,11 @@
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
+        }
+
+        // ヒントを表示する関数
+        function showHint() {
+            document.getElementById('hint-message').innerText = '答えが「せいかい」になるためには、①②③②が「せいかい」になれば良いようです。Ａには「赤」の漢字が入ります。';
         }
     </script>
 </body>
