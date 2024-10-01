@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #dcdcdc;
+            background-color: #f0f8ff; /* 薄い水色 */
         }
         .rule-box {
             border: 2px solid black;
@@ -62,10 +62,11 @@
         #hint-message {
             text-align: center;
             margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.5em;
         }
-        a {
+        .hint-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
             text-decoration: underline;
             color: blue;
             cursor: pointer;
@@ -91,9 +92,7 @@
         <button onclick="checkAnswer()">設定完了</button>
     </div>
     <div id="result-message"></div>
-    <p>
-        <a href="#" onclick="toggleHint(event)">ヒント</a>
-    </p>
+    <a href="#" class="hint-link" onclick="toggleHint(event)">ヒント</a>
     <div id="hint-message"></div>
 
     <script>
