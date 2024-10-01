@@ -8,10 +8,9 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #ffffff; /* 背景を白に設定 */
-            text-align: center; /* 全体を中央揃え */
+            background-color: #dcdcdc;
         }
-        .rule-box, .image-container {
+        .rule-box {
             border: 2px solid black;
             padding: 15px;
             margin: 20px 0;
@@ -27,29 +26,20 @@
             font-weight: bold;
             border: 1px solid black;
         }
-        .image-container::before {
-            content: "画像";
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            background: white;
-            padding: 0 5px;
-            font-weight: bold;
-            border: 1px solid black;
-        }
-        .image-wrapper {
-            background-color: #d3d3d3; /* 灰色の背景 */
-            width: 685px; /* 画像より少し大きいサイズ */
-            height: 685px;
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto;
         }
         .image-container img {
-            width: 665px;
-            height: 665px;
-            object-fit: cover; /* 画像が正確なサイズで表示されるようにする */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
         select {
             font-size: 1em;
@@ -61,7 +51,7 @@
             margin-top: 20px;
         }
         .button-container button {
-            font-size: 1.5em; /* ボタンの文字サイズを大きくする */
+            font-size: 1.5em;
             padding: 10px 20px;
         }
         #result-message {
@@ -70,17 +60,9 @@
             margin-top: 10px;
         }
         #hint-message {
-            color: black; /* ヒントの文字を黒にする */
+            color: green;
             margin-top: 20px;
             font-weight: bold;
-        }
-        .hint-link {
-            font-size: 1.5em; /* ヒントの文字を大きくする */
-            font-weight: bold;
-            color: blue;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -88,8 +70,6 @@
     <p>第1問です！</p>
     <p>謎の答えが「せいかい」になるように問題文を埋めてください。</p>
     <p>設定ができたら、「設定完了」のボタンを押してください。</p>
-
-    <!-- 問題文 -->
     <div class="rule-box">
         <p>Ａに
             <select id="word1"></select>
@@ -98,23 +78,15 @@
             と読む漢字を埋めて解け。
         </p>
     </div>
-
-    <!-- 画像 -->
     <div class="image-container">
-        <div class="image-wrapper">
-            <img src="nazo1.png" alt="中央に配置された画像">
-        </div>
+        <img src="nazo1.png" alt="中央に配置された画像">
     </div>
-
     <div class="button-container">
         <button onclick="checkAnswer()">設定完了</button>
     </div>
-    
     <div id="result-message"></div>
-
-    <!-- ヒント部分の追加 -->
     <p>
-        <span class="hint-link" onclick="showHint()">ヒント</span>
+        <a href="#" onclick="showHint()">ヒント</a>
     </p>
     <div id="hint-message"></div>
 
