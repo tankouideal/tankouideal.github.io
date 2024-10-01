@@ -8,12 +8,14 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #ffffff; /* 背景を白に変更 */
+            background-color: #ffffff; /* 背景を白に設定 */
+            text-align: center; /* 全体を中央揃え */
         }
         .rule-box, .image-container {
             border: 2px solid black;
             padding: 15px;
             margin: 20px 0;
+            display: inline-block;
             position: relative;
         }
         .rule-box::before {
@@ -35,6 +37,20 @@
             padding: 0 5px;
             font-weight: bold;
             border: 1px solid black;
+        }
+        .image-wrapper {
+            background-color: #d3d3d3; /* 灰色の背景 */
+            width: 685px; /* 画像より少し大きいサイズ */
+            height: 685px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+            width: 665px;
+            height: 665px;
+            object-fit: cover; /* 画像が正確なサイズで表示されるようにする */
         }
         select {
             font-size: 1em;
@@ -60,10 +76,12 @@
             font-weight: bold;
         }
         .hint-link {
-            font-size: 1.2em; /* ヒントの文字を大きくする */
+            font-size: 1.5em; /* ヒントの文字を大きくする */
             font-weight: bold;
             color: blue;
             cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -82,7 +100,9 @@
     </div>
 
     <div class="image-container">
-        <img src="nazo1.png" alt="中央に配置された画像">
+        <div class="image-wrapper">
+            <img src="nazo1.png" alt="中央に配置された画像">
+        </div>
     </div>
 
     <div class="button-container">
