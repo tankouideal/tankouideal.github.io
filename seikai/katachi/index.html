@@ -75,10 +75,9 @@
     </style>
 </head>
 <body>
-    <p>正解です！　第4問です！</p>
+    <p>正解です！　第5問です！</p>
     <div class="rule-box">
-        <p> <select id="word1"></select>で書かれた謎の答えが<select id="word2"></select><select id="word3"></select>になるとき、
-          　<select id="word4"></select>で書かれた謎の答えが答え。
+        <p> <select id="word1"></select><select id="word2"></select><select id="word3"></select>の中の文字を左から読め。
         </p>
     </div>
     <div class="image-container">
@@ -111,17 +110,15 @@
             populateSelect('word1');
             populateSelect('word2');
           　populateSelect('word3');
-          　populateSelect('word4');
         };
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
             const word3 = document.getElementById('word3').value;
-            const word4 = document.getElementById('word4').value;
-            const combined = word1 + word2 + word3 + word4;
+            const combined = word1 + word2 + word3;
 
-            if (combined === 'あおめしたあか') {
+            if (combined === 'きいろいろ') {
                 window.location.href = 'https://tankouideal.github.io/seikai/last/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
@@ -133,7 +130,7 @@
             event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = 'あおあおあ';
+                hintMessage.innerText = '黄色い四角の中を左から読めば「セイカイ」になりますね。';
             } else {
                 hintMessage.innerText = '';
             }
