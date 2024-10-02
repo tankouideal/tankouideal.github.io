@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第5問</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #cfa
+        }
+        .rule-box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .rule-box::before {
+            content: "問題文";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+        }
+        #result-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #hint-message {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hint-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>正解です！　第4問です！</p>
+    <div class="rule-box">
+        <p> <select id="word1"></select>で書かれた謎の答えが<select id="word2"></select><select id="word3"></select>になるとき、
+          　<select id="word4"></select>で書かれた謎の答えが答え。
+        </p>
+    </div>
+    <div class="image-container">
+        <img src="nazo4.png" alt="中央に配置された画像">
+    </div>
+    <div class="button-container">
+        <button onclick="checkAnswer()">設定完了</button>
+    </div>
+    <div id="result-message"></div>
+    <a href="#" class="hint-link" onclick="toggleHint(event)">ヒント</a>
+    <div id="hint-message"></div>
+
+    <script>
+        // 選択肢を定義
+        const options = ['あか', 'あお', 'き', 'いろ', 'はな', 'した', 'め'];
+
+        // セレクトボックスに選択肢を追加する関数
+        function populateSelect(id) {
+            const select = document.getElementById(id);
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                select.appendChild(opt);
+            });
+        }
+
+        // ページ読み込み時にセレクトボックスに選択肢を追加
+        window.onload = function() {
+            populateSelect('word1');
+            populateSelect('word2');
+          　populateSelect('word3');
+          　populateSelect('word4');
+        };
+
+        function checkAnswer() {
+            const word1 = document.getElementById('word1').value;
+            const word2 = document.getElementById('word2').value;
+            const word3 = document.getElementById('word3').value;
+            const word4 = document.getElementById('word4').value;
+            const combined = word1 + word2 + word3 + word4;
+
+            if (combined === 'あおめしたあか') {
+                window.location.href = 'https://tankouideal.github.io/seikai/last/';
+            } else {
+                document.getElementById('result-message').innerText = '不正解です';
+            }
+        }
+
+        // ヒントの表示/非表示を切り替える関数
+        function toggleHint(event) {
+            event.preventDefault(); // ページのリロードを防ぐ
+            const hintMessage = document.getElementById('hint-message');
+            if (hintMessage.innerText === '') {
+                hintMessage.innerText = 'あおあおあ';
+            } else {
+                hintMessage.innerText = '';
+            }
+        }
+    </script>
+</body>
+</html>
