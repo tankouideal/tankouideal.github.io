@@ -122,6 +122,133 @@
             populateSelect('word4');
         };
 
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第7問</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #cfa;
+        }
+        .rule-box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .rule-box::before {
+            content: "問題文";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+        }
+        #result-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .hint-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hint-link {
+            display: inline;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .hint-message {
+            display: inline;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>正解です！　第7問です！</p>
+    <div class="rule-box">
+        <p><select id="word1"></select>のイラストから<select id="word2"></select>のイラストに最短で向かったとき、通る文字列が答え。</p>
+        <p>ただし、<select id="word3"></select><select id="word4"></select>の壁は通り抜けられる。</p>
+    </div>
+    <div class="image-container">
+        <img src="nazo7.png" alt="中央に配置された画像">
+    </div>
+    <div class="button-container">
+        <button onclick="checkAnswer()">設定完了</button>
+    </div>
+    <div id="result-message"></div>
+
+    <div class="hint-container">
+        <a href="#" class="hint-link" onclick="toggleHint(event, 1)">ヒント1</a>
+        <span id="hint-message-1" class="hint-message"></span>
+    </div>
+    <div class="hint-container">
+        <a href="#" class="hint-link" onclick="toggleHint(event, 2)">ヒント2</a>
+        <span id="hint-message-2" class="hint-message"></span>
+    </div>
+    <div class="hint-container">
+        <a href="#" class="hint-link" onclick="toggleHint(event, 3)">ヒント3</a>
+        <span id="hint-message-3" class="hint-message"></span>
+    </div>
+
+    <script>
+        // 選択肢を定義
+        const options = ['あか', 'あお', 'き', 'いろ', 'はな', 'した', 'め'];
+
+        // セレクトボックスに選択肢を追加する関数
+        function populateSelect(id) {
+            const select = document.getElementById(id);
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                select.appendChild(opt);
+            });
+        }
+
+        // ページ読み込み時にセレクトボックスに選択肢を追加
+        window.onload = function() {
+            populateSelect('word1');
+            populateSelect('word2');
+            populateSelect('word3');
+            populateSelect('word4');
+        };
+
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
@@ -137,12 +264,19 @@
         }
 
         // ヒントの表示/非表示を切り替える関数
-        function toggleHint(hintNumber) {
-            const hint = document.getElementById('hint' + hintNumber);
-            if (hint.style.display === 'none') {
-                hint.style.display = 'block';
+        function toggleHint(event, hintNumber) {
+            event.preventDefault(); // ページのリロードを防ぐ
+            const hintMessage = document.getElementById('hint-message-' + hintNumber);
+            if (hintMessage.innerText === '') {
+                if (hintNumber === 1) {
+                    hintMessage.innerText = 'ヒント1: 答えは2文字です。';
+                } else if (hintNumber === 2) {
+                    hintMessage.innerText = 'ヒント2: 最初の文字は「め」です。';
+                } else if (hintNumber === 3) {
+                    hintMessage.innerText = 'ヒント3: 最後の文字は「い」です。';
+                }
             } else {
-                hint.style.display = 'none';
+                hintMessage.innerText = '';
             }
         }
     </script>
