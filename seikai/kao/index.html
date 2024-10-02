@@ -74,9 +74,10 @@
     </style>
 </head>
 <body>
-    <p>正解です！　第3問です！</p>
+    <p>正解です！　第2問です！</p>
     <div class="rule-box">
-        <p><select id="word1"></select>、もしくは
+        <p> <select id="word1"></select>
+            、あるいは
             <select id="word2"></select>
             に対応する言葉が答え。
         </p>
@@ -117,8 +118,8 @@
             const word2 = document.getElementById('word2').value;
             const combined = word1 + word2;
 
-            if (combined === 'したはな') or (combined === 'はなした')  {
-                window.location.href = 'https://tankouideal.github.io/seikai/katachi/';
+            if (combined === 'したはな') {
+                window.location.href = 'https://tankouideal.github.io/seikai/kao/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
@@ -129,7 +130,7 @@
             event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「せい」か「い」になれば良いようです。';
+                hintMessage.innerText = '答えが「せい」か「い」なれば良いようです。';
             } else {
                 hintMessage.innerText = '';
             }
