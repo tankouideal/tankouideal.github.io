@@ -118,7 +118,7 @@
             const word2 = document.getElementById('word2').value;
             const combined = word1 + word2;
 
-            if (combined === 'したはな') {
+            if (combined === 'したはな' or combined === 'はなした' ) {
                 window.location.href = 'https://tankouideal.github.io/seikai/moji/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
@@ -130,7 +130,7 @@
             event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「せい」か「い」なれば良いようです。';
+                hintMessage.innerText = '答えが「せい」か「い」になれば良いようです。';
             } else {
                 hintMessage.innerText = '';
             }
