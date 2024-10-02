@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #cfa
+            background-color: #cfa;
         }
         .rule-box {
             border: 2px solid black;
@@ -64,12 +64,15 @@
             margin-top: 20px;
         }
         .hint-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
+            display: inline;
             text-decoration: underline;
             color: blue;
             cursor: pointer;
+            margin-right: 10px;
+        }
+        .hint-container {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -77,7 +80,7 @@
     <p>正解です！　第7問です！</p>
     <div class="rule-box">
         <p><select id="word1"></select>のイラストから<select id="word2"></select>のイラストに最短で向かったとき、通る文字列が答え。</p>
-        <p>ただし、</select><select id="word3"></select><select id="word4"></select>の壁は通り抜けられる。</p>
+        <p>ただし、<select id="word3"></select><select id="word4"></select>の壁は通り抜けられる。</p>
     </div>
     <div class="image-container">
         <img src="nazo7.png" alt="中央に配置された画像">
@@ -86,8 +89,15 @@
         <button onclick="checkAnswer()">設定完了</button>
     </div>
     <div id="result-message"></div>
-    <a href="#" class="hint-link" onclick="toggleHint(event)">ヒント</a>
-    <div id="hint-message"></div>
+    
+    <div class="hint-container">
+        <a href="#" class="hint-link" onclick="toggleHint(1)">ヒント1</a>
+        <a href="#" class="hint-link" onclick="toggleHint(2)">ヒント2</a>
+        <a href="#" class="hint-link" onclick="toggleHint(3)">ヒント3</a>
+        <div id="hint1" style="display:none;">最初のヒントの内容</div>
+        <div id="hint2" style="display:none;">2つ目のヒントの内容</div>
+        <div id="hint3" style="display:none;">最後のヒントの内容</div>
+    </div>
 
     <script>
         // 選択肢を定義
@@ -108,8 +118,8 @@
         window.onload = function() {
             populateSelect('word1');
             populateSelect('word2');
-          　populateSelect('word3');
-          　populateSelect('word4');
+            populateSelect('word3');
+            populateSelect('word4');
         };
 
         function checkAnswer() {
@@ -120,20 +130,19 @@
             const combined = word1 + word2 + word3 + word4;
 
             if (combined === 'めきめいろ') {
-                window.location.href = 'https://tankouideal.github.io/seikai/clear/';
+                window.location.href = 'https://tankouideal.github.io/seikai/last/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
         }
 
         // ヒントの表示/非表示を切り替える関数
-        function toggleHint(event) {
-            event.preventDefault(); // ページのリロードを防ぐ
-            const hintMessage = document.getElementById('hint-message');
-            if (hintMessage.innerText === '') {
-                hintMessage.innerText = 'あおあおあ';
+        function toggleHint(hintNumber) {
+            const hint = document.getElementById('hint' + hintNumber);
+            if (hint.style.display === 'none') {
+                hint.style.display = 'block';
             } else {
-                hintMessage.innerText = '';
+                hint.style.display = 'none';
             }
         }
     </script>
