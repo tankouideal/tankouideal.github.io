@@ -89,9 +89,10 @@
     <div class="button-container">
         <button onclick="checkAnswer()">設定完了</button>
     </div>
-    <div id="result-message"></div>
-    <a href="#" class="hint-link" onclick="toggleHint(event)">ヒント</a>
-    <div id="hint-message"></div>
+    <div id="hint-container">
+        <button type="button" class="hint-link" onclick="toggleHint(event)">ヒント</button>
+        <div id="hint-message"></div>
+    </div>
 
     <script>
         // 選択肢を定義
