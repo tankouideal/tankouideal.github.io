@@ -70,7 +70,10 @@
             color: blue;
             cursor: pointer;
             font-size: 1em;
-            padding: 0;
+            margin-bottom: 10px;
+        }
+        .hint-message {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -86,9 +89,12 @@
     <div class="button-container">
         <button onclick="checkAnswer()">設定完了</button>
     </div>
+
     <div id="hint-container">
-        <button type="button" class="hint-link" onclick="showHint()">ヒント</button>
-        <div id="hint-message"></div>
+        <button type="button" class="hint-link" onclick="showHint(1)">ヒント1</button><br>
+        <button type="button" class="hint-link" onclick="showHint(2)">ヒント2</button><br>
+        <button type="button" class="hint-link" onclick="showHint(3)">ヒント3</button>
+        <div id="hint-message" class="hint-message"></div>
     </div>
 
     <script>
@@ -128,21 +134,15 @@
             }
         }
 
-        // ヒントを3つに分けて表示する関数
-        let hintCount = 0;
-        const hints = [
-            'ヒント1: Aには「あか」と読む漢字が入ります。',
-            'ヒント2: Bには「いろ」と読む漢字が入ります。',
-            'ヒント3: 最後の答えは「あおめしたあか」になります。'
-        ];
-
-        function showHint() {
+        // ヒントを表示する関数
+        function showHint(hintNumber) {
             const hintMessage = document.getElementById('hint-message');
-            if (hintCount < hints.length) {
-                hintMessage.innerText = hints[hintCount];
-                hintCount++;
-            } else {
-                hintMessage.innerText = 'これ以上のヒントはありません。';
+            if (hintNumber === 1) {
+                hintMessage.innerText = 'ヒント1: Aには「あか」と読む漢字が入ります。';
+            } else if (hintNumber === 2) {
+                hintMessage.innerText = 'ヒント2: Bには「いろ」と読む漢字が入ります。';
+            } else if (hintNumber === 3) {
+                hintMessage.innerText = 'ヒント3: 最後の答えは「あおめしたあか」になります。';
             }
         }
     </script>
