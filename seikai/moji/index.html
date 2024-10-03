@@ -59,17 +59,22 @@
             text-align: center;
             margin-top: 10px;
         }
-        #hint-message {
+        #hint-container {
             text-align: center;
             margin-top: 20px;
         }
+        #hint-message, .hint-link {
+            display: inline-block;
+            margin-left: 10px;
+        }
         .hint-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
+            background: none;
+            border: none;
             text-decoration: underline;
             color: blue;
             cursor: pointer;
+            font-size: 1em;
+            padding: 0;
         }
     </style>
 </head>
@@ -86,9 +91,10 @@
     <div class="button-container">
         <button onclick="checkAnswer()">設定完了</button>
     </div>
-    <div id="result-message"></div>
-    <a href="#" class="hint-link" onclick="toggleHint(event)">ヒント</a>
-    <div id="hint-message"></div>
+    <div id="hint-container">
+        <button type="button" class="hint-link" onclick="toggleHint(event)">ヒント</button>
+        <div id="hint-message"></div>
+    </div>
 
     <script>
         // 選択肢を定義
