@@ -131,14 +131,23 @@
             }
         }
 
-        // ヒントの表示/非表示を切り替える関数
-        function toggleHint(event) {
-            event.preventDefault(); // ページのリロードを防ぐ
-            const hintMessage = document.getElementById('hint-message');
+                // ヒントの表示/非表示を切り替える関数
+        function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '黄色い四角の中を左から読めば「セイカイ」になりますね。';
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = '赤で書かれた謎と、青で書かれた謎が重なっているようです。重なっている部分は紫になっています。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = '赤で書かれた謎では、図形は「せいさんかくけい」を表し、答えが「せいかい」になっているようです。';
+                        break;
+                    case 'hint3':
+                        hintMessage.innerText = '青で書かれた謎では、図形は何かの立体を表しているようです。図形は正多面体の1つのようです。';
+                        break;
+                }
             } else {
-                hintMessage.innerText = '';
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
             }
         }
     </script>
