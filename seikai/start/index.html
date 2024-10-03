@@ -59,12 +59,15 @@
             text-align: center;
             margin-top: 10px;
         }
-        #hint-message {
-            display: inline;
+        #hint-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #hint-message, .hint-link {
+            display: inline-block;
             margin-left: 10px;
         }
         .hint-link {
-            display: inline;
             text-decoration: underline;
             color: blue;
             cursor: pointer;
@@ -90,8 +93,11 @@
         <button onclick="checkAnswer()">設定完了</button>
     </div>
     <div id="result-message"></div>
-    <a href="#" class="hint-link" onclick="toggleHint(event)">ヒント</a>
-    <div id="hint-message"></div>
+
+    <div id="hint-container">
+        <a href="#" class="hint-link" onclick="toggleHint(event)">ヒント</a>
+        <div id="hint-message"></div>
+    </div>
 
     <script>
         // 選択肢を定義
