@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #dfb
+            background-color: #dfb;
         }
         .rule-box {
             border: 2px solid black;
@@ -60,13 +59,9 @@
             text-align: center;
             margin-top: 10px;
         }
-       #hint-container {
+        #hint-container {
             text-align: center;
             margin-top: 20px;
-        }
-        #hint-message, .hint-link {
-            display: inline-block;
-            margin-left: 10px;
         }
         .hint-link {
             background: none;
@@ -92,7 +87,7 @@
         <button onclick="checkAnswer()">設定完了</button>
     </div>
     <div id="hint-container">
-        <button type="button" class="hint-link" onclick="toggleHint(event)">ヒント</button>
+        <button type="button" class="hint-link" onclick="showHint()">ヒント</button>
         <div id="hint-message"></div>
     </div>
 
@@ -115,8 +110,8 @@
         window.onload = function() {
             populateSelect('word1');
             populateSelect('word2');
-          　populateSelect('word3');
-          　populateSelect('word4');
+            populateSelect('word3');
+            populateSelect('word4');
         };
 
         function checkAnswer() {
@@ -133,14 +128,21 @@
             }
         }
 
-        // ヒントの表示/非表示を切り替える関数
-        function toggleHint(event) {
-            event.preventDefault(); // ページのリロードを防ぐ
+        // ヒントを3つに分けて表示する関数
+        let hintCount = 0;
+        const hints = [
+            'ヒント1: Aには「あか」と読む漢字が入ります。',
+            'ヒント2: Bには「いろ」と読む漢字が入ります。',
+            'ヒント3: 最後の答えは「あおめしたあか」になります。'
+        ];
+
+        function showHint() {
             const hintMessage = document.getElementById('hint-message');
-            if (hintMessage.innerText === '') {
-                hintMessage.innerText = 'あおあおあ';
+            if (hintCount < hints.length) {
+                hintMessage.innerText = hints[hintCount];
+                hintCount++;
             } else {
-                hintMessage.innerText = '';
+                hintMessage.innerText = 'これ以上のヒントはありません。';
             }
         }
     </script>
