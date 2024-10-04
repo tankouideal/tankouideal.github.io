@@ -130,14 +130,23 @@
             }
         }
 
-        // ヒントの表示/非表示を切り替える関数
-        function toggleHint(event) {
-            event.preventDefault(); // ページのリロードを防ぐ
-            const hintMessage = document.getElementById('hint-message');
+                // ヒントの表示/非表示を切り替える関数
+        function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「正解」になれば良いので、この2つの漢字を拾えるように問題文を設定しましょう。';
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = 'どんぐりのイラストを「○○のイラスト」と表現することは難しいようです。「した（下）のイラスト」という表現では、どのイラストなのか特定できません。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = '「め（芽）のイラスト」から出発して「き（木）のイラスト」まで進めば良いようです。';
+                        break;
+                    case 'hint3':
+                        hintMessage.innerText = '全ての壁を通り抜けられるように、問題文を設定できないでしょうか。';
+                        break;
+                }
             } else {
-                hintMessage.innerText = '';
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
             }
         }
     </script>
