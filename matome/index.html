@@ -41,18 +41,23 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
         }
         .grid-item {
             text-align: center;
         }
         .grid-item img {
-            max-width: 100%;
+            max-width: 100px; /* 画像をさらに小さく */
             height: auto;
             cursor: pointer;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 5px; /* 画像とタイトルの間にスペース */
+        }
+        .grid-item p {
+            margin: 0;
+            font-size: 14px;
         }
         .math-problems {
             background-color: #f0f0f0;
@@ -82,17 +87,20 @@
             <div class="grid-container">
                 <!-- 9つのLINE謎画像とリンク -->
                 <div class="grid-item">
+                    <p>LINE謎 1</p>
                     <a href="URL_TO_LINE_PUZZLE_1" target="_blank">
-                        <img src="i.png" alt="LINE謎1">
+                        <img src="LINE_PUZZLE_IMAGE_URL_1" alt="LINE謎1">
                     </a>
                 </div>
                 <div class="grid-item">
+                    <p>LINE謎 2</p>
                     <a href="URL_TO_LINE_PUZZLE_2" target="_blank">
                         <img src="LINE_PUZZLE_IMAGE_URL_2" alt="LINE謎2">
                     </a>
                 </div>
                 <!-- 他の7つのLINE謎も同様に配置 -->
                 <div class="grid-item">
+                    <p>LINE謎 3</p>
                     <a href="URL_TO_LINE_PUZZLE_3" target="_blank">
                         <img src="LINE_PUZZLE_IMAGE_URL_3" alt="LINE謎3">
                     </a>
@@ -107,6 +115,7 @@
             <div class="grid-container">
                 <!-- Web謎の画像を同様に並べる -->
                 <div class="grid-item">
+                    <p>Web謎 1</p>
                     <a href="URL_TO_WEB_PUZZLE_1" target="_blank">
                         <img src="WEB_PUZZLE_IMAGE_URL_1" alt="Web謎1">
                     </a>
