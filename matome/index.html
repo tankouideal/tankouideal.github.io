@@ -30,24 +30,29 @@
         h2 {
             font-size: 20px;
         }
+        h3 {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
         p {
             font-size: 16px;
             line-height: 1.5;
         }
-        .block {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
         }
-        .block div {
-            flex: 1;
-            min-width: 200px;
+        .grid-item {
             text-align: center;
         }
-        .block img {
+        .grid-item img {
             max-width: 100%;
             height: auto;
             cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         .math-problems {
             background-color: #f0f0f0;
@@ -70,25 +75,47 @@
     
     <section>
         <h2>問題集</h2>
-        <div class="block">
-            <!-- LINE謎ブロック -->
-            <div>
-                <h3>LINE謎</h3>
-                <a href="URL_TO_LINE_PUZZLE" target="_blank">
-                    <img src="LINE_PUZZLE_IMAGE_URL" alt="LINE謎の画像">
-                </a>
+        
+        <!-- LINE謎ブロック -->
+        <section>
+            <h3>LINE謎</h3>
+            <div class="grid-container">
+                <!-- 9つのLINE謎画像とリンク -->
+                <div class="grid-item">
+                    <a href="URL_TO_LINE_PUZZLE_1" target="_blank">
+                        <img src="i.png" alt="LINE謎1">
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="URL_TO_LINE_PUZZLE_2" target="_blank">
+                        <img src="LINE_PUZZLE_IMAGE_URL_2" alt="LINE謎2">
+                    </a>
+                </div>
+                <!-- 他の7つのLINE謎も同様に配置 -->
+                <div class="grid-item">
+                    <a href="URL_TO_LINE_PUZZLE_3" target="_blank">
+                        <img src="LINE_PUZZLE_IMAGE_URL_3" alt="LINE謎3">
+                    </a>
+                </div>
+                <!-- さらに追加して9種類まで -->
             </div>
-            
-            <!-- Web謎ブロック -->
-            <div>
-                <h3>Web謎</h3>
-                <a href="URL_TO_WEB_PUZZLE" target="_blank">
-                    <img src="WEB_PUZZLE_IMAGE_URL" alt="Web謎の画像">
-                </a>
+        </section>
+        
+        <!-- Web謎ブロック -->
+        <section>
+            <h3>Web謎</h3>
+            <div class="grid-container">
+                <!-- Web謎の画像を同様に並べる -->
+                <div class="grid-item">
+                    <a href="URL_TO_WEB_PUZZLE_1" target="_blank">
+                        <img src="WEB_PUZZLE_IMAGE_URL_1" alt="Web謎1">
+                    </a>
+                </div>
+                <!-- 他のWeb謎もここに追加 -->
             </div>
-        </div>
+        </section>
     </section>
-    
+
     <section>
         <h2>数学の問題</h2>
         <div class="math-problems">
