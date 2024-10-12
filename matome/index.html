@@ -65,10 +65,11 @@
             border-radius: 5px;
         }
 
-        /* 画面が600px以下の時、1列に並べる */
+        /* スマホ表示時の中央揃え */
         @media (max-width: 600px) {
             .grid-container {
                 grid-template-columns: 1fr; /* 1列に変更 */
+                justify-items: center; /* コンテンツを中央揃えにする */
             }
         }
     </style>
