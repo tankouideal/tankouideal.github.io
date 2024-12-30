@@ -40,10 +40,9 @@
             font-size: 20px;
             line-height: 1.5;
         }
-        
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 1行に3つまで表示 */
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
         .grid-item {
@@ -61,17 +60,15 @@
             margin: 0;
             font-size: 18px;
         }
-        .math-problems {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin-top: 5px;
         }
-
-        /* スマホ表示時の中央揃え */
         @media (max-width: 600px) {
             .grid-container {
-                grid-template-columns: 1fr; /* 1列に変更 */
-                justify-items: center; /* コンテンツを中央揃えにする */
+                grid-template-columns: 1fr;
+                justify-items: center;
             }
         }
     </style>
@@ -84,76 +81,84 @@
 
 <main>
     <section>
-        <p>単項イデアルが作成した謎解きを紹介します。</p>
-    </section>
-    
-    <section>
-        
-        <section>
-            <h3>LINE謎</h3>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <p>「い」が使えない謎解き（おすすめです）</p>
-                    <a href="http://lin.ee/QrPV23d" target="_blank">
-                        <img src="i.png" alt="LINE謎1">
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <p>インクがかかった謎解き</p>
-                    <a href="http://lin.ee/iiFYIGu" target="_blank">
-                        <img src="ink.png" alt="LINE謎2">
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <p>魔法がかかった謎解き</p>
-                    <a href="http://lin.ee/MxIklst" target="_blank">
-                        <img src="mahou.png" alt="LINE謎3">
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <p>しりとりで答える謎解き</p>
-                    <a href="http://lin.ee/vkkUr2R" target="_blank">
-                        <img src="shiritori.png" alt="LINE謎3">
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <p>散乱した謎解き</p>
-                    <a href="http://lin.ee/dFEtICv" target="_blank">
-                        <img src="sanran.png" alt="LINE謎3">
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <p>ルールが読めない謎解き</p>
-                    <a href="http://lin.ee/IzqCxS8k" target="_blank">
-                        <img src="rule.png" alt="LINE謎3">
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <p>アルファベットが消えた謎解き</p>
-                    <a href="http://lin.ee/gxAJTQD" target="_blank">こちらをクリック</a>
-                </div>
-                <div class="grid-item">
-                    <p>数字が答えになる謎解き</p>
-                    <a href="http://lin.ee/wRvSEuK" target="_blank">こちらをクリック</a>
-                </div>
-                <div class="grid-item">
-                    <p>漢字を埋める謎解き</p>
-                    <a href="http://lin.ee/cbkazom" target="_blank">こちらをクリック</a>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h3>Web謎</h3>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <p>正解にする謎解き</p>
-                    <a href="https://tankouideal.github.io/seikai/" target="_blank">こちらをクリック</a>
-                </div>
-            </div>
-        </section>
+        <p>単項イデアルが作成した謎解きを紹介します。※記載の難易度は作者の主観であり、人によって感じ方は様々かと思いますので、参考程度にお考え下さい。</p>
     </section>
 
+    <section>
+        <h3>Web謎</h3>
+        <div class="grid-container">
+            <div class="grid-item">
+                <p>正解にする謎解き</p>
+                <a href="https://tankouideal.github.io/seikai/" target="_blank">
+                    <img src="seikai.png" alt="Web謎1">
+                </a>
+                <div class="description">難易度: ★★☆☆☆ <br>シンプルなので暇つぶしにおすすめです。</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>LINE謎</h3>
+        <div class="grid-container">
+            <div class="grid-item">
+                <p>「い」が使えない謎解き</p>
+                <a href="http://lin.ee/QrPV23d" target="_blank">
+                    <img src="i.png" alt="LINE謎1">
+                </a>
+                <div class="description">難易度: ★★★★★ <br>一番よく使われるひらがなである「い」を使わないで謎に答えてもらいます。一番おすすめです。</div>
+            </div>
+            <div class="grid-item">
+                <p>インクがかかった謎解き</p>
+                <a href="http://lin.ee/iiFYIGu" target="_blank">
+                    <img src="ink.png" alt="LINE謎2">
+                </a>
+                <div class="description">難易度: ★★★★☆ <br>いわゆるインク謎なので、人を選ぶかもしれません……。</div>
+            </div>
+            <div class="grid-item">
+                <p>魔法がかかった謎解き</p>
+                <a href="http://lin.ee/MxIklst" target="_blank">
+                    <img src="mahou.png" alt="LINE謎3">
+                </a>
+                <div class="description">難易度: ★★★★★ <br>魔法の森で謎を解きます。今まで作った中で一番長いです。お時間あれば。</div>
+            </div>
+            <div class="grid-item">
+                <p>しりとりで答える謎解き</p>
+                <a href="http://lin.ee/vkkUr2R" target="_blank">
+                    <img src="shiritori.png" alt="LINE謎4">
+                </a>
+                <div class="description">難易度: ★★★☆☆ <br>14問の謎に答えがしりとりになるように答えてもらいます。「ん」で終わるとゲームオーバーです。</div>
+            </div>
+            <div class="grid-item">
+                <p>散乱した謎解き</p>
+                <a href="http://lin.ee/dFEtICv" target="_blank">
+                    <img src="sanran.png" alt="LINE謎5">
+                </a>
+                <div class="description">難易度: ★★★☆☆ <br>すみません、持ち帰り謎をバラバラに散乱させてしまいました……。</div>
+            </div>
+            <div class="grid-item">
+                <p>ルールが読めない謎解き</p>
+                <a href="http://lin.ee/IzqCxS8k" target="_blank">
+                    <img src="rule.png" alt="LINE謎6">
+                </a>
+                <div class="description">難易度: ★★★★☆ <br>すみません、ルールにインクがかかってしまいました……。</div>
+            </div>
+            <div class="grid-item">
+                <p>アルファベットが消えた謎解き</p>
+                <a href="http://lin.ee/gxAJTQD" target="_blank">こちらをクリック</a>
+                <div class="description">難易度: ★☆☆☆☆ <br>すみません、謎の中のアルファベットが全部消えてしまいました……。</div>
+            </div>
+            <div class="grid-item">
+                <p>数字が答えになる謎解き</p>
+                <a href="http://lin.ee/wRvSEuK" target="_blank">こちらをクリック</a>
+                <div class="description">難易度: ★★☆☆☆ <br>答えが全部数字になります。数字が好きな方におすすめです。</div>
+            </div>
+            <div class="grid-item">
+                <p>漢字を埋める謎解き</p>
+                <a href="http://lin.ee/cbkazom" target="_blank">こちらをクリック</a>
+                <div class="description">難易度: ★★★☆☆ <br>初めて作った謎解きなので少しクオリティ低めですが、良ければどうぞ。</div>
+            </div>
+        </div>
+    </section>
 </main>
 
 </body>
