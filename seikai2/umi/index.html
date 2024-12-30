@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>正解にする謎解き2</title>
+    <title>第2問</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,7 +18,7 @@
             position: relative;
         }
         .rule-box::before {
-            content: "ルール";
+            content: "問題文";
             position: absolute;
             top: -10px;
             left: 10px;
@@ -26,34 +27,124 @@
             font-weight: bold;
             border: 1px solid black;
         }
-        .underline-link {
-            text-decoration: underline;
-            color: blue; /* 色を青に設定 */
-            cursor: pointer; /* マウスカーソルをポインタに変更 */
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
         }
-        .underline-link:hover {
-            color: darkblue; /* ホバー時の色を変更 */
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+        }
+        #result-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #hint-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hint-link {
+            background: none;
+            border: none;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            margin: 5px 0; /* ボタンの間隔 */
+        }
+        .hint-message {
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <p>このサイトはWeb謎解きサイト「正解にする謎解き2」です。</p>
-        <p>前作のリンクは以下になります。使える言葉の種類が異なる点を除いて、基本のルールは同じです。</p>
-        <p>「正解にする謎解き」　⇒　<a href="https://tankouideal.github.io/seikai/" target="_blank">https://tankouideal.github.io/seikai/</a></p>
-    </div>
+    <p>正解です！　第2問です！</p>
     <div class="rule-box">
-        <p>・全部で7問の謎が出題されます。</p>
-        <p>・問題文のテキストボックスに言葉を埋めることで、7問の謎の答えを全て「せいかい」にしてください。</p>
-        <p>・埋められる言葉は、「よん」「じゅう」「はん」「ぶん」「かい」「がい」「てん」の7種類です。</p>
-        <p>・同じ言葉を複数回使っても構いませんが、必ず全てのテキストボックスに言葉を埋める必要があります。</p>
+        <p>Ａに
+            <select id="word1"></select>
+            、Ｂに
+            <select id="word2"></select>
+            と読む漢字を埋めて解け。
+        </p>
     </div>
-    <p>プレイ環境としては、スマートフォンかpcを想定しています。</p>
-    <p>また、ソースコードの閲覧は禁止です。</p>
-    <p>
-        <a href="https://tankouideal.github.io/seikai2/start" class="underline-link">こちらをクリックするとゲームが開始します</a>
-    </p>
-    <p>作者のXアカウント　⇒　<a href="https://x.com/tankouideal?openExternalBrowser=1" target="_blank">https://x.com/tankouideal</a></p>
+    <div class="image-container">
+        <img src="nazo1.png" alt="中央に配置された画像">
     </div>
+    <div class="button-container">
+        <button onclick="checkAnswer()">設定完了</button>
+    </div>
+    <div id="result-message"></div>
+
+    <div id="hint-container">
+        <button type="button" class="hint-link" onclick="toggleHint(event)">ヒント</button>
+        <div id="hint-message"></div>
+    </div>
+
+    <script>
+        // 選択肢を定義
+        const options = ['よん', 'じゅう', 'はん', 'ぶん', 'かい', 'がい', 'てん'];
+
+        // セレクトボックスに選択肢を追加する関数
+        function populateSelect(id) {
+            const select = document.getElementById(id);
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                select.appendChild(opt);
+            });
+        }
+
+        // ページ読み込み時にセレクトボックスに選択肢を追加
+        window.onload = function() {
+            populateSelect('word1');
+            populateSelect('word2');
+        };
+
+        function checkAnswer() {
+            const word1 = document.getElementById('word1').value;
+            const word2 = document.getElementById('word2').value;
+            const combined = word1 + word2;
+
+            if (combined === 'あかいろ') {
+                window.location.href = 'https://tankouideal.github.io/seikai/number/';
+            } else {
+                document.getElementById('result-message').innerText = '不正解です';
+            }
+        }
+
+        // ヒントの表示/非表示を切り替える関数
+        function toggleHint(event) {
+            event.preventDefault(); // ページのリロードを防ぐ
+            const hintMessage = document.getElementById('hint-message');
+            if (hintMessage.innerText === '') {
+                hintMessage.innerText = '答えが「せいかい」になることから問題文を逆算しましょう。Aには「あか」と読む漢字が入ります。';
+            } else {
+                hintMessage.innerText = '';
+            }
+        }
+    </script>
 </body>
 </html>
