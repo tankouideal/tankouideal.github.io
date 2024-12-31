@@ -82,11 +82,10 @@
 <body>
     <p>正解です！　第2問です！</p>
     <div class="rule-box">
-        <p>Ａに
-            <select id="word1"></select>
-            、Ｂに
-            <select id="word2"></select>
-            と読む漢字を埋めて解け。
+        <p>画像を見ながら変換したとき、？？？？に入る言葉が答え。<br>
+        　　か【はち】り　⇒　肩こり
+            【<select id="word1"></select>】ら　⇒　カメラ
+           せ【 <select id="word2"></select>】い　⇒　？？？？
         </p>
     </div>
     <div class="image-container">
@@ -128,8 +127,8 @@
             const word2 = document.getElementById('word2').value;
             const combined = word1 + word2;
 
-            if (combined === 'あかいろ') {
-                window.location.href = 'https://tankouideal.github.io/seikai/number/';
+            if (combined === 'よんじゅう') {
+                window.location.href = 'https://tankouideal.github.io/seikai2/suuji/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
@@ -140,7 +139,7 @@
             event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「せいかい」になることから問題文を逆算しましょう。Aには「あか」と読む漢字が入ります。';
+                hintMessage.innerText = '【はち】がタコに変換されているようです。他には、【に】がペンギンになります。';
             } else {
                 hintMessage.innerText = '';
             }
