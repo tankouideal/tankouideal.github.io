@@ -34,6 +34,24 @@
         .underline-link:hover {
             color: darkblue; /* ホバー時の色を変更 */
         }
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+        　　display: block; /* 行間スペースを削除 */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            margin: 0; /* 余白を削除 */
+            padding: 0; /* パディングを削除 */
+        }
     </style>
 </head>
 <body>
