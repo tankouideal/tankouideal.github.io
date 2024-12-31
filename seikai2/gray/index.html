@@ -135,13 +135,22 @@
         }
 
         // ヒントの表示/非表示を切り替える関数
-        function toggleHint(event) {
-            event.preventDefault(); // ページのリロードを防ぐ
-            const hintMessage = document.getElementById('hint-message');
+        function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「せいかい」になることから問題文を逆算しましょう。Aには「あか」と読む漢字が入ります。';
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = '黄色い四角の中の文字を左から読めば、「セイカイ」になりますね。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = 'そもそも黄色い四角は、記号としての「四角」なのでしょうか。';
+                        break;
+                    case 'hint3':
+                        hintMessage.innerText = '黄色い四角と同じ形の「黒い四角」がありますが、これは記号ではなく、何かの文字のようです。';
+                        break;
+                }
             } else {
-                hintMessage.innerText = '';
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
             }
         }
     </script>
