@@ -84,11 +84,10 @@
     <p>謎の答えが「せいかい」になるように問題文を埋めてください。</p>
     <p>設定ができたら、「設定完了」のボタンを押してください。</p>
     <div class="rule-box">
-        <p>Ａに
+        <p>二人の台詞を繋げると
             <select id="word1"></select>
-            、Ｂに
             <select id="word2"></select>
-            と読む漢字を埋めて解け。
+            になるとき、？に入る言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -130,8 +129,8 @@
             const word2 = document.getElementById('word2').value;
             const combined = word1 + word2;
 
-            if (combined === 'あかいろ') {
-                window.location.href = 'https://tankouideal.github.io/seikai/number/';
+            if (combined === 'かいぶん') {
+                window.location.href = 'https://tankouideal.github.io/seikai2/umi/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
@@ -142,7 +141,7 @@
             event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「せいかい」になることから問題文を逆算しましょう。Aには「あか」と読む漢字が入ります。';
+                hintMessage.innerText = '二人の台詞を繋げると「よいかいせいだ　だいせいかいよ」となるように問題文を設定すればいいようです。';
             } else {
                 hintMessage.innerText = '';
             }
