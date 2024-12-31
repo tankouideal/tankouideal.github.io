@@ -129,15 +129,23 @@
             populateSelect('word1');
             populateSelect('word2');
             populateSelect('word3');
+            populateSelect('word4');
+            populateSelect('word5');
+            populateSelect('word6');
+            populateSelect('word7');
         };
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
             const word3 = document.getElementById('word3').value;
-            const combined = word1 + word2 + word3;
+            const word4 = document.getElementById('word4').value;
+            const word5 = document.getElementById('word5').value;
+            const word6 = document.getElementById('word6').value;
+            const word7 = document.getElementById('word7').value;
+            const combined = word1 + word2 + word3 + word4 + word5 + word6 + word7;
 
-            if (combined === 'はんかいてん') {
+            if (combined === 'よんてんよんぶんよんじゅうよん') {
                 window.location.href = 'https://tankouideal.github.io/seikai2/clear2/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
