@@ -81,11 +81,10 @@
 <body>
     <p>正解です！　第5問です！</p>
     <div class="rule-box">
-        <p>Ａに
+        <p>画像の漢字のパーツを全て重複なく使って、２つの熟語を作ろう。１つ目の熟語の読みが
             <select id="word1"></select>
-            、Ｂに
             <select id="word2"></select>
-            と読む漢字を埋めて解け。
+        　　になるとき、２つ目の熟語の読みが答え。
         </p>
     </div>
     <div class="image-container">
@@ -97,8 +96,10 @@
     <div id="result-message"></div>
 
     <div id="hint-container">
-        <button type="button" class="hint-link" onclick="toggleHint(event)">ヒント</button>
-        <div id="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
+        <div id="hint1" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
+        <div id="hint2" class="hint-message"></div>
     </div>
 
     <script>
@@ -127,21 +128,27 @@
             const word2 = document.getElementById('word2').value;
             const combined = word1 + word2;
 
-            if (combined === 'あかいろ') {
-                window.location.href = 'https://tankouideal.github.io/seikai/number/';
+            if (combined === 'ぶんかい') {
+                window.location.href = 'https://tankouideal.github.io/seikai/umi2/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
         }
 
         // ヒントの表示/非表示を切り替える関数
-        function toggleHint(event) {
-            event.preventDefault(); // ページのリロードを防ぐ
-            const hintMessage = document.getElementById('hint-message');
+        function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「せいかい」になることから問題文を逆算しましょう。Aには「あか」と読む漢字が入ります。';
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = '２つ目の熟語の読みが「せいかい」になれば良いようです。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = '画像のパーツから「政界」という熟語が作れないでしょうか。';
+                        break;
+                }
             } else {
-                hintMessage.innerText = '';
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
             }
         }
     </script>
