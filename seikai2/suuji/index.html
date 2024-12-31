@@ -81,11 +81,8 @@
 <body>
     <p>正解です！　第3問です！</p>
     <div class="rule-box">
-        <p>Ａに
-            <select id="word1"></select>
-            、Ｂに
-            <select id="word2"></select>
-            と読む漢字を埋めて解け。
+        <p>「８６３６」が <select id="word1"></select><select id="word2"></select>になるとき、
+            「１４５４」が答え。
         </p>
     </div>
     <div class="image-container">
@@ -127,8 +124,8 @@
             const word2 = document.getElementById('word2').value;
             const combined = word1 + word2;
 
-            if (combined === 'あかいろ') {
-                window.location.href = 'https://tankouideal.github.io/seikai/number/';
+            if (combined === 'よんてん') {
+                window.location.href = 'https://tankouideal.github.io/seikai2/gray/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
@@ -139,7 +136,7 @@
             event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '答えが「せいかい」になることから問題文を逆算しましょう。Aには「あか」と読む漢字が入ります。';
+                hintMessage.innerText = '１～９には「せ？？いか？？？？」という言葉が入るようです。矢印の先を見てみましょう。';
             } else {
                 hintMessage.innerText = '';
             }
