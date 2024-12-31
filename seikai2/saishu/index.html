@@ -79,13 +79,17 @@
     </style>
 </head>
 <body>
-    <p>正解です！　第7問です！</p>
+    <p>正解です！　最後の問題です！</p>
     <div class="rule-box">
-        <p>Ａに
+        <p>
             <select id="word1"></select>
-            、Ｂに
             <select id="word2"></select>
-            と読む漢字を埋めて解け。
+            <select id="word3"></select>
+            <select id="word4"></select>の
+            <select id="word5"></select>
+            <select id="word6"></select>
+            <select id="word7"></select>
+            を計算し、画像の表で変換しろ。
         </p>
     </div>
     <div class="image-container">
@@ -146,13 +150,14 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '黒い文字と、赤い文字で、文字の読み方が異なるようです。';
+                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。２～９の漢字は使いません。
+                           　　　　　　　　　　　　 「がい（垓）」は大きい数の単位になりますが、ここでは使わないようです。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '４は、ひっくり返すと「カ」、７１は「ル」と読めそうです。';
+                        hintMessage.innerText = '４つ目のテキストボックスに「ぶん」を埋めると、「AぶんのB」という分数が表現できそうです。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '画像を180度回転させることを、「○○かいてん」と表現できないでしょうか。';
+                        hintMessage.innerText = '「整数分の整数」の形では、「１０」にはならなさそうですね……。';
                         break;
                 }
             } else {
