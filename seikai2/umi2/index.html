@@ -81,11 +81,12 @@
 <body>
     <p>正解です！　第6問です！</p>
     <div class="rule-box">
-        <p>Ａに
+        <p>４本の点線を実線にして、あみだくじを完成させよう。
             <select id="word1"></select>
-            、Ｂに
             <select id="word2"></select>
-            と読む漢字を埋めて解け。
+            <select id="word3"></select>
+            <select id="word4"></select>
+        　に繋がるように完成させたとき、選んだ４本の点線に書かれたひらがなを上から読んだ言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -125,16 +126,18 @@
             populateSelect('word1');
             populateSelect('word2');
             populateSelect('word3');
+            populateSelect('word4');
         };
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
             const word3 = document.getElementById('word3').value;
-            const combined = word1 + word2 + word3;
+            const word3 = document.getElementById('word4').value;
+            const combined = word1 + word2 + word3 + word4;
 
-            if (combined === 'はんかいてん') {
-                window.location.href = 'https://tankouideal.github.io/seikai/number/';
+            if (combined === 'かいがいかいがい') {
+                window.location.href = 'https://tankouideal.github.io/seikai2/saishu/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
             }
@@ -146,13 +149,13 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '黒い文字と、赤い文字で、文字の読み方が異なるようです。';
+                        hintMessage.innerText = '貝は「かい」と表現できるので、最初は「かい」を埋めれば良さそうです。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '４は、ひっくり返すと「カ」、７１は「ル」と読めそうです。';
+                        hintMessage.innerText = '貝がタコに繋がれば良いのですが、「タコ」を直接表現することはできないようです。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '画像を180度回転させることを、「○○かいてん」と表現できないでしょうか。';
+                        hintMessage.innerText = '「タコ」を回りの状況から間接的に表現できないでしょうか。「イカではない」ことが重要です。';
                         break;
                 }
             } else {
