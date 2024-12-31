@@ -81,11 +81,11 @@
 <body>
     <p>正解です！　第4問です！</p>
     <div class="rule-box">
-        <p>Ａに
+        <p>画像を
             <select id="word1"></select>
-            、Ｂに
             <select id="word2"></select>
-            と読む漢字を埋めて解け。
+            <select id="word3"></select>
+            させたとき、灰色の四角に入る言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -95,10 +95,13 @@
         <button onclick="checkAnswer()">設定完了</button>
     </div>
     <div id="result-message"></div>
-
     <div id="hint-container">
-        <button type="button" class="hint-link" onclick="toggleHint(event)">ヒント</button>
-        <div id="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
+        <div id="hint1" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
+        <div id="hint2" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
+        <div id="hint3" class="hint-message"></div>
     </div>
 
     <script>
@@ -120,14 +123,15 @@
         window.onload = function() {
             populateSelect('word1');
             populateSelect('word2');
+            populateSelect('word3');
         };
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
-            const combined = word1 + word2;
+            const combined = word1 + word2 + word3;
 
-            if (combined === 'あかいろ') {
+            if (combined === 'はんかいてん') {
                 window.location.href = 'https://tankouideal.github.io/seikai/number/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
@@ -140,13 +144,13 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '黄色い四角の中の文字を左から読めば、「セイカイ」になりますね。';
+                        hintMessage.innerText = '黒い文字と、赤い文字で、文字の読み方が異なるようです。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = 'そもそも黄色い四角は、記号としての「四角」なのでしょうか。';
+                        hintMessage.innerText = '４は、ひっくり返すと「カ」、７１は「ル」と読めそうです。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '黄色い四角と同じ形の「黒い四角」がありますが、これは記号ではなく、何かの文字のようです。';
+                        hintMessage.innerText = '画像を180度回転させることを、「○○かいてん」と表現できないでしょうか。';
                         break;
                 }
             } else {
