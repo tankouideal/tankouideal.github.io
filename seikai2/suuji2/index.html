@@ -81,10 +81,10 @@
 <body>
     <p>正解です！　第4問です！</p>
     <div class="rule-box">
-        <p><select id="word1"></select>
+        <p>緑の四角が<select id="word1"></select>を表すように
             <select id="word2"></select>
             <select id="word3"></select>
-            させたとき、灰色の四角に入る言葉が答え。
+            させたとき、青の四角に入る言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -129,7 +129,7 @@
             const word3 = document.getElementById('word3').value;
             const combined = word1 + word2 + word3;
 
-            if (combined === 'はんかいてん') {
+            if (combined === 'かいかいてん') {
                 window.location.href = 'https://tankouideal.github.io/seikai2/kanji/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
