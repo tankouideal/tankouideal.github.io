@@ -111,7 +111,7 @@
 
     <script>
         // 選択肢を定義
-        const options = ['はん', 'ぶん', 'よん', 'じゅう', 'かい', 'がい', 'てん'];
+        const options = ['せん', 'ぶん', 'よん', 'じゅう', 'かい', 'がい', 'てん'];
 
         // セレクトボックスに選択肢を追加する関数
         function populateSelect(id) {
@@ -147,7 +147,11 @@
 
             if (combined === 'よんてんよんぶんよんじゅうよん') {
                 window.location.href = 'https://tankouideal.github.io/seikai2/clear2/';
-            } else {
+            } else
+            if (combined === 'よんてんよんぶんよんせんよん') {
+                window.location.href = 'https://tankouideal.github.io/seikai2/daiseikai/';
+            } else
+            { 
                 document.getElementById('result-message').innerText = '不正解です';
             }
         }
@@ -158,7 +162,7 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。２～９に対応する漢字は使いません。「がい（垓）」は大きい数の単位になりますが、これも使わないようです。';
+                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。「がい（垓）」は大きい数の単位になりますが、これは使わないようです。「かい」も使いません。';
                         break;
                     case 'hint2':
                         hintMessage.innerText = '４つ目のテキストボックスに「ぶん」を埋めると、「ＡぶんのＢ」という分数が表現できそうです。';
