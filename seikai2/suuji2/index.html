@@ -99,8 +99,6 @@
         <div id="hint1" class="hint-message"></div>
         <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
         <div id="hint2" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
-        <div id="hint3" class="hint-message"></div>
     </div>
 
     <script>
@@ -148,9 +146,6 @@
                         break;
                     case 'hint2':
                         hintMessage.innerText = '４はひっくり返すと「カ」、７１は「ル」と読めそうです。';
-                        break;
-                    case 'hint3':
-                        hintMessage.innerText = '画像を180度回転させることを、「○○かいてん」と表現できないでしょうか。';
                         break;
                 }
             } else {
