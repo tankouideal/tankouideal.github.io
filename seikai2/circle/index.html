@@ -82,11 +82,7 @@
 <body>
     <p>正解です！　第2問です！</p>
     <div class="rule-box">
-        <p>画像を見ながら変換したとき、？？？？に入る言葉が答え。<br><br>
-        　か【はち】り　⇒　肩こり<br>
-        　【<select id="word1"></select>】ら　⇒　カメラ<br>
-         　せ【 <select id="word2"></select>】い　⇒　？？？？
-        </p>
+        <p><select id="word1"></select><select id="word2"></select>の中の文字を左から読め。</p>
     </div>
     <div class="image-container">
         <img src="nazo2.png" alt="中央に配置された画像">
@@ -127,7 +123,7 @@
             const word2 = document.getElementById('word2').value;
             const combined = word1 + word2;
 
-            if (combined === 'よんじゅう') {
+            if (combined === 'てんせん') {
                 window.location.href = 'https://tankouideal.github.io/seikai2/suuji/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
@@ -139,7 +135,7 @@
             event.preventDefault(); // ページのリロードを防ぐ
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '【はち】がタコに変換されているようです。他には、【に】がペンギンになります。';
+                hintMessage.innerText = '「実線ではない枠」に囲まれた文字を左から読めば良さそうです。';
             } else {
                 hintMessage.innerText = '';
             }
