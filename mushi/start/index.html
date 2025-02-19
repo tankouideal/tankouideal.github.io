@@ -41,7 +41,7 @@
             max-height: 100%;
             object-fit: cover;
         }
-        select, input {
+        select {
             font-size: 1em;
             padding: 5px;
             margin: 0 5px;
@@ -49,9 +49,6 @@
         .button-container {
             text-align: center;
             margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
         }
         .button-container button {
             font-size: 1.5em;
@@ -107,9 +104,12 @@
     </div>
 
     <script>
-        const options = ['赤色', '青色', '黄色', '緑色', '灰色', '肌色'];
+        // 選択肢を定義
+        const options1 = ['赤色', '青色', '黄色', '緑色', '灰色', '肌色'];
+        const options2 = ['オレンジ', '紫', '茶色', '白', '黒', '銀']; // ダミーの選択肢
 
-        function populateSelect(id) {
+        // セレクトボックスに選択肢を追加する関数
+        function populateSelect(id, options) {
             const select = document.getElementById(id);
             options.forEach(option => {
                 const opt = document.createElement('option');
@@ -119,9 +119,10 @@
             });
         }
 
+        // ページ読み込み時にセレクトボックスに選択肢を追加
         window.onload = function() {
-            populateSelect('word1');
-            populateSelect('word2');
+            populateSelect('word1', options1);
+            populateSelect('word2', options2);
         };
 
         function checkAnswer() {
@@ -137,6 +138,7 @@
             }
         }
 
+        // ヒントの表示/非表示を切り替える関数
         function toggleHint(event) {
             event.preventDefault();
             const hintMessage = document.getElementById('hint-message');
