@@ -51,6 +51,15 @@
     <p>他にもLINE謎など作っておりますので、良ければ遊んでください！</p>
     <p>作者の他の謎解き　⇒　<a href="https://tankouideal.github.io/matome/" target="_blank">https://tankouideal.github.io/matome/</a></p>
     <p>作者のXアカウント　⇒　<a href="https://x.com/tankouideal" target="_blank">https://x.com/tankouideal</a></p>
+    <div id="hint-container">
+        <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
+        <div id="hint1" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
+        <div id="hint2" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
+        <div id="hint3" class="hint-message"></div>
+    </div>
+    <script>
             // ヒントの表示/非表示を切り替える関数
         function toggleHint(hintId) {
             const hintMessage = document.getElementById(hintId);
@@ -70,5 +79,6 @@
                 hintMessage.innerText = ''; // クリックでヒントを消すことも可能
             }
         }
+    </script>
 </body>
 </html>
