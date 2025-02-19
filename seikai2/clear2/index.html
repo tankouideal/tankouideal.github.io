@@ -52,11 +52,11 @@
     <p>作者の他の謎解き　⇒　<a href="https://tankouideal.github.io/matome/" target="_blank">https://tankouideal.github.io/matome/</a></p>
     <p>作者のXアカウント　⇒　<a href="https://x.com/tankouideal" target="_blank">https://x.com/tankouideal</a></p>
     <div id="hint-container">
-        <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
+        <button type="button" class="hint-link" onclick="toggleHint('hint1')">隠し要素のヒント1</button>
         <div id="hint1" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
+        <button type="button" class="hint-link" onclick="toggleHint('hint2')">隠し要素のヒント2</button>
         <div id="hint2" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
+        <button type="button" class="hint-link" onclick="toggleHint('hint3')">隠し要素のヒント3</button>
         <div id="hint3" class="hint-message"></div>
     </div>
     <script>
@@ -65,13 +65,13 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。「がい（垓）」は大きい数の単位になりますが、これは使わないようです。「かい」も使いません。';
+                        hintMessage.innerText = '最後の謎のみ、答えを「とてもせいかい」という意味の言葉にすることができます。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '４つ目のテキストボックスに「ぶん」を埋めると、「ＡぶんのＢ」という分数が表現できます。「ＡぶんのＢ」は「Ｂ÷Ａ」であることに注意してください。';
+                        hintMessage.innerText = '最後の謎の答えを「だいせいかい（９１０）」にしてみましょう。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '「整数分の整数」の形では、「１０」にはならなさそうですね……。';
+                        hintMessage.innerText = '「よんてんよんぶんのよんじゅうよん」の一ヶ所を別の言葉に変えれば、答えが９１０になります。';
                         break;
                 }
             } else {
