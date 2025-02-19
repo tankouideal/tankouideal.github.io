@@ -51,5 +51,24 @@
     <p>他にもLINE謎など作っておりますので、良ければ遊んでください！</p>
     <p>作者の他の謎解き　⇒　<a href="https://tankouideal.github.io/matome/" target="_blank">https://tankouideal.github.io/matome/</a></p>
     <p>作者のXアカウント　⇒　<a href="https://x.com/tankouideal" target="_blank">https://x.com/tankouideal</a></p>
+            // ヒントの表示/非表示を切り替える関数
+        function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
+            if (hintMessage.innerText === '') {
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。「がい（垓）」は大きい数の単位になりますが、これは使わないようです。「かい」も使いません。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = '４つ目のテキストボックスに「ぶん」を埋めると、「ＡぶんのＢ」という分数が表現できます。「ＡぶんのＢ」は「Ｂ÷Ａ」であることに注意してください。';
+                        break;
+                    case 'hint3':
+                        hintMessage.innerText = '「整数分の整数」の形では、「１０」にはならなさそうですね……。';
+                        break;
+                }
+            } else {
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
+            }
+        }
 </body>
 </html>
