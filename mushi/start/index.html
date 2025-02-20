@@ -34,17 +34,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px auto;
+            margin: 10px auto 0;
         }
         .image-container img {
             max-width: 100%;
             max-height: 100%;
             object-fit: cover;
         }
-        select, input {
+        select {
             font-size: 1.2em;
             padding: 10px;
             margin: 0 5px;
+        }
+        input {
+            font-size: 1.5em;
+            padding: 12px;
         }
         .button-container {
             text-align: center;
@@ -87,9 +91,9 @@
             <select id="word2"></select>
             を無視して謎を解きます。
         </p>
-    <p>宣言ができたら、以下の謎に回答しましょう。</p>
+        <p>宣言ができたら、以下の謎に回答しましょう。</p>
     </div>
-    <div class="image-container" style="margin-top: 0;">
+    <div class="image-container">
         <img src="piece.png" alt="中央に配置された画像">
     </div>
     <div class="button-container">
