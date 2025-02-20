@@ -54,15 +54,17 @@
             margin-top: 20px;
         }
         .button-container input {
-            display: block; /* インライン要素の重なりを防ぐ */
-            width: 80%; /* スマホ表示時のバランス調整 */
-            margin: 0 auto 10px; /* 下に余白を確保 */
+            display: block;
+            width: 80%; /* スマホでは広めに */
+            max-width: 300px; /* PCでの横幅制限 */
+            margin: 0 auto 10px;
             font-size: 1.5em;
             padding: 12px;
-        }    
+        }
         .button-container button {
             display: block;
             width: 80%;
+            max-width: 200px; /* PCでのボタンの横幅制限 */
             margin: 0 auto;
             font-size: 1.5em;
             padding: 10px 20px;
