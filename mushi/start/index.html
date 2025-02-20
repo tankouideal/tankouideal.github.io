@@ -41,7 +41,7 @@
             max-height: 100%;
             object-fit: cover;
         }
-        select {
+        select, input {
             font-size: 1em;
             padding: 5px;
             margin: 0 5px;
@@ -71,7 +71,7 @@
             cursor: pointer;
             font-size: 1em;
             padding: 0;
-            margin: 5px 0; /* ボタンの間隔 */
+            margin: 5px 0;
         }
         .hint-message {
             margin-top: 5px;
@@ -85,13 +85,14 @@
         <p>私はこのページで、
             <select id="word1"></select>の
             <select id="word2"></select>
-           を無視して謎を解きます。
+            を無視して謎を解きます。
         </p>
     </div>
     <div class="image-container">
         <img src="piece.png" alt="中央に配置された画像">
     </div>
     <div class="button-container">
+        <input type="text" id="word3" placeholder="入力してください">
         <button onclick="checkAnswer()">回答する</button>
     </div>
     <div id="result-message"></div>
@@ -102,12 +103,9 @@
     </div>
 
     <script>
-        // 選択肢を定義
-        const options = ['赤色', '青色', '黄色', '緑色', '肌色', '灰色'];
-
-        // セレクトボックスに選択肢を追加する関数
-        function populateSelect(id) {
+        function populateSelect(id, options) {
             const select = document.getElementById(id);
+            select.innerHTML = '';
             options.forEach(option => {
                 const opt = document.createElement('option');
                 opt.value = option;
@@ -116,16 +114,18 @@
             });
         }
 
-        // ページ読み込み時にセレクトボックスに選択肢を追加
         window.onload = function() {
-            populateSelect('word1');
-            populateSelect('word2');
+            const options1 = ['赤色', '青色', '黄色', '緑色', '肌色', '灰色'];
+            const options2 = ['ピース', 'ブロック', 'ボール', 'カード', '星', 'ひらめき'];
+            populateSelect('word1', options1);
+            populateSelect('word2', options2);
         };
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
-            const combined = word1 + word2;
+            const word3 = document.getElementById('word3').value;
+            const combined = word1 + word2 + word3;
 
             if (combined === '黄色ピースひらめき') {
                 window.location.href = 'https://tankouideal.github.io/seikai/number/';
@@ -134,9 +134,8 @@
             }
         }
 
-        // ヒントの表示/非表示を切り替える関数
         function toggleHint(event) {
-            event.preventDefault(); // ページのリロードを防ぐ
+            event.preventDefault();
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
                 hintMessage.innerText = '答えが「せいかい」になることから問題文を逆算しましょう。Aには「あか」と読む漢字が入ります。';
