@@ -17,7 +17,7 @@
             position: relative;
         }
         .rule-box::before {
-            content: "このページで無視するもの";
+            content: "無視するもの";
             position: absolute;
             top: -10px;
             left: 10px;
@@ -54,12 +54,6 @@
             font-size: 1.5em;
             padding: 10px 20px;
         }
-        #answer {
-            font-size: 1.5em;
-            padding: 10px;
-            width: 200px;
-            height: 40px;
-        }
         #result-message {
             color: red;
             text-align: center;
@@ -86,20 +80,18 @@
 </head>
 <body>
     <p>第1問です！</p>
-    <p>まずは、以下の枠で「このページで無視するもの」を設定してください。</p>
+    <p>まずは以下の枠で「無視するもの」を宣言してください。</p>
     <div class="rule-box">
-        <p>Ａに
-            <select id="word1"></select>
-            、Ｂに
+        <p>私はこのページで、
+            <select id="word1"></select>の
             <select id="word2"></select>
-            と読む漢字を埋めて解け。
+           を無視して謎を解きます。
         </p>
     </div>
     <div class="image-container">
         <img src="nazo1.png" alt="中央に配置された画像">
     </div>
     <div class="button-container">
-        <input type="text" id="answer" placeholder="答えを入力">
         <button onclick="checkAnswer()">回答する</button>
     </div>
     <div id="result-message"></div>
@@ -111,11 +103,10 @@
 
     <script>
         // 選択肢を定義
-        const optionsA = ['赤色', '青色', '黄色', '緑色', '灰色', '肌色'];
-        const optionsB = ['ピース', 'バナナ', 'ぶどう', 'みかん', 'メロン']; // ダミーの選択肢
+        const options = ['赤色', '青色', '黄色', '緑色', '肌色', '灰色'];
 
         // セレクトボックスに選択肢を追加する関数
-        function populateSelect(id, options) {
+        function populateSelect(id) {
             const select = document.getElementById(id);
             options.forEach(option => {
                 const opt = document.createElement('option');
@@ -127,13 +118,16 @@
 
         // ページ読み込み時にセレクトボックスに選択肢を追加
         window.onload = function() {
-            populateSelect('word1', optionsA);
-            populateSelect('word2', optionsB);
+            populateSelect('word1');
+            populateSelect('word2');
         };
 
         function checkAnswer() {
-            const answer = document.getElementById('answer').value;
-            if (answer === '黄色ピースひらめき') {
+            const word1 = document.getElementById('word1').value;
+            const word2 = document.getElementById('word2').value;
+            const combined = word1 + word2;
+
+            if (combined === '黄色ピースひらめき') {
                 window.location.href = 'https://tankouideal.github.io/seikai/number/';
             } else {
                 document.getElementById('result-message').innerText = '不正解です';
