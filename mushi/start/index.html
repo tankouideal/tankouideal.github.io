@@ -27,18 +27,18 @@
             border: 1px solid black;
         }
         .image-container {
-        width: 90vw;
-        max-width: 600px;
-        height: auto; /* 高さを画像に合わせる */
-        overflow: hidden;
-        margin: 10px auto 0;
-        text-align: center;
+            width: 90vw;
+            max-width: 600px;
+            height: auto; /* 高さを画像に合わせる */
+            overflow: hidden;
+            margin: 10px auto 0;
+            text-align: center;
         }
         .image-container img {
-        max-width: 100%;
-        height: auto; /* 画像のアスペクト比を維持 */
-        display: block; /* 余白を減らす */
-        margin: 0 auto; /* 中央配置 */
+            max-width: 100%;
+            height: auto; /* 画像のアスペクト比を維持 */
+            display: block; /* 余白を減らす */
+            margin: 0 auto; /* 中央配置 */
         }
         select {
             font-size: 1em;
@@ -53,7 +53,17 @@
             text-align: center;
             margin-top: 20px;
         }
+        .button-container input {
+            display: block; /* インライン要素の重なりを防ぐ */
+            width: 80%; /* スマホ表示時のバランス調整 */
+            margin: 0 auto 10px; /* 下に余白を確保 */
+            font-size: 1.5em;
+            padding: 12px;
+        }    
         .button-container button {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
             font-size: 1.5em;
             padding: 10px 20px;
         }
