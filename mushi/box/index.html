@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第5問</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfb;
+        }
+        .rule-box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .rule-box::before {
+            content: "無視するもの";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .image-container {
+            width: 90vw;
+            max-width: 600px;
+            height: auto; /* 高さを画像に合わせる */
+            overflow: hidden;
+            margin: 10px auto 0;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto; /* 画像のアスペクト比を維持 */
+            display: block; /* 余白を減らす */
+            margin: 0 auto; /* 中央配置 */
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        input {
+            font-size: 1.5em;
+            padding: 12px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container input {
+            display: block;
+            width: 80%; /* スマホでは広めに */
+            margin: 0 auto 10px;
+            font-size: 1.5em;
+            padding: 12px;
+        }
+        .button-container button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+        }
+        @media (min-width: 600px) {
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .button-container input {
+            width: auto;
+            max-width: 300px;
+            margin: 0;
+            display: inline-block;
+        }
+        .button-container button {
+            display: inline-block;
+        }
+        }
+        #result-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #hint-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hint-link {
+            background: none;
+            border: none;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            margin: 5px 0;
+        }
+        .hint-message {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>正解です！　第5問です！</p>
+    <div class="rule-box">
+        <p>このページでは、
+            <select id="word1"></select>の
+            <select id="word2"></select>
+            を無視して謎を解く。
+        </p>
+    </div>
+    <br><br>
+    <div class="image-container">
+        <img src="box.png" alt="中央に配置された画像">
+    </div>
+    <div class="button-container">
+        <input type="text" id="word3" placeholder="ひらがなかカタカナで入力">
+        <button onclick="checkAnswer()">回答する</button>
+    </div>
+    <div id="result-message"></div>
+
+    <div id="hint-container">
+        <button type="button" class="hint-link" onclick="toggleHint(event)">ヒント</button>
+        <div id="hint-message"></div>
+    </div>
+
+    <script>
+        function populateSelect(id, options) {
+            const select = document.getElementById(id);
+            select.innerHTML = '';
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                select.appendChild(opt);
+            });
+        }
+
+        window.onload = function() {
+            const options1 = ['赤色', '青色', '黄色', '灰色', '肌色'];
+            const options2 = ['ハート', 'マーク', 'バード', 'ルール', 'ケース', 'ピース'];
+            populateSelect('word1', options1);
+            populateSelect('word2', options2);
+        };
+
+        function checkAnswer() {
+            const word1 = document.getElementById('word1').value;
+            const word2 = document.getElementById('word2').value;
+            const word3 = document.getElementById('word3').value;
+            const combined = word1 + word2 + word3;
+
+            if (combined === '青色ケースみどり' || combined === '青色ケースミドリ'
+             || combined === '青色ケースみどりいろ'|| combined === '青色ケースミドリイロ') {
+                window.location.href = 'https://tankouideal.github.io/mushi/douji';
+            } else {
+                document.getElementById('result-message').innerText = '不正解です';
+            }
+        }
+
+        function toggleHint(event) {
+            event.preventDefault();
+            const hintMessage = document.getElementById('hint-message');
+            if (hintMessage.innerText === '') {
+                hintMessage.innerText = 'このままだと、ボールの色が「青色のパターン」と「緑色のパターン」の両方あって、特定できないですね……。';
+            } else {
+                hintMessage.innerText = '';
+            }
+        }
+    </script>
+</body>
+</html>
