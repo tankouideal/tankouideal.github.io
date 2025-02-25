@@ -159,11 +159,15 @@
             const word3 = document.getElementById('word3').value;
             const combined = word1 + word2 + word3;
 
-            if (combined === '灰色ルール寒気') {
-                window.location.href = 'https://tankouideal.github.io/mushi/saigo';
-            } else {
-                document.getElementById('result-message').innerText = '不正解です';
-            }
+        if (combined === '灰色ルール寒気') {
+            window.location.href = 'https://tankouideal.github.io/mushi/saigo';
+        } else if (combined === '灰色ルールかんき') {
+            resultMessage.innerText = 'ひらがなかカタカナで入力してください';
+            resultMessage.style.color = 'gray';
+        } else {
+            resultMessage.innerText = '不正解です';
+            resultMessage.style.color = 'red';
+        }
         }
 
         function toggleHint(hintId) {
