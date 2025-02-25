@@ -166,13 +166,22 @@
             }
         }
 
-        function toggleHint(event) {
-            event.preventDefault();
-            const hintMessage = document.getElementById('hint-message');
+        function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = '左の謎は、「からす」の頭';
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = '左の謎の答えは、「からす」の頭・「いんこ」の真ん中・「きつつき」の最後の文字を拾って、「かんき」になります。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = '右の謎の答えは、「にわとり」のイラストがあるので、文章から「にわ」を取って「さむけ」となります。';
+                        break;
+                    case 'hint3':
+                        hintMessage.innerText = '「寒気」と回答できれば、同時に答えられるのですが、何かのルールに抵触しそうですね……。';
+                        break;
+                }
             } else {
-                hintMessage.innerText = '';
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
             }
         }
     </script>
