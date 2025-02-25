@@ -154,13 +154,18 @@
             const word2 = document.getElementById('word2').value;
             const word3 = document.getElementById('word3').value;
             const combined = word1 + word2 + word3;
+            const resultMessage = document.getElementById('result-message');
 
-            if (combined === '青色ケースみどり' || combined === '青色ケースミドリ'
-             || combined === '青色ケースみどりいろ'|| combined === '青色ケースミドリイロ') {
-                window.location.href = 'https://tankouideal.github.io/mushi/douji';
-            } else {
-                document.getElementById('result-message').innerText = '不正解です';
-            }
+        if (combined === '青色ケースみどり' || combined === '青色ケースミドリ'
+         || combined === '青色ケースみどりいろ'|| combined === '青色ケースミドリイロ') {
+            window.location.href = 'https://tankouideal.github.io/mushi/saigo';
+        } else if (combined === '青色ケース緑' || combined === '青色ケース緑色') {
+            resultMessage.innerText = 'ひらがなかカタカナで入力してください';
+            resultMessage.style.color = 'gray';
+        } else {
+            resultMessage.innerText = '不正解です';
+            resultMessage.style.color = 'red';
+        }
         }
 
         function toggleHint(event) {
