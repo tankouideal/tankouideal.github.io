@@ -162,7 +162,7 @@
 
         if (combined === '灰色ルール寒気') {
             window.location.href = 'https://tankouideal.github.io/mushi/saigo';
-        } else if ((word1 + word2 !== '灰色ルール') && (word3 = '寒気')) {
+        } else if ((word1 + word2 !== '灰色ルール') && (word3 === '寒気')) {
             resultMessage.innerText = 'ひらがなかカタカナで入力してください';
             resultMessage.style.color = 'gray';
         } else {
