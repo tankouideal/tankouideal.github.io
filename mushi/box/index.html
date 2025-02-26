@@ -156,10 +156,10 @@
             const combined = word1 + word2 + word3;
             const resultMessage = document.getElementById('result-message');
 
-        if (combined === '青色ケースみどり' || combined === '青色ケースミドリ'
-         || combined === '青色ケースみどりいろ'|| combined === '青色ケースミドリイロ') {
+        if (combined === '黄色ケースみどり' || combined === '黄色ケースミドリ'
+         || combined === '黄色ケースみどりいろ'|| combined === '黄色ケースミドリイロ') {
             window.location.href = 'https://tankouideal.github.io/mushi/douji';
-        } else if (combined === '青色ケース緑' || combined === '青色ケース緑色') {
+        } else if (combined === '黄色ケース緑' || combined === '黄色ケース緑色') {
             resultMessage.innerText = 'ひらがなかカタカナで入力してください';
             resultMessage.style.color = 'gray';
         } else {
@@ -172,7 +172,7 @@
             event.preventDefault();
             const hintMessage = document.getElementById('hint-message');
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = 'このままだと、ボールの色が「青色のパターン」と「緑色のパターン」の両方あって、特定できないですね……。';
+                hintMessage.innerText = 'このままだと、「黄色」と「緑色」の両方のパターンがあって、ボールの色が特定できないですね……。';
             } else {
                 hintMessage.innerText = '';
             }
