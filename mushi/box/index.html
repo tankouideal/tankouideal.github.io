@@ -162,10 +162,10 @@
             const combined = word1 + word2 + word3;
             const resultMessage = document.getElementById('result-message');
 
-        if (combined === '黄色ケースみどり' || combined === '黄色ケースミドリ'
-         || combined === '黄色ケースみどりいろ'|| combined === '黄色ケースミドリイロ') {
+        if (combined === '黄色ケースくろ' || combined === '黄色ケースクロ'
+         || combined === '黄色ケースくろいろ'|| combined === '黄色ケースクロイロ') {
             window.location.href = 'https://tankouideal.github.io/mushi/douji';
-        } else if (combined === '黄色ケース緑' || combined === '黄色ケース緑色') {
+        } else if (combined === '黄色ケース黒' || combined === '黄色ケース黒色') {
             resultMessage.innerText = 'ひらがなかカタカナで入力してください';
             resultMessage.style.color = 'gray';
         } else {
@@ -179,10 +179,10 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = 'このままだと、黄色・緑色の両方が考えられて、ボールの色が特定できないですね。なお、鳥の発言は無視しません。';
+                        hintMessage.innerText = '鳥の発言は無視しません。ですが、このままだと黄色・黒の両方が考えられて、ボールの色が特定できないですね。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '「黄色のパターン」と「緑色のパターン」の一方を無視できないでしょうか。';
+                        hintMessage.innerText = '「黄色のパターン」と「黒色のパターン」の一方を無視できないでしょうか。';
                         break;
                 }
             } else {
