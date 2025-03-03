@@ -132,6 +132,8 @@
         <div id="hint2" class="hint-message"></div>
         <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
         <div id="hint3" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint4')">ヒント4</button>
+        <div id="hint4" class="hint-message"></div>
     </div>
 
     <script>
@@ -178,6 +180,9 @@
                         break;
                     case 'hint3':
                         hintMessage.innerText = '赤色のマークを無視しましょう。そうすると、黒い四角と、何が残るでしょうか。';
+                        break;
+                    case 'hint4':
+                        hintMessage.innerText = '赤色のマークを無視しましょう。そうすると、真ん中には「黒」と「白」しか残らないですね。';
                         break;
                 }
             } else {
