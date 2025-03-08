@@ -82,7 +82,7 @@
     <p>正解です！　第4問です！</p>
     <div class="rule-box">
         <p>
-            Xに<select id="word1"></select>、Yに<select id="word2">が入るとき、Zに入る言葉が答え。
+            Xに<select id="word1"></select>、Yに<select id="word2"></select>が入るとき、Zに入る言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -121,11 +121,6 @@
         window.onload = function() {
             populateSelect('word1');
             populateSelect('word2');
-            populateSelect('word3');
-            populateSelect('word4');
-            populateSelect('word5');
-            populateSelect('word6');
-            populateSelect('word7');
         };
 
         function checkAnswer() {
