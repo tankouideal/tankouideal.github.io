@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第5問</title>
+    <title>第7問</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,14 +79,15 @@
     </style>
 </head>
 <body>
-    <p>正解です！　第5問です！</p>
+    <p>正解です！　最後の問題です！</p>
     <div class="rule-box">
         <p>
-           し<select id="word1"></select><select id="word2"></select><select id="word3"></select>う<select id="word4"></select>、画像が表す言葉が答え。
+            ③⑨⑥が<select id="word1"></select>、
+            ④⑤⑦が<select id="word2"></select>を表すとして、謎を解こう。
         </p>
     </div>
     <div class="image-container">
-        <img src="nazo5.png" alt="中央に配置された画像">
+        <img src="nazo7.png" alt="中央に配置された画像">
     </div>
     <div class="button-container">
         <button onclick="checkAnswer()">設定完了</button>
@@ -104,7 +105,7 @@
 
     <script>
         // 選択肢を定義
-        const options = ['せいか', 'いるか', 'きなこ', 'かくに', 'たいと', 'だいす','めたとき'];
+        const options = ['せいか', 'いるか', 'きなこ', 'かくに', 'たいと', 'だいす', 'めたとき'];
 
         // セレクトボックスに選択肢を追加する関数
         function populateSelect(id) {
@@ -121,19 +122,15 @@
         window.onload = function() {
             populateSelect('word1');
             populateSelect('word2');
-            populateSelect('word3');
-            populateSelect('word4');
         };
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
-            const word3 = document.getElementById('word3').value;  
-            const word4 = document.getElementById('word4').value;
-            const combined = word1 + word2 + word3 + word4;
+            const combined = word1 + word2;
 
-            if (combined === 'かくにせいかたいとめたとき') {
-                window.location.href = 'https://tankouideal.github.io/seikai3/umi/';
+            if (combined === 'きなこたいと') {
+                window.location.href = 'https://tankouideal.github.io/seikai3/extra/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
 
