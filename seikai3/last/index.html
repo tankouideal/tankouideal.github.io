@@ -82,7 +82,7 @@
     <p>正解です！　最後の謎です！</p>
     <div class="rule-box">
         <p>
-           画像の枠に<select id="word1"></select><select id="word2"></select><select id="word3"></select>をう<select id="word4"></select>、赤い矢印が表す言葉が答え。
+           し<select id="word1"></select><select id="word2"></select><select id="word3"></select><select id="word4"></select>をう<select id="word5"></select>、赤い矢印が表す言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -123,6 +123,7 @@
             populateSelect('word2');
             populateSelect('word3');
             populateSelect('word4');
+            populateSelect('word5');
         };
 
         function checkAnswer() {
@@ -130,9 +131,10 @@
             const word2 = document.getElementById('word2').value;
             const word3 = document.getElementById('word3').value;  
             const word4 = document.getElementById('word4').value;
-            const combined = word1 + word2 + word3 + word4;
+            const word4 = document.getElementById('word5').value;
+            const combined = word1 + word2 + word3 + word4 + word5;
 
-            if (combined === 'めたときたいとだいすめたとき') {
+            if (combined === 'かくにめたときたいとだいすめたとき') {
                 window.location.href = 'https://tankouideal.github.io/seikai3/allclear/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
