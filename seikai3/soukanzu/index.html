@@ -96,10 +96,6 @@
     <div id="hint-container">
         <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
         <div id="hint1" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
-        <div id="hint2" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
-        <div id="hint3" class="hint-message"></div>
     </div>
 
     <script>
@@ -141,13 +137,7 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。「がい（垓）」は大きい数の単位になりますが、これは使わないようです。「かい」も使いません。';
-                        break;
-                    case 'hint2':
-                        hintMessage.innerText = '４つ目のテキストボックスに「ぶん」を埋めると、「ＡぶんのＢ」という分数が表現できます。「ＡぶんのＢ」は「Ｂ÷Ａ」であることに注意してください。';
-                        break;
-                    case 'hint3':
-                        hintMessage.innerText = '「整数分の整数」の形では、「１０」にはならなさそうですね……。';
+                        hintMessage.innerText = '右下の「誠海（せいかい）」が答えになるようにしましょう。左下の「泰斗（たいと）」は無視して良いです。';
                         break;
                 }
             } else {
