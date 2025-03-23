@@ -100,8 +100,6 @@
         <div id="hint1" class="hint-message"></div>
         <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
         <div id="hint2" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
-        <div id="hint3" class="hint-message"></div>
     </div>
 
     <script>
@@ -147,13 +145,10 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。「がい（垓）」は大きい数の単位になりますが、これは使わないようです。「かい」も使いません。';
+                        hintMessage.innerText = '画像に六角形がないので、「さんかく」や「ろっかく」は図形を意味する言葉ではないようです。画像の文字は、左から読みます。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '４つ目のテキストボックスに「ぶん」を埋めると、「ＡぶんのＢ」という分数が表現できます。「ＡぶんのＢ」は「Ｂ÷Ａ」であることに注意してください。';
-                        break;
-                    case 'hint3':
-                        hintMessage.innerText = '「整数分の整数」の形では、「１０」にはならなさそうですね……。';
+                        hintMessage.innerText = '「三画三画三画六画三画三画」が「ショウボウシ」を表します。';
                         break;
                 }
             } else {
