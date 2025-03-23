@@ -80,7 +80,7 @@
 </head>
 <body>
     <p>大正解です！　最後の謎です！</p>
-    <p>最後の謎も、答えを「だいせいかい」にしてください。</p>
+    <p>最後も答えを「だいせいかい」にしてください。</p>
     <div class="rule-box">
         <p>
            し<select id="word1"></select><select id="word2"></select><select id="word3"></select><select id="word4"></select>をう<select id="word5"></select>、赤い矢印が表す言葉が答え。
@@ -146,13 +146,13 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '計算結果が「１０」になるように文章を作れば良いようです。「がい（垓）」は大きい数の単位になりますが、これは使わないようです。「かい」も使いません。';
+                        hintMessage.innerText = '赤い矢印が通る9文字が「だいせいかい」を表します。＝で縦に繋がれた四角には、同じ文字が入ります。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '４つ目のテキストボックスに「ぶん」を埋めると、「ＡぶんのＢ」という分数が表現できます。「ＡぶんのＢ」は「Ｂ÷Ａ」であることに注意してください。';
+                        hintMessage.innerText = '赤い矢印が「DAISEIKAI」を通るようにアルファベットを埋めましょう。最初のテキストボックスには「かくに」、最後のテキストボックスには「めたとき」が入ります。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '「整数分の整数」の形では、「１０」にはならなさそうですね……。';
+                        hintMessage.innerText = '「?E??」「KI?AI」「DAIS?」という3つの言葉が埋まるように問題文を設定しましょう。';
                         break;
                 }
             } else {
