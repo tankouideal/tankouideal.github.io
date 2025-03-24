@@ -82,7 +82,7 @@
     <p>正解です！　第4問です！</p>
     <div class="rule-box">
         <p>
-           <select id="word1"></select><select id="word2"></select>が<select id="word3"></select>いがの<select id="word4"></select>るが答え。
+           <select id="word1"></select>の裏に<select id="word2"></select><select id="word3"></select>な絵の<select id="word4"></select>るが答え。
         </p>
     </div>
     <div class="image-container">
@@ -100,7 +100,7 @@
 
     <script>
         // 選択肢を定義
-        const options = ['せいか', 'いるか', 'きなこ', 'かくに', 'たいと', 'だいす','めたとき'];
+        const options = ['せいか', 'きなこ', 'たいと', 'かくに', 'だいす', 'めたとき', 'かいそう'];
 
         // セレクトボックスに選択肢を追加する関数
         function populateSelect(id) {
@@ -128,7 +128,7 @@
             const word4 = document.getElementById('word4').value;
             const combined = word1 + word2 + word3 + word4;
 
-            if (combined === 'たいといるかいるかたいと') {
+            if (combined === 'かいそうたいとかいそうたいと') {
                 window.location.href = 'https://tankouideal.github.io/seikai3/tanuki/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
@@ -139,7 +139,7 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '鯛とイルカがいる左の絵が答えになるようにしましょう。よくわからない場合、選択肢から絞っていきましょう。';
+                        hintMessage.innerText = '左の絵が答えになるようにしましょう。海草の裏に、何かいそうですね……。';
                         break;
                 }
             } else {
