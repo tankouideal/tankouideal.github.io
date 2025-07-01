@@ -164,13 +164,22 @@
             }
         }
 
-        function toggleHint(event) {
-            event.preventDefault();
-            const hintMessage = document.getElementById('hint-message');
+       function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
             if (hintMessage.innerText === '') {
-                hintMessage.innerText = 'じゃんけんの「チョキ」を無視できないでしょうか。';
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = 'じゃんけんの「チョキ」を無視できないでしょうか。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = '肌色のピースを無視しましょう。そうすると、「パー」と「グー」が残ります。';
+                        break;
+                    case 'hint3':
+                        hintMessage.innerText = '「パー」・「グー」を、「か〇」・「〇〇」と言い換えられないでしょうか。';
+                        break;
+                }
             } else {
-                hintMessage.innerText = '';
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
             }
         }
     </script>
