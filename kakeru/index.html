@@ -1,1 +1,76 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゴールドをかける</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20 px;
+            background-color: #dfb;
+        }
+        .rule-box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .rule-box::before {
+            content: "ルール";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        .underline-link {
+            text-decoration: underline;
+            color: blue; /* 色を青に設定 */
+            cursor: pointer; /* マウスカーソルをポインタに変更 */
+        }
+        .underline-link:hover {
+            color: darkblue; /* ホバー時の色を変更 */
+        }
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+        　　display: block; /* 行間スペースを削除 */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            margin: 0; /* 余白を削除 */
+            padding: 0; /* パディングを削除 */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>このサイトはWeb謎解きサイト</p>
+        <p>「ゴールドをかける（賭ける）」です。</p>
+    </div>
+    <div class="rule-box">
+        <p>・「ひらがなポーカー」というゲームに7回挑戦し、「ゴールド」という通貨を累計200ゴールド稼いでください。</p>
+        <p>・「ひらがなポーカー」とは、各ゲームで配られたカードの中から5文字の言葉を作り出し、その言葉に応じて稼げるゴールドの金額が決まるゲームです。</p>
+        <p>　例：「むきふむき」という言葉はツーペア、「せきゆきき」という言葉はスリーカード等</p>
+　　　　 <p>・7回のゲームでは、それぞれのページで稼ぐべきゴールドの金額が目標として最初に表示されるので、各ゲームでその金額を稼ぐようにしてください。</p>
+    </div>
+    <p>プレイ環境としては、pcかスマートフォンを想定しています。</p>
+    <p>また、ソースコードの閲覧は禁止です。</p>
+    <p>
+        <a href="https://tankouideal.github.io/kakeru/start" class="underline-link">こちらをクリックするとゲームが開始します</a>
+    </p>
+    <p>作者のXアカウント　⇒　<a href="https://x.com/tankouideal?openExternalBrowser=1" target="_blank">https://x.com/tankouideal</a></p>
+    </div>
+</body>
+</html>
