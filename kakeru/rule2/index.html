@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>役のルール2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfb;
+        }
+        }
+        .underline-link {
+            text-decoration: underline;
+            color: blue; /* 色を青に設定 */
+            cursor: pointer; /* マウスカーソルをポインタに変更 */
+        }
+        .underline-link:hover {
+            color: darkblue; /* ホバー時の色を変更 */
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* 折り返しを許可 */
+            justify-content: center;
+            gap: 10px; /* 画像間の余白 */
+            margin: 20px auto;
+            max-width: 90vw;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 550px; /* PC時の画像幅 */
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* スマホ表示時（幅600px以下）に縦並び */
+        @media screen and (max-width: 600px) {
+        .image-container {
+            flex-direction: column;
+            align-items: center;
+    　  }
+　　    .image-container img {
+            max-width: 90vw;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>続いて、役の判定方法と、それによってゴールドを稼げるゴールドの金額について説明します。</p>
+    <div class="image-container">
+    <img src="役の判定方法.png" alt="中央に配置された画像">
+    <img src="役の判定方法2.png" alt="中央に配置された画像">
+    </div>
+    　　<p>これらのルールについてはゲーム中も見返すことができますが、今のうちによく理解しておきましょう。</p>
+        <p>次のページから第1ゲームが始まります。</p>
+        <p>全7ゲームそれぞれのページの上部の「目標」のゴールドの金額があり、各ゲームでその金額を稼いでいけばクリアとなりますので、頑張ってください！</p>
+    </div>
+    <p>
+        <a href="https://tankouideal.github.io/kakeru/rule2" class="underline-link">こちらをクリックすると第1ゲームに進みます</a>
+    </p>
+    </div>
+</body>
+</html>
