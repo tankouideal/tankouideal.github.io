@@ -125,7 +125,8 @@
         function checkAnswer() {
         const word = document.getElementById('word').value;
             if (word === 'かたたたき') {
-                document.getElementById('result-message').innerText = '正解です。';
+                document.getElementById('result-message').innerText = '正解です。'
+                result.style.color = 'black'; // 正解時は黒字;
             } else {
                 document.getElementById('result-message').innerText = '言葉になっていないか、その言葉では目標金額が稼げないようです。';
             }
