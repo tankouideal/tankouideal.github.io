@@ -101,12 +101,14 @@
         <input type="text" id="word" placeholder="ひらがなで入力">
         <button onclick="checkAnswer()">宣言する</button>
     </div>
-    <div id="result-message">
-　　<p></p>
+    <p></p>
     <p>なお、役の判定方法のルールは以下で確認できます。</p>
     <div class="image-container">
+        <img src="役の判定方法1.png" alt="中央に配置された画像"
+        <img src="役の判定方法2.png" alt="中央に配置された画像">
         <img src="役の判定方法3.png" alt="中央に配置された画像">
     </div>
+    <div id="result-message">
     </div>
         <div id="hint-container">
         <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
@@ -124,7 +126,7 @@
             if (word === 'かたたたき') {
                 window.location.href = 'https://tankouideal.github.io/mushi/saigo';
             } else {
-                document.getElementById('result-message').innerText = '不正解です';
+                document.getElementById('result-message').innerText = '言葉になっていないか、その言葉では目標金額が稼げないようです。';
             }
         }
 
