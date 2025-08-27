@@ -11,18 +11,19 @@
             background-color: #dfb;
         }
         .image-container {
-            width: 90vw;
-            max-width: 600px;
-            height: auto; /* 高さを画像に合わせる */
-            overflow: hidden;
-            margin: 10px auto 0;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap; /* 折り返しを許可 */
+            justify-content: center;
+            gap: 10px; /* 画像間の余白 */
+            margin: 20px auto;
+            max-width: 90vw;
         }
         .image-container img {
-            max-width: 100%;
-            height: auto; /* 画像のアスペクト比を維持 */
-            display: block; /* 余白を減らす */
-            margin: 0 auto; /* 中央配置 */
+            width: 100%;
+            max-width: 450px; /* PC時の画像幅 */
+            height: auto;
+            object-fit: cover;
+            display: block;
         }
         select {
             font-size: 1em;
@@ -101,6 +102,11 @@
         <button onclick="checkAnswer()">宣言する</button>
     </div>
     <div id="result-message">
+　　<p></p>
+    <p>なお、役の判定方法のルールは以下で確認できます。</p>
+    <div class="image-container">
+        <img src="役の判定方法3.png" alt="中央に配置された画像">
+    </div>
     </div>
         <div id="hint-container">
         <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
