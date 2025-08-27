@@ -1,1 +1,148 @@
-a
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第1ゲーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfb;
+        }
+        .image-container {
+            width: 90vw;
+            max-width: 600px;
+            height: auto; /* 高さを画像に合わせる */
+            overflow: hidden;
+            margin: 10px auto 0;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto; /* 画像のアスペクト比を維持 */
+            display: block; /* 余白を減らす */
+            margin: 0 auto; /* 中央配置 */
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        input {
+            font-size: 1.5em;
+            padding: 12px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container input {
+            display: block;
+            width: 80%; /* スマホでは広めに */
+            margin: 0 auto 10px;
+            font-size: 1.5em;
+            padding: 12px;
+        }
+        .button-container button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+        }
+        @media (min-width: 600px) {
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .button-container input {
+            width: auto;
+            max-width: 300px;
+            margin: 0;
+            display: inline-block;
+        }
+        .button-container button {
+            display: inline-block;
+        }
+        }
+        #result-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #hint-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hint-link {
+            background: none;
+            border: none;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            margin: 5px 0;
+        }
+        .hint-message {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>それでは第1ゲームで使うカードをお配りします。第1ゲームの目標金額は<u>10ゴールド</u>です。</p>
+    <br><br>
+    <div class="image-container">
+        <img src="かんたんたたき.png" alt="中央に配置された画像">
+    </div>
+    <div class="button-container">
+        <input type="text" id="word" placeholder="ひらがなで入力">
+        <button onclick="checkAnswer()">宣言する</button>
+    </div>
+    <div id="result-message">
+    </div>
+        <div id="hint-container">
+        <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
+        <div id="hint1" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
+        <div id="hint2" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
+        <div id="hint3" class="hint-message"></div>
+        <button type="button" class="hint-link" onclick="toggleHint('hint4')">ヒント4</button>
+        <div id="hint4" class="hint-message"></div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            if (word === '赤色マークとわいらいと') {
+                window.location.href = 'https://tankouideal.github.io/mushi/saigo';
+            } else {
+                document.getElementById('result-message').innerText = '不正解です';
+            }
+        }
+
+        function toggleHint(hintId) {
+            const hintMessage = document.getElementById(hintId);
+            if (hintMessage.innerText === '') {
+                switch(hintId) {
+                    case 'hint1':
+                        hintMessage.innerText = '右上のイラストは「いと」です。';
+                        break;
+                    case 'hint2':
+                        hintMessage.innerText = '左下のイラストは「ほほ」です。';
+                        break;
+                    case 'hint3':
+                        hintMessage.innerText = '赤色のマークを無視しましょう。そうすると、黒い四角と、何が残るでしょうか。';
+                        break;
+                    case 'hint4':
+                        hintMessage.innerText = '赤色のマークを無視すると、画像の中央には「黒い四角」と「（見えない）白い四角」が残ります。答えは6文字の、少し難しい言葉になります。';
+                        break;
+                }
+            } else {
+                hintMessage.innerText = ''; // クリックでヒントを消すことも可能
+            }
+        }
+    </script>
+</body>
+</html>
