@@ -58,9 +58,6 @@
         margin: 0;
         display: inline-block;
       }
-      .button-container button {
-        display: inline-block;
-      }
     }
     #result-message {
       color: red;
@@ -107,11 +104,11 @@
       width: 80%;
       max-width: 300px;
     }
-    .rule-box button {
-      font-size: 1.2em;
-      padding: 8px 16px;
-      margin-top: 10px;
+    .common-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
     }
+
   </style>
 </head>
 <body>
@@ -123,12 +120,12 @@
 
   <div class="rule-box">
     <input type="text" id="kuku-input" placeholder="ひらがなで入力">
-    <button onclick="runKuku()">変換を実行する</button>
+    <button class="common-button" onclick="runKuku()">変換を実行する</button>
   </div>
 
   <div class="button-container">
     <input type="text" id="word" placeholder="ひらがな5文字で入力">
-    <button onclick="checkAnswer()">宣言する</button>
+    <button class="common-button" onclick="checkAnswer()">宣言する</button>
   </div>
 
   <div id="result-message"></div>
