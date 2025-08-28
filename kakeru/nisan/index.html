@@ -169,7 +169,7 @@
         if (kukuState.nisan) {
           result.innerText = '「にさん」は既に入力されています。';
         } else {
-          mainImage.innerHTML = `<img src="game4_alt.png" alt="変換後の画像">`;
+          mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
           result.innerText = '「にさん」が入力されました。上部画像が切り替わりました。';
           result.style.color = 'black';
           kukuState.nisan = true;
@@ -178,7 +178,11 @@
         if (kukuState.gogo) {
           result.innerText = '「ごご」は既に入力されています。';
         } else {
-          ruleImages.innerHTML = `<img src="hantei4.png" alt="変換後の判定画像">`;
+          ruleImages.innerHTML = `
+          <img src="hantei1.png" alt="変換後の判定画像">
+          <img src="hantei2.png" alt="変換後の判定画像">
+          <img src="hantei4.png" alt="変換後の判定画像">
+          `;
           result.innerText = '「ごご」が入力されました。判定画像が切り替わりました。';
           result.style.color = 'black';
           kukuState.gogo = true;
