@@ -165,8 +165,7 @@
 
     <script>
     let kukuState = {
-      nisan: false,
-      gogo: false
+      shiha: false,
     };
 
     function runKuku() {
@@ -182,13 +181,12 @@
           mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
           result.innerHTML = '「へい<u>しは</u>いかい」が「へい<u>さんじゅうに</u>いかい>」に変化しました。';
           result.style.color = 'black';
-          kukuState.nisan = true;
+          kukuState.shiha = true;
         }
       } else if (input === 'ごご') {
-        if (kukuState.gogo) {
+        if {
           result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
           result.style.color = 'black';
-          kukuState.gogo = true;
         }
       } else {
         result.innerText = 'その入力では変換ができませんでした。';
@@ -200,7 +198,7 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-      if (!(kukuState.nisan && kukuState.gogo)) {
+      if (!(kukuState.shiha)) {
         result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
         result.style.color = 'red';
         return;
