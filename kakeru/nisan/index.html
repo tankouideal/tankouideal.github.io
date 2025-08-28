@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第4ゲーム</title>
+  <title>第5ゲーム</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -62,11 +62,17 @@
     border: 2px solid black;
     padding: 15px;
     position: relative;
-    width: 50%;
     margin: 20px auto;
     text-align: center;
+    /* スマホでは幅制限なし（デフォルト） */
     }
 
+    /* PC表示（幅600px以上）のときだけ横幅を制限 */
+    @media (min-width: 600px) {
+    .rule-box {
+      width: 50%;
+    }
+    }
 
     .rule-box::before {
       content: "九九変換装置";
@@ -117,7 +123,7 @@
   </style>
 </head>
 <body>
-  <p>続いて、第4ゲームで使うカードをお配りします。第4ゲームの目標金額は<u>20ゴールド</u>です。</p>
+  <p>続いて、第5ゲームで使うカードをお配りします。第5ゲームの目標金額は<u>20ゴールド</u>です。</p>
   <br><br>
 
   <div class="image-container" id="main-image">
