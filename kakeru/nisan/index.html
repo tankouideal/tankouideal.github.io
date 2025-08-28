@@ -166,7 +166,7 @@
           result.innerText = '「にさん」は既に入力されています。';
         } else {
           mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
-          result.innerText = '「にさん」が入力されました。「<u>にさん</u>び<u>にさん</u>」が「<u>ろく</u>び<u>ろく</u>」に変化しました。';
+          result.innerHTML = '「にさん」が入力されました。「<u>にさん</u>び<u>にさん</u>」が「<u>ろく</u>び<u>ろく</u>」に変化しました。';
           result.style.color = 'black';
           kukuState.nisan = true;
         }
@@ -179,7 +179,7 @@
           <img src="hantei2.png" alt="変換後の判定画像">
           <img src="hantei4.png" alt="変換後の判定画像">
           `;
-          result.innerText = '「ごご」が入力されました。「<u>ごご</u>ーるど」が「<u>にじゅうご</u>ーるど」に変化しました。';
+          result.innerHTML = '「ごご」が入力されました。「<u>ごご</u>ーるど」が「<u>にじゅうご</u>ーるど」に変化しました。';
           result.style.color = 'black';
           kukuState.gogo = true;
         }
