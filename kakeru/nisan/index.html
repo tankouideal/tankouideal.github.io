@@ -86,7 +86,7 @@
       margin-top: 5px;
     }
 
-    /* ✅ ルールボックスのスタイル */
+    /* ✅ ルールボックススタイル */
     .rule-box {
       border: 2px solid black;
       padding: 15px;
@@ -123,13 +123,10 @@
     <img src="game4.png" alt="中央に配置された画像">
   </div>
 
-  <!-- ✅ 九九変換装置（ルールボックス風） -->
+  <!-- ✅ 九九変換装置 -->
   <div class="rule-box">
     <p><strong>九九変換装置</strong></p>
-    <input type="text" id="kuku1-input" placeholder="ひらがなで九九を入力（例：にさん）">
-    <br>
-    <input type="text" id="kuku2-input" placeholder="ひらがなで九九を入力（例：ごご）">
-    <br>
+    <input type="text" id="kuku-input" placeholder="ひらがなで九九を入力（例：にさん、 ごご）">
     <button onclick="runKuku()">変換を実行する</button>
   </div>
 
@@ -160,44 +157,37 @@
   </div>
 
   <script>
-    let kuku1Valid = false;
-    let kuku2Valid = false;
+    let kukuState = {
+      nisan: false,
+      gogo: false
+    };
 
     function runKuku() {
-      const kuku1 = document.getElementById('kuku1-input').value.trim();
-      const kuku2 = document.getElementById('kuku2-input').value.trim();
-      const ruleImages = document.getElementById('rule-images');
-      const mainImage = document.getElementById('main-image');
+      const input = document.getElementById('kuku-input').value.trim();
       const result = document.getElementById('result-message');
+      const mainImage = document.getElementById('main-image');
+      const ruleImages = document.getElementById('rule-images');
 
-      // にさん → 上部画像を切り替え
-      if (kuku1 === 'にさん') {
-        mainImage.innerHTML = `<img src="game4_alt.png" alt="変換後の画像">`;
-        kuku1Valid = true;
+      if (input === 'にさん') {
+        if (kukuState.nisan) {
+          result.innerText = '「にさん」は既に入力されています。';
+        } else {
+          mainImage.innerHTML = `<img src="game4_alt.png" alt="変換後の画像">`;
+          result.innerText = '「にさん」が入力されました。上部画像が切り替わりました。';
+          result.style.color = 'black';
+          kukuState.nisan = true;
+        }
+      } else if (input === 'ごご') {
+        if (kukuState.gogo) {
+          result.innerText = '「ごご」は既に入力されています。';
+        } else {
+          ruleImages.innerHTML = `<img src="hantei4.png" alt="変換後の判定画像">`;
+          result.innerText = '「ごご」が入力されました。判定画像が切り替わりました。';
+          result.style.color = 'black';
+          kukuState.gogo = true;
+        }
       } else {
-        mainImage.innerHTML = `<img src="game4.png" alt="中央に配置された画像">`;
-        kuku1Valid = false;
-      }
-
-      // ごご → 判定画像を切り替え
-      if (kuku2 === 'ごご') {
-        ruleImages.innerHTML = `<img src="hantei4.png" alt="変換後の判定画像">`;
-        kuku2Valid = true;
-      } else {
-        ruleImages.innerHTML = `
-          <img src="hantei1.png" alt="中央に配置された画像">
-          <img src="hantei2.png" alt="中央に配置された画像">
-          <img src="hantei3.png" alt="中央に配置された画像">
-        `;
-        kuku2Valid = false;
-      }
-
-      // 状態表示
-      if (kuku1Valid && kuku2Valid) {
-        result.innerText = '九九変換装置が正常に作動しました。';
-        result.style.color = 'black';
-      } else {
-        result.innerText = '九九変換装置が正しく作動していません。';
+        result.innerText = '入力が認識されませんでした。';
         result.style.color = 'red';
       }
     }
@@ -206,7 +196,7 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-message');
 
-      if (!(kuku1Valid && kuku2Valid)) {
+      if (!(kukuState.nisan && kukuState.gogo)) {
         result.innerText = '九九変換装置が正しく使われていないため、正しく判定できません。';
         result.style.color = 'red';
         return;
@@ -217,4 +207,15 @@
           <p>正解です。</p>
           <p>あなたは「ろくろくび」と書いた紙を青のロボットに渡し、「ツーペア」と書かれた紙を受け取りました。</p>
           <p>あなたはそれらの紙を緑のロボットに渡し、目標金額である20ゴールドを獲得しました。</p>
-          <p><a href="https://tankouideal.github.io/kakeru/kuku" style="color: blue; text-decoration: underline;">次の説明に進む</a></
+          <p><a href="https://tankouideal.github.io/kakeru/kuku" style="color: blue; text-decoration: underline;">次の説明に進む</a></p>
+        `;
+        result.style.color = 'black';
+      } else {
+        result.innerText = '言葉になっていないか、その言葉では目標金額が稼げないようです。';
+        result.style.color = 'red';
+      }
+    }
+
+    function toggleHint(hintId) {
+      const hintMessage = document.getElementById(hintId);
+      if (hint
