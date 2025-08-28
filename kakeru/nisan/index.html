@@ -97,6 +97,11 @@
       width: 80%;
       max-width: 300px;
     }
+    .kuku-box button {
+      font-size: 1.2em;
+      padding: 8px 16px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -109,6 +114,7 @@
   <div class="kuku-box">
     <p><strong>九九変換装置</strong></p>
     <input type="text" id="kuku-input" placeholder="ひらがなで九九を入力（例：ごご）">
+    <button onclick="runKuku()">変換を実行する</button>
   </div>
 
   <div class="button-container">
@@ -138,20 +144,39 @@
   </div>
 
   <script>
+    let kukuValid = false;
+
+    function runKuku() {
+      const kuku = document.getElementById('kuku-input').value.trim();
+      const ruleImages = document.getElementById('rule-images');
+      const result = document.getElementById('result-message');
+
+      if (kuku === 'ごご') {
+        ruleImages.innerHTML = `<img src="hantei4.png" alt="変換後の判定画像">`;
+        result.innerText = '九九変換装置が正常に作動しました。';
+        result.style.color = 'black';
+        kukuValid = true;
+      } else {
+        ruleImages.innerHTML = `
+          <img src="hantei1.png" alt="中央に配置された画像">
+          <img src="hantei2.png" alt="中央に配置された画像">
+          <img src="hantei3.png" alt="中央に配置された画像">
+        `;
+        result.innerText = '九九変換装置が正しく作動していません。';
+        result.style.color = 'red';
+        kukuValid = false;
+      }
+    }
+
     function checkAnswer() {
       const word = document.getElementById('word').value.trim();
-      const kuku = document.getElementById('kuku-input').value.trim();
       const result = document.getElementById('result-message');
-      const ruleImages = document.getElementById('rule-images');
 
-      if (kuku !== 'ごご') {
+      if (!kukuValid) {
         result.innerText = '九九変換装置が正しく使われていないため、正しく判定できません。';
         result.style.color = 'red';
         return;
       }
-
-      // 九九が「ごご」の場合、画像を切り替える
-      ruleImages.innerHTML = `<img src="hantei4.png" alt="変換後の判定画像">`;
 
       if (word === 'ろくろくび') {
         result.innerHTML = `
