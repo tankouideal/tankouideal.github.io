@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>第4ゲーム</title>
   <style>
-   body {
+body {
   font-family: Arial, sans-serif;
   margin: 20px;
   background-color: #dfb;
@@ -28,13 +28,13 @@
   display: block;
 }
 
-/* 共通入力欄スタイル（宣言欄に合わせる） */
+/* 共通入力欄スタイル */
 input {
   font-size: 1.5em;
   padding: 12px;
 }
 
-/* 共通ボタンスタイル（宣言欄に合わせる） */
+/* 共通ボタンスタイル */
 .common-button {
   font-size: 1.5em;
   padding: 10px 20px;
@@ -47,16 +47,15 @@ input {
 }
 
 .button-container input {
-  display: block;
-  width: 80%;
-  margin: 0 auto 10px;
   font-size: 1.5em;
   padding: 12px;
+  width: 80%;
+  max-width: 300px;
 }
 
 .button-container button {
-  display: block;
-  margin: 0 auto;
+  font-size: 1.5em;
+  padding: 10px 20px;
 }
 
 /* 九九変換装置のレイアウト */
@@ -69,7 +68,7 @@ input {
 }
 
 .rule-box::before {
-  content: "ルール";
+  content: "九九変換装置";
   position: absolute;
   top: -10px;
   left: 10px;
@@ -80,8 +79,6 @@ input {
 }
 
 .rule-box input {
-  display: block;
-  margin: 0 auto 10px;
   font-size: 1.5em;
   padding: 12px;
   width: 80%;
@@ -89,13 +86,14 @@ input {
 }
 
 .rule-box button {
-  display: block;
-  margin: 0 auto;
+  font-size: 1.5em;
+  padding: 10px 20px;
 }
 
-/* レスポンシブ：PC表示で宣言欄を横並びに */
+/* PC表示で横並びにする（宣言欄と九九変換装置） */
 @media (min-width: 600px) {
-  .button-container {
+  .button-container,
+  .rule-box {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -103,15 +101,16 @@ input {
     gap: 10px;
   }
 
-  .button-container input {
+  .button-container input,
+  .rule-box input {
     width: auto;
     max-width: 300px;
     margin: 0;
-    display: inline-block;
   }
 
-  .button-container button {
-    display: inline-block;
+  .button-container button,
+  .rule-box button {
+    margin: 0;
   }
 }
 
