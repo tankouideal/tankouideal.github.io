@@ -149,15 +149,15 @@ input {
   <div class="image-container" id="main-image">
     <img src="game4.png" alt="中央に配置された画像">
   </div>
+  
+  <div class="button-container">
+    <input type="text" id="word" placeholder="ひらがな5文字で入力">
+    <button class="common-button" onclick="checkAnswer()">宣言する</button>
+  </div>
 
   <div class="rule-box">
     <input type="text" id="kuku-input" placeholder="ひらがなで入力">
     <button class="common-button" onclick="runKuku()">変換を実行する</button>
-  </div>
-
-  <div class="button-container">
-    <input type="text" id="word" placeholder="ひらがな5文字で入力">
-    <button class="common-button" onclick="checkAnswer()">宣言する</button>
   </div>
 
   <div id="result-message"></div>
