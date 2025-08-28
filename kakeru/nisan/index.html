@@ -170,7 +170,7 @@
           result.innerText = '「にさん」は既に入力されています。';
         } else {
           mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
-          result.innerText = '「にさん」が入力されました。上部画像が切り替わりました。';
+          result.innerText = '「にさん」が入力されました。「<u>にさん</u>び<u>にさん</u>」が「<u>ろく</u>び<u>ろく</u>」に変化しました。';
           result.style.color = 'black';
           kukuState.nisan = true;
         }
@@ -183,7 +183,7 @@
           <img src="hantei2.png" alt="変換後の判定画像">
           <img src="hantei4.png" alt="変換後の判定画像">
           `;
-          result.innerText = '「ごご」が入力されました。判定画像が切り替わりました。';
+          result.innerText = '「ごご」が入力されました。「<u>ごご</u>ーるど」が「<u>にじゅうご</u>ーるど」に変化しました。';
           result.style.color = 'black';
           kukuState.gogo = true;
         }
@@ -198,7 +198,7 @@
       const result = document.getElementById('result-message');
 
       if (!(kukuState.nisan && kukuState.gogo)) {
-        result.innerText = '九九変換装置が正しく使われていないため、正しく判定できません。';
+        result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
         result.style.color = 'red';
         return;
       }
@@ -212,7 +212,7 @@
         `;
         result.style.color = 'black';
       } else {
-        result.innerText = '言葉になっていないか、その言葉では目標金額が稼げないようです。';
+        result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
         result.style.color = 'red';
       }
     }
