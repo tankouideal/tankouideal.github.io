@@ -132,12 +132,13 @@
 
   <div class="section">
     <div class="input-group">
+      <input type="text" id="pen-input" placeholder="認識操作ペンで書いたひらがな">
       <input type="text" id="word" placeholder="ひらがな5文字で入力">
       <button class="common-button" onclick="checkAnswer()">宣言する</button>
     </div>
     <div id="result-declare" class="result-message"></div>
   </div>
-
+  
   <div class="section rule-box">
     <input type="text" id="kuku-input" placeholder="ひらがなで入力">
     <button class="common-button" onclick="runKuku()">変換を実行する</button>
@@ -164,9 +165,6 @@
   </div>
 
     <script>
-    let kukuState = {
-      shiha: false,
-    };
 
     function runKuku() {
       const input = document.getElementById('kuku-input').value.trim();
@@ -184,28 +182,29 @@
     }
 
     function checkAnswer() {
+      const penInput = document.getElementById('pen-input').value.trim();
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-      if (!(kukuState.shiha)) {
-        result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
-        result.style.color = 'red';
-        return;
-      }
+    if (!(kukuState.shiha)) {
+      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+      result.style.color = 'red';
+    return;
+    }
 
-      if (word === 'ふるはうす') {
-        result.innerHTML = `
-          <p>あなたは「ふるはうす」と書いた紙を青のロボットに渡すと、ロボットは「ふるはうす」と書かれた紙を返してきました。</p>
-          <p>また、ロボットは「フラッシュ」と書かれた紙も渡してきました。</p>
-          <p>あなたはそれらの紙を緑のロボットに渡し、50ゴールドを獲得しました！</p>
-          <p>第6ゲーム、成功です！</p>
-          <p><a href="https://tankouideal.github.io/kakeru/nisan" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
-        `;
-        result.style.color = 'black';
-      } else {
-        result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
-        result.style.color = 'red';
-      }
+    if (penInput === 'は' && word === 'ふるはうす') {
+      result.innerHTML = `
+        <p>あなたは「ふるはうす」と書いた紙を青のロボットに渡すと、ロボットは「ふるはうす」と書かれた紙を返してきました。</p>
+        <p>また、ロボットは「フラッシュ」と書かれた紙も渡してきました。</p>
+        <p>あなたはそれらの紙を緑のロボットに渡し、50ゴールドを獲得しました！</p>
+        <p>第6ゲーム、成功です！</p>
+      <p><a href="https://tankouideal.github.io/kakeru/nisan" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
+      `;
+      result.style.color = 'black';
+    } else {
+      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+      result.style.color = 'red';
+    }
     }
 
     function toggleHint(hintId) {
