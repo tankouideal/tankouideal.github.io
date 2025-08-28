@@ -104,6 +104,7 @@
     </div>
     <div id="result-message">
     </div>
+    <br>
     <p>なお、役の判定方法のルールは以下で確認できます。</p>
     <div class="image-container">
     <img src="hantei1.png" alt="中央に配置された画像">
@@ -126,8 +127,20 @@
         const word = document.getElementById('word').value;
         const result = document.getElementById('result-message');
             if (word === 'かたたたき') {
-                document.getElementById('result-message').innerText = '正解です。';
+                document.getElementById('result-message').innerText = '正解です。
+                \n「かたたたき」と書いた紙を青いロボットに渡すと、「スリーカード」と書かれた紙を受け取り、10ゴールドに換金できました。
+                \n 目標金額を達成しました。';
                 result.style.color = 'black'; // 正解時は黒字;
+
+                // リンクを追加
+        const link = document.createElement('a');
+        link.href = 'https://tankouideal.github.io/kakeru/seikai';
+        link.innerText = '▶ 次のゲームへ';
+        link.style.display = 'block';
+        link.style.marginTop = '10px';
+        link.style.color = 'blue';
+        link.style.textDecoration = 'underline';
+
             } else {
                 document.getElementById('result-message').innerText = '言葉になっていないか、その言葉では目標金額が稼げないようです。';
                 result.style.color = 'red';
