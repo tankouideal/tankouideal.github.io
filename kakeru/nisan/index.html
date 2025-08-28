@@ -198,7 +198,7 @@
           kukuState.gogo = true;
         }
       } else {
-        result.innerText = '入力が認識されませんでした。';
+        result.innerText = 'その入力では変換ができませんでした。';
         result.style.color = 'red';
       }
     }
@@ -216,7 +216,7 @@
       if (word === 'ろくろくび') {
         result.innerHTML = `
           <p>あなたは「ろくろくび」と書いた紙を青のロボットに渡し、「ツーペア」と書かれた紙を受け取りました。</p>
-          <p>あなたはそれらの紙を緑のロボットに渡し、目標金額である20ゴールドを獲得しました。</p>
+          <p>あなたはそれらの紙を緑のロボットに渡し、20ゴールドを獲得しました！</p>
           <p><a href="https://tankouideal.github.io/kakeru/kuku" style="color: blue; text-decoration: underline;">次の説明に進む</a></p>
         `;
         result.style.color = 'black';
