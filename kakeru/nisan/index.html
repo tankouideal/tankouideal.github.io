@@ -5,162 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>第4ゲーム</title>
   <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #dfb;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #dfb;
+      text-align: center;
+    }
 
-.image-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px auto;
-  max-width: 90vw;
-}
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px auto;
+      max-width: 90vw;
+    }
 
-.image-container img {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
+    .image-container img {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
 
-/* 共通入力欄スタイル */
-input {
-  font-size: 1.5em;
-  padding: 12px;
-}
+    input {
+      font-size: 1.5em;
+      padding: 12px;
+      width: 80%;
+      max-width: 300px;
+    }
 
-/* 共通ボタンスタイル */
-.common-button {
-  font-size: 1.5em;
-  padding: 10px 20px;
-}
+    .common-button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+    }
 
-/* 宣言欄のレイアウト */
-.button-container {
-  text-align: center;
-  margin-top: 20px;
-}
+    .section {
+      margin: 30px 0;
+    }
 
-.button-container input {
-  font-size: 1.5em;
-  padding: 12px;
-  width: 80%;
-  max-width: 300px;
-}
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
 
-.button-container button {
-  font-size: 1.5em;
-  padding: 10px 20px;
-}
+    .result-message {
+      margin-top: 10px;
+      min-height: 1em;
+      color: red;
+    }
 
-/* 九九変換装置のレイアウト */
-.rule-box {
-  border: 2px solid black;
-  padding: 15px;
-  margin: 20px 0;
-  position: relative;
-  text-align: center;
-}
+    .rule-box {
+      border: 2px solid black;
+      padding: 15px;
+      position: relative;
+    }
 
-.rule-box::before {
-  content: "九九変換装置";
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  background: white;
-  padding: 0 5px;
-  font-weight: bold;
-  border: 1px solid black;
-}
+    .rule-box::before {
+      content: "九九変換装置";
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      background: white;
+      padding: 0 5px;
+      font-weight: bold;
+      border: 1px solid black;
+    }
 
-.rule-box input {
-  font-size: 1.5em;
-  padding: 12px;
-  width: 80%;
-  max-width: 300px;
-}
+    @media (min-width: 600px) {
+      .input-group {
+        flex-direction: row;
+        justify-content: center;
+      }
 
-.rule-box button {
-  font-size: 1.5em;
-  padding: 10px 20px;
-}
+      input {
+        width: auto;
+        margin: 0;
+      }
 
-/* PC表示で横並びにする（宣言欄と九九変換装置） */
-@media (min-width: 600px) {
-  .button-container,
-  .rule-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
+      .common-button {
+        margin: 0;
+      }
+    }
 
-  .button-container input,
-  .rule-box input {
-    width: auto;
-    max-width: 300px;
-    margin: 0;
-  }
+    #hint-container {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-  .button-container button,
-  .rule-box button {
-    margin: 0;
-  }
-}
+    .hint-link {
+      background: none;
+      border: none;
+      text-decoration: underline;
+      color: blue;
+      cursor: pointer;
+      font-size: 1em;
+      padding: 0;
+      margin: 5px 0;
+    }
 
-#result-message {
-  color: red;
-  text-align: center;
-  margin-top: 10px;
-  min-height: 1em;
-}
-
-#hint-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.hint-link {
-  background: none;
-  border: none;
-  text-decoration: underline;
-  color: blue;
-  cursor: pointer;
-  font-size: 1em;
-  padding: 0;
-  margin: 5px 0;
-}
-
-.hint-message {
-  margin-top: 5px;
-}
-
+    .hint-message {
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
   <p>続いて、第4ゲームで使うカードをお配りします。第4ゲームの目標金額は<u>20ゴールド</u>です。</p>
   <br><br>
+
   <div class="image-container" id="main-image">
     <img src="game4.png" alt="中央に配置された画像">
   </div>
-  
-  <div class="button-container">
-    <input type="text" id="word" placeholder="ひらがな5文字で入力">
-    <button class="common-button" onclick="checkAnswer()">宣言する</button>
+
+  <div class="section">
+    <div class="input-group">
+      <input type="text" id="word" placeholder="ひらがな5文字で入力">
+      <button class="common-button" onclick="checkAnswer()">宣言する</button>
+    </div>
+    <div id="result-declare" class="result-message"></div>
   </div>
 
-  <div class="rule-box">
+  <div class="section rule-box">
     <input type="text" id="kuku-input" placeholder="ひらがなで入力">
     <button class="common-button" onclick="runKuku()">変換を実行する</button>
+    <div id="result-kuku" class="result-message"></div>
   </div>
-
-  <div id="result-message"></div>
 
   <br>
   <p>なお、役の判定方法のルールは以下で確認できます。</p>
@@ -189,7 +161,7 @@ input {
 
     function runKuku() {
       const input = document.getElementById('kuku-input').value.trim();
-      const result = document.getElementById('result-message');
+      const result = document.getElementById('result-kuku');
       const mainImage = document.getElementById('main-image');
       const ruleImages = document.getElementById('rule-images');
 
@@ -207,9 +179,9 @@ input {
           result.innerText = '「ごご」は既に入力されています。';
         } else {
           ruleImages.innerHTML = `
-          <img src="hantei1.png" alt="変換後の判定画像">
-          <img src="hantei2.png" alt="変換後の判定画像">
-          <img src="hantei4.png" alt="変換後の判定画像">
+            <img src="hantei1.png" alt="変換後の判定画像">
+            <img src="hantei2.png" alt="変換後の判定画像">
+            <img src="hantei4.png" alt="変換後の判定画像">
           `;
           result.innerHTML = '「ごご」が入力されました。「<u>ごご</u>ーるど」が「<u>にじゅうご</u>ーるど」に変化しました。';
           result.style.color = 'black';
@@ -223,7 +195,7 @@ input {
 
     function checkAnswer() {
       const word = document.getElementById('word').value.trim();
-      const result = document.getElementById('result-message');
+      const result = document.getElementById('result-declare');
 
       if (!(kukuState.nisan && kukuState.gogo)) {
         result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
