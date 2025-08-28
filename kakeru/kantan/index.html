@@ -127,22 +127,13 @@
         const word = document.getElementById('word').value;
         const result = document.getElementById('result-message');
             if (word === 'かたたたき') {
-                document.getElementById('result-message').innerText = 
-                `<p>正解です。</p>
-                <p>「かたたたき」と書いた紙を青いロボットに渡すと、「スリーカード」と書かれた紙を受け取り、10ゴールドに換金できました。</p>
-                <p>目標金額を達成しました。</p>`;
-                result.style.color = 'black'; // 正解時は黒字;
-
-                // リンクを追加
-        const link = document.createElement('a');
-        link.href = 'https://tankouideal.github.io/kakeru/seikai';
-        link.innerText = '▶ 次のゲームへ';
-        link.style.display = 'block';
-        link.style.marginTop = '10px';
-        link.style.color = 'blue';
-        link.style.textDecoration = 'underline';
-
-                result.appendChild(link); // 
+            result.innerHTML = `
+            <p>正解です。</p>
+            <p>「かたたたき」と書いた紙を青いロボットに渡すと、「スリーカード」と書かれた紙を受け取り、10ゴールドに換金できました。</p>
+            <p>目標金額を達成しました。</p>
+            <p><a href="https://tankouideal.github.io/kakeru/seikai" style="color: blue; text-decoration: underline;">▶ 次のゲームへ</a></p>
+            `;
+            result.style.color = 'black'; // 正解時は黒字;
 
             } else {
                 document.getElementById('result-message').innerText = '言葉になっていないか、その言葉では目標金額が稼げないようです。';
