@@ -127,9 +127,10 @@
         const word = document.getElementById('word').value;
         const result = document.getElementById('result-message');
             if (word === 'かたたたき') {
-                document.getElementById('result-message').innerText = `正解です。
-                「かたたたき」と書いた紙を青いロボットに渡すと、「スリーカード」と書かれた紙を受け取り、10ゴールドに換金できました。
-                目標金額を達成しました。`;
+                document.getElementById('result-message').innerText = 
+                `<p>正解です。</p>
+                <p>「かたたたき」と書いた紙を青いロボットに渡すと、「スリーカード」と書かれた紙を受け取り、10ゴールドに換金できました。</p>
+                <p>目標金額を達成しました。</p>`;
                 result.style.color = 'black'; // 正解時は黒字;
 
                 // リンクを追加
