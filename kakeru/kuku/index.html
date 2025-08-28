@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>役のルール</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfb;
+        }
+        .underline-link {
+            text-decoration: underline;
+            color: blue; /* 色を青に設定 */
+            cursor: pointer; /* マウスカーソルをポインタに変更 */
+        }
+        .underline-link:hover {
+            color: darkblue; /* ホバー時の色を変更 */
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* 折り返しを許可 */
+            justify-content: center;
+            gap: 10px; /* 画像間の余白 */
+            margin: 20px auto;
+            max-width: 90vw;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 450px; /* PC時の画像幅 */
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* スマホ表示時（幅600px以下）に縦並び */
+        @media screen and (max-width: 600px) {
+        .image-container {
+            flex-direction: column;
+            align-items: center;
+    　  }
+　　    .image-container img {
+            max-width: 90vw;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>3ゲームクリア、おめでとうございます！</p>
+        <p>ここで、追加アイテムである、「九九変換装置」をお渡しします。</p>
+    <div class="image-container">
+    <img src="kuku.png" alt="中央に配置された画像">
+    </div>
+        <p>次のページ以降、「九九変換装置」を使いたいときは、「九九変換装置」と書かれた欄にひらがなで九九を入力してください。カードのひらがなにも使用できます。</p>
+        <p>なお、次のページ以降、適当に九九を入力していると、<u>そのゲームがクリア不能になる可能性がございます。</u></p>
+        <p>もし詰んでしまったと思う場合は、ページをリロードして、ゲームの最初からやり直してください。</p>
+        <p>次のページからぐっと難しくなりますので、覚悟を決めてから、第4ゲームに進んでください。</p>
+    </div>
+    <p>
+        <a href="https://tankouideal.github.io/kakeru/rule2" class="underline-link">次のゲームに進む</a>
+    </p>
+</body>
+</html>
