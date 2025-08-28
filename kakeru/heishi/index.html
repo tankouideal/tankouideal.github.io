@@ -175,19 +175,17 @@
       const ruleImages = document.getElementById('rule-images');
 
       if (input === 'しは') {
-        if (kukuState.nisan) {
+        if (kukuState.shiha) {
           result.innerText = '「しは」は既に入力されています。';
         } else {
           mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
-          result.innerHTML = '「へい<u>しは</u>いかい」が「へい<u>さんじゅうに</u>いかい>」に変化しました。';
+          result.innerHTML = '「へい<u>しは</u>いかい」が「へい<u>さんじゅうに</u>いかい」に変化しました。';
           result.style.color = 'black';
           kukuState.shiha = true;
         }
       } else if (input === 'ごご') {
-        if {
           result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
           result.style.color = 'black';
-        }
       } else {
         result.innerText = 'その入力では変換ができませんでした。';
         result.style.color = 'red';
