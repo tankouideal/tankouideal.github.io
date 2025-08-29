@@ -170,7 +170,7 @@
 
     <script>
     let kukuState = {
-      ingo: false,
+      inni: false,
       goni: false
     };
 
@@ -182,21 +182,21 @@
       const mainImage = document.getElementById('main-image');
       const ruleImages = document.getElementById('rule-images');
 
-    if (input === 'いんご') {
-      if (kukuState.ingo) {
-        result.innerText = '「いんご」は既に入力されています。';
+    if (input === 'いんに') {
+      if (kukuState.inni) {
+        result.innerText = '「いんに」は既に入力されています。';
         result.style.color = 'red';
       } else {
       ruleImages.innerHTML = `
         <img src="hantei1.png" alt="中央に配置された画像">
         <img src="hantei2.png" alt="中央に配置された画像">
         <img src="hantei4.png" alt="中央に配置された画像">
-        <img src="kuku-alt.png" alt="変換後の画像">
-        <img src="pen.png" alt="中央に配置された画像">
+        <img src="kuku.png" alt="変換後の画像">
+        <img src="pen-2.png" alt="中央に配置された画像">
       `;
-      result.innerHTML = '「いんご」が入力されました。画像が切り替わりました。';
+      result.innerHTML = '<p>「ぼ<u>いんに</u>ついて」が「「ぼ<u>に</u>ついて」に変化しました。</p>';
       result.style.color = 'black';
-      kukuState.ingo = true;
+      kukuState.inni = true;
       }
     } else if (input === 'ごに') {
       if (kukuState.goni) {
@@ -204,7 +204,7 @@
         result.style.color = 'red';
       } else {
         mainImage.innerHTML = `<img src="game7-2.png" alt="変換後の画像">`;
-        result.innerHTML = '「ごに」が入力されました。画像が切り替わりました。';
+        result.innerHTML = '<p>「ふうぼう<u>ごに</u>ん」が「ふうぼう<u>じゅう</u>ん」に変化しました。</p>';
         result.style.color = 'black';
         kukuState.goni = true;
       }
