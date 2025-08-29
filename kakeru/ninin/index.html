@@ -181,6 +181,10 @@
       const mainImage = document.getElementById('main-image');
       const ruleImages = document.getElementById('rule-images');
 
+    if (input === 'いんご') {
+          result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
+          result.style.color = 'black';
+      } else 
     if (input === 'ににん') {
       if (kukuState.ninin) {
         result.innerText = '「ににん」は既に入力されています。';
