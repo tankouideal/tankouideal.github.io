@@ -185,7 +185,7 @@
     if (input === 'いんに') {
       if (kukuState.inni) {
         result.innerText = '「いんに」は既に入力されています。';
-        result.style.color = 'red';
+        result.style.color = 'black';
       } else {
       ruleImages.innerHTML = `
         <img src="hantei1.png" alt="中央に配置された画像">
@@ -201,7 +201,7 @@
     } else if (input === 'ごに') {
       if (kukuState.goni) {
         result.innerText = '「ごに」は既に入力されています。';
-        result.style.color = 'red';
+        result.style.color = 'black';
       } else {
         mainImage.innerHTML = `<img src="game8-2.png" alt="変換後の画像">`;
         result.innerHTML = '<p>「ふうぼう<u>ごに</u>ん」が「ふうぼう<u>じゅう</u>ん」に変化しました。</p>';
