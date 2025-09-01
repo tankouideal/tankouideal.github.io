@@ -219,25 +219,31 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-    if (!kukuState.goni || !kukuState.inni) {
-      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+      if (penInput === 'ぼ' && word === 'ぼうふうう' && kukuState.goni {
+    if (!kukuState.inni) {
+      result.innerText = '現状のルールだと、その言葉では目標金額に届かないようです。';
       result.style.color = 'red';
-    return;
-    }
-
-    if (penInput === 'ぼ' && word === 'ぼうふうう') {
+      return;
+    } else {
       result.innerHTML = `
-      <p>あなたは「ぼうふうう」と書いた紙を青のロボットに渡すと、ロボットは「フォーカード」と書かれた紙を返してきました。</p>
+        <p>あなたは「ぼうふうう」と書いた紙を青のロボットに渡すと、ロボットは「フォーカード」と書かれた紙を返してきました。</p>
       <p>また、ロボットは「フラッシュ」と書かれた紙も渡してきました。</p>
       <p>あなたはそれらの紙を緑のロボットに渡し、60ゴールドを獲得しました！</p>
       <p>第8ゲーム、成功です！</p>
       <p><a href="https://tankouideal.github.io/kakeru/perfect" style="color: blue; text-decoration: underline;">クリアページに進む</a></p>
       `;
       result.style.color = 'black';
+    }
     } else {
+    result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+    result.style.color = 'red';
+    }
+    }
+
+    if (!kukuState.goni || !kukuState.inni) {
       result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
       result.style.color = 'red';
-    }
+    return;
     }
 
     function toggleHint(hintId) {
