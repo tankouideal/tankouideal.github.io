@@ -207,8 +207,8 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-  if (word === 'ろくろくび') {
-    if (!(kukuState.nisan && kukuState.gogo)) {
+  if (word === 'ろくろくび' && kukuState.nisan) {
+    if (!kukuState.gogo)) {
       result.innerText = '現状のルールだと、その言葉では目標金額に届かないようです。';
       result.style.color = 'red';
       return;
