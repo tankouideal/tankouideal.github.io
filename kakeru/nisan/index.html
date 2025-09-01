@@ -207,10 +207,6 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-      function checkAnswer() {
-  const word = document.getElementById('word').value.trim();
-  const result = document.getElementById('result-declare');
-
   if (word === 'ろくろくび') {
     if (!(kukuState.nisan && kukuState.gogo)) {
       result.innerText = '現状のルールだと、その言葉では目標金額に届かないようです。';
