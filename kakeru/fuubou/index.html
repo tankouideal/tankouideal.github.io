@@ -240,12 +240,6 @@
     }
     }
 
-    if (!kukuState.goni || !kukuState.inni) {
-      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
-      result.style.color = 'red';
-    return;
-    }
-
     function toggleHint(hintId) {
       const hintMessage = document.getElementById(hintId);
       if (hintMessage.innerText === '') {
