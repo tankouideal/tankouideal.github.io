@@ -207,23 +207,28 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-      if (word === 'ろくろくび'){
-      　if (!(kukuState.nisan && kukuState.gogo)) {
-        result.innerText = '現状のルールだと、その言葉では目標金額に届かないようです。';
-        result.style.color = 'red';
-        return;
-      } else {
-        result.innerHTML = `
-          <p>あなたは「ろくろくび」と書いた紙を青のロボットに渡し、「ツーペア」と書かれた紙を受け取りました。</p>
-          <p>あなたはその紙を緑のロボットに渡し、20ゴールドを獲得しました！</p>
-          <p>第5ゲーム、成功です！</p>
-          <p><a href="https://tankouideal.github.io/kakeru/ninshiki" style="color: blue; text-decoration: underline;">次の説明に進む</a></p>
-        `;
-        result.style.color = 'black';
-      } else {
-        result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
-        result.style.color = 'red';
-      }
+      function checkAnswer() {
+  const word = document.getElementById('word').value.trim();
+  const result = document.getElementById('result-declare');
+
+  if (word === 'ろくろくび') {
+    if (!(kukuState.nisan && kukuState.gogo)) {
+      result.innerText = '現状のルールだと、その言葉では目標金額に届かないようです。';
+      result.style.color = 'red';
+      return;
+    } else {
+      result.innerHTML = `
+        <p>あなたは「ろくろくび」と書いた紙を青のロボットに渡し、「ツーペア」と書かれた紙を受け取りました。</p>
+        <p>あなたはその紙を緑のロボットに渡し、20ゴールドを獲得しました！</p>
+        <p>第5ゲーム、成功です！</p>
+        <p><a href="https://tankouideal.github.io/kakeru/ninshiki" style="color: blue; text-decoration: underline;">次の説明に進む</a></p>
+      `;
+      result.style.color = 'black';
+    }
+    } else {
+    result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+    result.style.color = 'red';
+    }
     }
 
     function toggleHint(hintId) {
