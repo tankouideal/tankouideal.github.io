@@ -174,14 +174,14 @@
       const mainImage = document.getElementById('main-image');
       const ruleImages = document.getElementById('rule-images');
 
-      if (input === 'しは') {
-        if (kukuState.shiha) {
-          result.innerText = '「しは」は既に入力されています。';
+      if (input === 'ごろく') {
+        if (kukuState.goroku) {
+          result.innerText = '「ごろく」は既に入力されています。';
         } else {
           mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
-          result.innerHTML = '「へい<u>しは</u>いかい」が「へい<u>さんじゅうに</u>いかい」に変化しました。';
+          result.innerHTML = '「いいかい<u>ごろく</u>」が「いいかい<u>さんじゅう</u>」に変化しました。';
           result.style.color = 'black';
-          kukuState.shiha = true;
+          kukuState.goroku = true;
         }
       } else if (input === 'ごご') {
           result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
@@ -196,7 +196,7 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-      if (!(kukuState.shiha)) {
+      if (!(kukuState.goroku)) {
         result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
         result.style.color = 'red';
         return;
