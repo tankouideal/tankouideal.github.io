@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第4ゲーム</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #dfb;
+      text-align: center;
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px auto;
+      max-width: 90vw;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    input {
+      font-size: 1.5em;
+      padding: 12px;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .common-button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+    }
+
+    .section {
+      margin: 30px 0;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .result-message {
+      margin-top: 10px;
+      min-height: 1em;
+      color: red;
+    }
+
+    .rule-box {
+    border: 2px solid black;
+    padding: 15px;
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+    /* スマホでは幅制限なし（デフォルト） */
+    }
+
+    /* PC表示（幅600px以上）のときだけ横幅を制限 */
+    @media (min-width: 600px) {
+    .rule-box {
+      width: 50%;
+    }
+    }
+
+    .rule-box::before {
+      content: "九九変換装置";
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      background: white;
+      padding: 0 5px;
+      font-weight: bold;
+      border: 1px solid black;
+    }
+
+    @media (min-width: 600px) {
+      .input-group {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      input {
+        width: auto;
+        margin: 0;
+      }
+
+      .common-button {
+        margin: 0;
+      }
+    }
+
+    #hint-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .hint-link {
+      background: none;
+      border: none;
+      text-decoration: underline;
+      color: blue;
+      cursor: pointer;
+      font-size: 1em;
+      padding: 0;
+      margin: 5px 0;
+    }
+
+    .hint-message {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <p>続いて、第4ゲームで使うカードをお配りします。第4ゲームの目標金額は<u>10ゴールド</u>です。</p>
+  <br><br>
+
+  <div class="image-container" id="main-image">
+    <img src="game4.png" alt="中央に配置された画像">
+  </div>
+
+  <div class="section">
+    <div class="input-group">
+      <input type="text" id="word" placeholder="ひらがな5文字で入力">
+      <button class="common-button" onclick="checkAnswer()">宣言する</button>
+    </div>
+    <div id="result-declare" class="result-message"></div>
+  </div>
+
+  <div class="section rule-box">
+    <input type="text" id="kuku-input" placeholder="ひらがなで入力">
+    <button class="common-button" onclick="runKuku()">変換を実行する</button>
+    <div id="result-kuku" class="result-message"></div>
+  </div>
+
+  <br>
+  <p>なお、役の判定方法のルールは以下で確認できます。</p>
+  <div class="image-container" id="rule-images">
+    <img src="hantei1.png" alt="中央に配置された画像">
+    <img src="hantei2.png" alt="中央に配置された画像">
+    <img src="hantei3.png" alt="中央に配置された画像">
+  </div>
+
+  <div id="hint-container">
+    <button type="button" class="hint-link" onclick="toggleHint('hint1')">ヒント1</button>
+    <div id="hint1" class="hint-message"></div>
+    <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
+    <div id="hint2" class="hint-message"></div>
+    <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
+    <div id="hint3" class="hint-message"></div>
+    <button type="button" class="hint-link" onclick="toggleHint('hint4')">ヒント4</button>
+    <div id="hint4" class="hint-message"></div>
+  </div>
+
+    <script>
+    let kukuState = {
+      shiha: false,
+    };
+
+    function runKuku() {
+      const input = document.getElementById('kuku-input').value.trim();
+      const result = document.getElementById('result-kuku');
+      const mainImage = document.getElementById('main-image');
+      const ruleImages = document.getElementById('rule-images');
+
+      if (input === 'しは') {
+        if (kukuState.shiha) {
+          result.innerText = '「しは」は既に入力されています。';
+        } else {
+          mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
+          result.innerHTML = '「へい<u>しは</u>いかい」が「へい<u>さんじゅうに</u>いかい」に変化しました。';
+          result.style.color = 'black';
+          kukuState.shiha = true;
+        }
+      } else if (input === 'ごご') {
+          result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
+          result.style.color = 'black';
+      } else {
+        result.innerText = 'その入力では変換ができませんでした。';
+        result.style.color = 'red';
+      }
+    }
+
+    function checkAnswer() {
+      const word = document.getElementById('word').value.trim();
+      const result = document.getElementById('result-declare');
+
+      if (!(kukuState.shiha)) {
+        result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+        result.style.color = 'red';
+        return;
+      }
+
+      if (word === 'いいんかい') {
+        result.innerHTML = `
+          <p>あなたは「いいんかい」と書いた紙を青のロボットに渡し、「スリーカード」と書かれた紙を受け取りました。</p>
+          <p>あなたはその紙を緑のロボットに渡し、10ゴールドを獲得しました！</p>
+          <p>第4ゲーム、成功です！</p>
+          <p><a href="https://tankouideal.github.io/kakeru/nisan" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
+        `;
+        result.style.color = 'black';
+      } else {
+        result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+        result.style.color = 'red';
+      }
+    }
+
+    function toggleHint(hintId) {
+      const hintMessage = document.getElementById(hintId);
+      if (hintMessage.innerText === '') {
+        switch(hintId) {
+          case 'hint1':
+            hintMessage.innerText = '右上のイラストは「いと」です。';
+            break;
+          case 'hint2':
+            hintMessage.innerText = '左下のイラストは「ほほ」です。';
+            break;
+          case 'hint3':
+            hintMessage.innerText = '赤色のマークを無視しましょう。そうすると、黒い四角と、何が残るでしょうか。';
+            break;
+          case 'hint4':
+            hintMessage.innerText = '赤色のマークを無視すると、画像の中央には「黒い四角」と「（見えない）白い四角」が残ります。答えは6文字の、少し難しい言葉になります。';
+            break;
+        }
+      } else {
+        hintMessage.innerText = '';
+      }
+    }
+  </script>
+</body>
+</html>
