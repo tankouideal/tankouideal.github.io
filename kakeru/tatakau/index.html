@@ -121,7 +121,7 @@
             if (word === 'かたたたき') {
             result.innerHTML = `
             <p>あなたは「かたたたき」と書いた紙を青のロボットに渡し、「スリーカード」と書かれた紙を受け取りました。</p>
-            <p>あなたはその紙を緑のロボットに渡し、10ゴールドに換金しました！</p>
+            <p>あなたはその紙を緑のロボットに渡し、10ゴールドを獲得しました！</p>
             <p>第1ゲーム、成功です！</p>
             <p><a href="https://tankouideal.github.io/kakeru/tsuma" style="color: blue; text-decoration: underline;">次のゲームへに進む</a></p>
             `;
@@ -138,7 +138,7 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = 'スリーカードの言葉を宣言すれば、目標金額の10ゴールドが得られます。';
+                        hintMessage.innerText = 'スリーカードの言葉を宣言すれば、10ゴールドが獲得できます。';
                         break;
                     case 'hint2':
                         hintMessage.innerText = '「〇たたた〇」という言葉を宣言しましょう。';
