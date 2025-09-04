@@ -201,7 +201,7 @@
       if (word === 'いいんかい') {
         result.innerHTML = `
           <p>あなたは「いいんかい」と書いた紙を青のロボットに渡し、「スリーカード」と書かれた紙を受け取りました。</p>
-          <p>あなたはその紙を緑のロボットに渡し、10ゴールドに換金しました！</p>
+          <p>あなたはその紙を緑のロボットに渡し、10ゴールドを獲得しました！</p>
           <p>第4ゲーム、成功です！</p>
           <p><a href="https://tankouideal.github.io/kakeru/nisan" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
         `;
@@ -217,10 +217,10 @@
       if (hintMessage.innerText === '') {
         switch(hintId) {
           case 'hint1':
-            hintMessage.innerText = 'まずは7枚のカードを九九変換装置で変換しましょう。';
+            hintMessage.innerText = 'まずはカードの画像の「ごろく」を九九変換装置で変換しましょう。';
             break;
           case 'hint2':
-            hintMessage.innerText = '「いい〇〇い」という言葉を宣言しましょう。';
+            hintMessage.innerText = '「ごろく」の変換後に、「いい〇〇い」という言葉を宣言しましょう。';
             break;
         }
       } else {
