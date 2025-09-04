@@ -115,8 +115,6 @@
         <div id="hint2" class="hint-message"></div>
         <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
         <div id="hint3" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint4')">ヒント4</button>
-        <div id="hint4" class="hint-message"></div>
     </div>
 
     <script>
@@ -126,7 +124,7 @@
             if (word === 'おおおとこ') {
             result.innerHTML = `
             <p>あなたは「おおおとこ」と書いた紙を青のロボットに渡し、「スリーカード」と書かれた紙と、「フラッシュ」と書かれた紙を受け取りました。</p>
-            <p>あなたはそれらの紙を緑のロボットに渡し、30ゴールドを獲得しました！</p>
+            <p>あなたはそれらの紙を緑のロボットに渡し、30ゴールドを得ました！</p>
             <p>第3ゲーム、成功です！</p>
             <p><a href="https://tankouideal.github.io/kakeru/kuku" style="color: blue; text-decoration: underline;">次の説明に進む</a></p>
             `;
@@ -143,16 +141,13 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '右上のイラストは「いと」です。';
+                        hintMessage.innerText = 'フルハウスの言葉を宣言することはできないようです。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '左下のイラストは「ほほ」です。';
+                        hintMessage.innerText = 'スリーカードかつフラッシュの言葉を宣言すれば、目標金額の30ゴールドが得られます。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '赤色のマークを無視しましょう。そうすると、黒い四角と、何が残るでしょうか。';
-                        break;
-                    case 'hint4':
-                        hintMessage.innerText = '赤色のマークを無視すると、画像の中央には「黒い四角」と「（見えない）白い四角」が残ります。答えは6文字の、少し難しい言葉になります。';
+                        hintMessage.innerText = '「おおお〇〇」という言葉を宣言しましょう。';
                         break;
                 }
             } else {
