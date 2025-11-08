@@ -80,6 +80,7 @@
 </head>
 <body>
     <p>正解です！　第6問です！</p>
+    <p>※少し数学の知識を要するので、必要に応じて検索ください。</p>
     <div class="rule-box">
         <p> <select id="word1"></select>で書かれた謎の答えが<select id="word2"></select><select id="word3"></select>になるとき、<select id="word4"></select>で書かれた謎の答えが答え。</p>
     </div>
@@ -142,13 +143,13 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '赤で書かれた謎と、青で書かれた謎が重なっているようです。重なっている部分は紫になっています。';
+                        hintMessage.innerText = '赤で書かれた謎と、青で書かれた謎が重なっています。重なっている部分は紫になっています。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '赤で書かれた謎では、図形は「せいさんかくけい」を表し、答えが「せいかい」になっているようです。';
+                        hintMessage.innerText = '赤で書かれた謎では、図形は「せいさんかくけい」を表し、答えが「せいかい」になっています。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '青で書かれた謎では、図形は何かの立体を表しているようです。図形は正多面体の1つです。';
+                        hintMessage.innerText = '青で書かれた謎では、図形は「せいしめんたい」を表します。';
                         break;
                 }
             } else {
