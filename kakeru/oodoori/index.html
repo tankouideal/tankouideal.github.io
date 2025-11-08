@@ -113,8 +113,6 @@
         <div id="hint1" class="hint-message"></div>
         <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
         <div id="hint2" class="hint-message"></div>
-        <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
-        <div id="hint3" class="hint-message"></div>
     </div>
 
     <script>
@@ -141,12 +139,9 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = 'フルハウスの言葉を宣言することはできないようです。';
-                        break;
-                    case 'hint2':
                         hintMessage.innerText = 'スリーカードかつフラッシュの言葉を宣言しましょう。';
                         break;
-                    case 'hint3':
+                    case 'hint2':
                         hintMessage.innerText = '「おおお〇〇」という言葉を宣言しましょう。';
                         break;
                 }
