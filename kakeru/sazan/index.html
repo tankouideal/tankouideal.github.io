@@ -203,7 +203,7 @@
       const result = document.getElementById('result-declare');
 
     if (!kukuState.sazan) {
-      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
       result.style.color = 'red';
     return;
     }
@@ -217,7 +217,7 @@
       <br>`;
       result.style.color = 'black';
     } else {
-      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額が稼げないようです。';
+      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
       result.style.color = 'red';
     }
     }
