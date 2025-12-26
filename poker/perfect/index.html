@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリア</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfb;
+        }
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        #hint-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hint-link {
+            background: none;
+            border: none;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            margin: 5px 0; /* ボタンの間隔 */
+        }
+        .hint-message {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>クリアおめでとうございます！</p>
+    <div class="image-container">
+    <img src="icon.png" alt="中央に配置された画像">
+    </div>
+    <p>作者のXアカウント　⇒　<a href="https://x.com/tankouideal" target="_blank">https://x.com/tankouideal</a></p>
+</body>
+</html>

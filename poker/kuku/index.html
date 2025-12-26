@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九変換装置</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfb;
+            text-align: center;
+        }
+        .underline-link {
+            text-decoration: underline;
+            color: blue; /* 色を青に設定 */
+            cursor: pointer; /* マウスカーソルをポインタに変更 */
+        }
+        .underline-link:hover {
+            color: darkblue; /* ホバー時の色を変更 */
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* 折り返しを許可 */
+            justify-content: center;
+            gap: 10px; /* 画像間の余白 */
+            margin: 20px auto;
+            max-width: 90vw;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 450px; /* PC時の画像幅 */
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* スマホ表示時（幅600px以下）に縦並び */
+        @media screen and (max-width: 600px) {
+        .image-container {
+            flex-direction: column;
+            align-items: center;
+    　  }
+　　    .image-container img {
+            max-width: 90vw;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>第3ゲームクリア、おめでとうございます！</p>
+        <p>ここで、追加アイテムである、「九九変換装置」をお渡しします。</p>
+    <div class="image-container">
+    <img src="kuku.png" alt="中央に配置された画像">
+    </div>
+        <p>次のページ以降、「九九変換装置」を使いたいときは、「九九変換装置」と書かれた欄にひらがなで九九を入力してください。</p>
+        <p>この際、わかりやすさのために、「九九変換装置」で変換された部分の文字は赤くなります。</p>
+        <p>注意点として、九九で変換できる対象は<u>画像内の文字列</u>のみです。地の文などは変換できません。</p>
+        <p>また、次のページ以降、九九の変換を取り消したい場合は、<u>ページをリロードして、ゲームの最初からやり直してください。</u></p>
+        <br></br>
+        <p>なお、このWeb謎ではURLで進捗が管理されているので、途中で一度やめたい場合、そのゲームのURLを控えておいていただければ、そのゲームから再開できます。</p>
+        <p>ルールが把握できたら、第4ゲームに進んでください。</p>
+    </div>
+    <p>
+        <a href="https://tankouideal.github.io/kakeru/iikai" class="underline-link">次のゲームに進む</a>
+    </p>
+</body>
+</html>
