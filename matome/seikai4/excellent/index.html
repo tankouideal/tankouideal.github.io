@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリア</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfb;
+        }
+        .image-container {
+            width: 80vw;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        #hint-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hint-link {
+            background: none;
+            border: none;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            margin: 5px 0; /* ボタンの間隔 */
+        }
+        .hint-message {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>「はんたい」の「はんたい」（=さんせい）の「はんたい」（=あるかりせい）を埋めたとき……</p>
+    <p>正解です！　クリアおめでとうございます！</p>
+    <p>今作のテーマは「対義語」でした。第5問・第7問・第10問が対義語を使った謎になっていました。最後に「反対」の選択肢しか使わないのは、少し意地悪だったかもしれません。</p>
+        <div class="image-container">
+        <img src="clear3.png" alt="中央に配置された画像">
+        </div>
+    <p>【後でポストリンクを実装する】</p>
+    <p>なお、上のポストリンクではクリア画像が自動で添付される仕様になっていますが、「pic」以下の文字列を消せば画像は添付されません。</p>
+    <p>また、これ以上の隠し要素はありません。</p>
+    <p>他にもLINE謎など作っておりますので、良ければ遊んでください！</p>
+    <p>作者の他の謎解き　⇒　<a href="https://tankouideal.github.io/matome/" target="_blank">https://tankouideal.github.io/matome/</a></p>
+    <p>作者のXアカウント　⇒　<a href="https://x.com/tankouideal" target="_blank">https://x.com/tankouideal</a></p>
+</body>
+</html>
