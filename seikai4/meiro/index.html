@@ -132,7 +132,7 @@
             const word5 = document.getElementById('word5').value;
             const combined = word1 + word2 + word3 + word4 + word5
 
-            if (combined === 'ちからしかくのいちとなかいしか') {
+            if (combined === 'ちからしかくのいちしかしか') {
                 window.location.href = 'https://tankouideal.github.io/seikai4/card/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
@@ -146,7 +146,7 @@
                         hintMessage.innerText = '画像の丸の位置から四角の位置に向かうように、問題文を設定しましょう。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '動物については、「となかい」「だけ」通るようにしましょう。';
+                        hintMessage.innerText = '動物については、「鹿だけ」通るようにしましょう。';
                         break;
                 }
             } else {
