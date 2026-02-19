@@ -62,7 +62,7 @@
     .result-message {
       margin-top: 10px;
       min-height: 1em;
-      color: red;
+      color: #FF4444;
     }
 
     .rule-box {
@@ -193,7 +193,7 @@
           result.style.color = 'white';
       } else {
         result.innerText = 'その入力では変換ができませんでした。';
-        result.style.color = 'red';
+        result.style.color = '#FF4444';
       }
     }
 
@@ -203,7 +203,7 @@
 
       if (!(kukuState.goroku)) {
         result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
-        result.style.color = 'red';
+        result.style.color = '#FF4444';
         return;
       }
 
@@ -217,7 +217,7 @@
         result.style.color = 'white';
       } else {
         result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
-        result.style.color = 'red';
+        result.style.color = '#FF4444';
       }
     }
 

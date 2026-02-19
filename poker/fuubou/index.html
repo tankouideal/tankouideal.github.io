@@ -62,7 +62,7 @@
     .result-message {
       margin-top: 10px;
       min-height: 1em;
-      color: red;
+      color: #FF4444;
     }
 
     .rule-box {
@@ -218,10 +218,10 @@
       }
     } else if (input === 'くご') {
       result.innerText = 'その入力では変換ができませんでした。（変換できるのは画像の中の文字列に限られます。）';
-      result.style.color = 'red';
+      result.style.color = '#FF4444';
     } else {
        result.innerText = 'その入力では変換ができませんでした。';
-      result.style.color = 'red';
+      result.style.color = '#FF4444';
     }
     }
     function checkAnswer() {
@@ -232,7 +232,7 @@
       if (penInput === 'ぼ' && word === 'ぼうふうう' && kukuState.goni){
     if (!kukuState.inni) {
       result.innerText = '現状のルールだと、その言葉では目標金額に届きません。';
-      result.style.color = 'red';
+      result.style.color = '#FF4444';
       return;
     } else {
       result.innerHTML = `
@@ -246,7 +246,7 @@
     }
     } else {
     result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
-    result.style.color = 'red';
+    result.style.color = '#FF4444';
     }
     }
 
