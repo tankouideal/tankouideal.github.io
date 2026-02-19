@@ -193,7 +193,7 @@
     if (input === 'いんに') {
       if (kukuState.inni) {
         result.innerText = '「いんに」は既に入力されています。';
-        result.style.color = 'black';
+        result.style.color = 'white';
       } else {
       ruleImages.innerHTML = `
         <img src="hantei1.png" alt="中央に配置された画像">
@@ -203,17 +203,17 @@
         <img src="pen-2.png" alt="中央に配置された画像">
       `;
       result.innerHTML = '<p>「ぼ<u>いんに</u>ついて」が「ぼ<u>に</u>ついて」に変化しました。</p>';
-      result.style.color = 'black';
+      result.style.color = 'white';
       kukuState.inni = true;
       }
     } else if (input === 'ごに') {
       if (kukuState.goni) {
         result.innerText = '「ごに」は既に入力されています。';
-        result.style.color = 'black';
+        result.style.color = 'white';
       } else {
         mainImage.innerHTML = `<img src="game8-2.png" alt="変換後の画像">`;
         result.innerHTML = '<p>「ふうぼう<u>ごに</u>ん」が「ふうぼう<u>じゅう</u>ん」に変化しました。</p>';
-        result.style.color = 'black';
+        result.style.color = 'white';
         kukuState.goni = true;
       }
     } else if (input === 'くご') {
@@ -242,7 +242,7 @@
       <p>第8ゲーム、成功です！</p>
       <p><a href="https://tankouideal.github.io/poker/perfect" style="color: blue; text-decoration: underline;">クリアページに進む</a></p>
       <br>`;
-      result.style.color = 'black';
+      result.style.color = 'white';
     }
     } else {
     result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';

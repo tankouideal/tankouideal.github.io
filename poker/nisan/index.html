@@ -59,7 +59,7 @@
     }
 
     .rule-box {
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 15px;
     position: relative;
     margin: 20px auto;
@@ -82,7 +82,7 @@
       background: white;
       padding: 0 5px;
       font-weight: bold;
-      border: 1px solid black;
+      border: 1px solid white;
     }
 
     @media (min-width: 600px) {
@@ -179,7 +179,7 @@
         } else {
           mainImage.innerHTML = `<img src="game5-2.png" alt="変換後の画像">`;
           result.innerHTML = '「<u>にさん</u>び<u>にさん</u>」が「<u>ろく</u>び<u>ろく</u>」に変化しました。';
-          result.style.color = 'black';
+          result.style.color = 'white';
           kukuState.nisan = true;
         }
       } else if (input === 'ごご') {
@@ -192,7 +192,7 @@
             <img src="hantei4.png" alt="変換後の判定画像">
           `;
           result.innerHTML = '「<u>ごご</u>ーるど」が「<u>にじゅうご</u>ーるど」に変化しました。';
-          result.style.color = 'black';
+          result.style.color = 'white';
           kukuState.gogo = true;
         }
       } else {
@@ -217,7 +217,7 @@
         <p>第5ゲーム、成功です！</p>
         <p><a href="https://tankouideal.github.io/poker/ninshiki" style="color: blue; text-decoration: underline;">次の説明に進む</a></p>
       <br>`;
-      result.style.color = 'black';
+      result.style.color = 'white';
     }
     } else {
     result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';

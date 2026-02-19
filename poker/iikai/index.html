@@ -59,7 +59,7 @@
     }
 
     .rule-box {
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 15px;
     position: relative;
     margin: 20px auto;
@@ -82,7 +82,7 @@
       background: white;
       padding: 0 5px;
       font-weight: bold;
-      border: 1px solid black;
+      border: 1px solid white;
     }
 
     @media (min-width: 600px) {
@@ -177,12 +177,12 @@
         } else {
           mainImage.innerHTML = `<img src="game4-2.png" alt="変換後の画像">`;
           result.innerHTML = '「いいかい<u>ごろく</u>」が「いいかい<u>さんじゅう</u>」に変化しました。';
-          result.style.color = 'black';
+          result.style.color = 'white';
           kukuState.goroku = true;
         }
       } else if (input === 'ごご') {
           result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
-          result.style.color = 'black';
+          result.style.color = 'white';
       } else {
         result.innerText = 'その入力では変換ができませんでした。';
         result.style.color = 'red';
@@ -206,7 +206,7 @@
           <p>第4ゲーム、成功です！</p>
           <p><a href="https://tankouideal.github.io/poker/nisan" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
           <br>`;
-        result.style.color = 'black';
+        result.style.color = 'white';
       } else {
         result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
         result.style.color = 'red';
