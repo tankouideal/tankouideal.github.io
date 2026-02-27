@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第7ゲーム</title>
+  <title>第6ゲーム</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -123,11 +123,11 @@
   </style>
 </head>
 <body>
-  <p>続いて、第7ゲームで使うカードをお配りします。第7ゲームの目標金額は<u>60ゴールド</u>です。</p>
+  <p>続いて、第6ゲームで使うカードをお配りします。第6ゲームの目標金額は<u>20ゴールド</u>です。</p>
   <br><br>
 
   <div class="image-container" id="main-image">
-    <img src="game7.png" alt="中央に配置された画像">
+    <img src="game6.png" alt="中央に配置された画像">
   </div>
 
   <div class="section">
@@ -162,11 +162,14 @@
     <div id="hint1" class="hint-message"></div>
     <button type="button" class="hint-link" onclick="toggleHint('hint2')">ヒント2</button>
     <div id="hint2" class="hint-message"></div>
-    <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
-    <div id="hint3" class="hint-message"></div>
   </div>
 
     <script>
+    let kukuState = {
+      sazan: false,
+    };
+
+
 
     function runKuku() {
       const input = document.getElementById('kuku-input').value.trim();
@@ -174,13 +177,24 @@
       const mainImage = document.getElementById('main-image');
       const ruleImages = document.getElementById('rule-images');
 
-      if (input === 'いんに') {
+    if (input === 'いんに') {
           result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
           result.style.color = 'black';
+      } else 
+    if (input === 'さざん') {
+      if (kukuState.sazan) {
+        result.innerText = '「さざん」は既に入力されています。';
+        result.style.color = 'black';
       } else {
-        result.innerText = 'その入力では変換ができませんでした。';
-        result.style.color = 'red';
+      mainImage.innerHTML = `<img src="game6-2.png" alt="変換後の画像">`;
+      result.innerHTML = '<p>「<u>さざん</u>ふろくぶ」が「<u>く</u>ふろくぶ」に変化しました。</p>';
+      result.style.color = 'black';
+      kukuState.sazan = true;
       }
+    } else {
+      result.innerText = 'その入力では変換ができませんでした。';
+      result.style.color = 'red';
+    }
     }
 
     function checkAnswer() {
@@ -188,13 +202,18 @@
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-    if (penInput === 'は' && word === 'ふるはうす') {
+    if (!kukuState.sazan) {
+      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
+      result.style.color = 'red';
+    return;
+    }
+
+    if (penInput === 'ろ' && word === 'ふくぶくろ') {
       result.innerHTML = `
-        <p>あなたは「ふるはうす」と書いた紙を青のロボットに渡すと、ロボットは「ふるはうす」と書かれた紙を返してきました。</p>
-        <p>また、ロボットは「フラッシュ」と書かれた紙も渡してきました。</p>
-        <p>あなたはそれらの紙を緑のロボットに渡し、60ゴールドを獲得しました！</p>
-        <p>第7ゲーム、成功です！</p>
-      <p><a href="https://tankouideal.github.io/poker/fuubou" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
+      <p>あなたは「ふくぶくろ」と書いた紙を青のロボットに渡すと、ロボットは「フラッシュ」と書かれた紙を返してきました。</p>
+      <p>あなたはその紙を緑のロボットに渡し、20ゴールドを獲得しました！</p>
+      <p>第6ゲーム、成功です！</p>
+      <p><a href="https://tankouideal.github.io/poker/haru" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
       <br>`;
       result.style.color = 'black';
     } else {
@@ -208,13 +227,10 @@
       if (hintMessage.innerText === '') {
         switch(hintId) {
           case 'hint1':
-            hintMessage.innerText = '60ゴールドを獲得するためには、「フルハウス」と書かれた紙と、「フラッシュ」と書かれた紙を、緑のロボットに換金させる必要があります。';
+            hintMessage.innerText = 'まずはカードの画像の「さざん」を九九変換装置で変換しましょう。';
             break;
           case 'hint2':
-            hintMessage.innerText = '青のロボットは、渡した紙に書かれた言葉が「ツーペア」「スリーカード」「フルハウス」「フォーカード」のいずれでもないと判定した場合、渡した紙をそのまま返してきます。';
-            break;
-          case 'hint3':
-            hintMessage.innerText = '青のロボットに「ふるはうす」と書いた紙を渡しましょう。その上で、認識操作ペンを使いましょう。';
+            hintMessage.innerText = '「〇〇〇〇ろ」という言葉が宣言できますが、このままだとフラッシュにならないので、認識操作ペンを使いましょう。';
             break;
         }
       } else {

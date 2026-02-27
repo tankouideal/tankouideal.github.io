@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第7ゲーム</title>
+  <title>第8ゲーム</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -123,11 +123,11 @@
   </style>
 </head>
 <body>
-  <p>続いて、第7ゲームで使うカードをお配りします。第7ゲームの目標金額は<u>60ゴールド</u>です。</p>
+  <p>続いて、第8ゲーム（最終ゲーム）で使うカードをお配りします。第8ゲームの目標金額は<u>100ゴールド</u>です。</p>
   <br><br>
 
   <div class="image-container" id="main-image">
-    <img src="game7.png" alt="中央に配置された画像">
+    <img src="game8.png" alt="中央に配置された画像">
   </div>
 
   <div class="section">
@@ -164,9 +164,17 @@
     <div id="hint2" class="hint-message"></div>
     <button type="button" class="hint-link" onclick="toggleHint('hint3')">ヒント3</button>
     <div id="hint3" class="hint-message"></div>
+    <button type="button" class="hint-link" onclick="toggleHint('hint4')">ヒント4</button>
+    <div id="hint4" class="hint-message"></div>
   </div>
 
     <script>
+    let kukuState = {
+      inni: false,
+      goni: false
+    };
+
+
 
     function runKuku() {
       const input = document.getElementById('kuku-input').value.trim();
@@ -174,32 +182,63 @@
       const mainImage = document.getElementById('main-image');
       const ruleImages = document.getElementById('rule-images');
 
-      if (input === 'いんに') {
-          result.innerHTML = '発想は素晴らしいのですが……まだこのゲームでその変換を行う必要はありません。';
-          result.style.color = 'black';
+    if (input === 'いんに') {
+      if (kukuState.inni) {
+        result.innerText = '「いんに」は既に入力されています。';
+        result.style.color = 'black';
       } else {
-        result.innerText = 'その入力では変換ができませんでした。';
-        result.style.color = 'red';
+      ruleImages.innerHTML = `
+        <img src="hantei1.png" alt="中央に配置された画像">
+        <img src="hantei2.png" alt="中央に配置された画像">
+        <img src="hantei4.png" alt="中央に配置された画像">
+        <img src="kuku.png" alt="変換後の画像">
+        <img src="pen-2.png" alt="中央に配置された画像">
+      `;
+      result.innerHTML = '<p>「ぼ<u>いんに</u>ついて」が「ぼ<u>に</u>ついて」に変化しました。</p>';
+      result.style.color = 'black';
+      kukuState.inni = true;
       }
+    } else if (input === 'ごに') {
+      if (kukuState.goni) {
+        result.innerText = '「ごに」は既に入力されています。';
+        result.style.color = 'black';
+      } else {
+        mainImage.innerHTML = `<img src="game8-2.png" alt="変換後の画像">`;
+        result.innerHTML = '<p>「ふうぼう<u>ごに</u>ん」が「ふうぼう<u>じゅう</u>ん」に変化しました。</p>';
+        result.style.color = 'black';
+        kukuState.goni = true;
+      }
+    } else if (input === 'くご') {
+      result.innerText = 'その入力では変換ができませんでした。（変換できるのは画像の中の文字列に限られます。）';
+      result.style.color = 'red';
+    } else {
+       result.innerText = 'その入力では変換ができませんでした。';
+      result.style.color = 'red';
     }
-
+    }
     function checkAnswer() {
       const penInput = document.getElementById('pen-input').value.trim();
       const word = document.getElementById('word').value.trim();
       const result = document.getElementById('result-declare');
 
-    if (penInput === 'は' && word === 'ふるはうす') {
+      if (penInput === 'ぼ' && word === 'ぼうふうう' && kukuState.goni){
+    if (!kukuState.inni) {
+      result.innerText = '現状のルールだと、その言葉では目標金額に届きません。';
+      result.style.color = 'red';
+      return;
+    } else {
       result.innerHTML = `
-        <p>あなたは「ふるはうす」と書いた紙を青のロボットに渡すと、ロボットは「ふるはうす」と書かれた紙を返してきました。</p>
-        <p>また、ロボットは「フラッシュ」と書かれた紙も渡してきました。</p>
-        <p>あなたはそれらの紙を緑のロボットに渡し、60ゴールドを獲得しました！</p>
-        <p>第7ゲーム、成功です！</p>
-      <p><a href="https://tankouideal.github.io/poker/fuubou" style="color: blue; text-decoration: underline;">次のゲームに進む</a></p>
+        <p>あなたは「ぼうふうう」と書いた紙を青のロボットに渡すと、ロボットは「フォーカード」と書かれた紙を返してきました。</p>
+      <p>また、ロボットは「フラッシュ」と書かれた紙も渡してきました。</p>
+      <p>あなたはそれらの紙を緑のロボットに渡し、100ゴールドを獲得しました！</p>
+      <p>第8ゲーム、成功です！</p>
+      <p><a href="https://tankouideal.github.io/poker/perfect" style="color: blue; text-decoration: underline;">クリアページに進む</a></p>
       <br>`;
       result.style.color = 'black';
+    }
     } else {
-      result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
-      result.style.color = 'red';
+    result.innerText = '正しく言葉が宣言できていないか、その言葉では目標金額に届きません。';
+    result.style.color = 'red';
     }
     }
 
@@ -208,13 +247,16 @@
       if (hintMessage.innerText === '') {
         switch(hintId) {
           case 'hint1':
-            hintMessage.innerText = '60ゴールドを獲得するためには、「フルハウス」と書かれた紙と、「フラッシュ」と書かれた紙を、緑のロボットに換金させる必要があります。';
+            hintMessage.innerText = 'まずはカードの画像の「ごに」を九九変換装置で変換しましょう。';
             break;
           case 'hint2':
-            hintMessage.innerText = '青のロボットは、渡した紙に書かれた言葉が「ツーペア」「スリーカード」「フルハウス」「フォーカード」のいずれでもないと判定した場合、渡した紙をそのまま返してきます。';
+            hintMessage.innerText = '100ゴールドを獲得するためには、「フォーカード」と書かれた紙と、「フラッシュ」と書かれた紙を、緑のロボットに換金させる必要があります。';
             break;
           case 'hint3':
-            hintMessage.innerText = '青のロボットに「ふるはうす」と書いた紙を渡しましょう。その上で、認識操作ペンを使いましょう。';
+            hintMessage.innerText = '宣言できる最強の言葉は「ぼうふうう」です。しかし、ただ「ぼ」に認識操作ペンを使っただけでは、青のロボットに「フォーカード」と認識されません。';
+            break;
+          case 'hint4':
+            hintMessage.innerText = '青のロボットに「ぼ」を「う」だと認識させることはできないでしょうか。';
             break;
         }
       } else {
