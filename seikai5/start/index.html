@@ -84,7 +84,7 @@
     <p>設定ができたら、「設定完了」のボタンを押してください。</p>
     <div class="rule-box">
         <p>
-           画像の言葉について、✕〇〇✕〇〇が<select id="word1"></select>を表すとき、〇✕✕〇〇〇が表す言葉が答え。
+           画像の<select id="word1"></select>の矢印が<select id="word2"></select>を表すとき、<select id="word3"></select>の矢印が表す言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -102,7 +102,7 @@
 
     <script>
         // 選択肢を定義
-        const options = ['はい', 'しか', 'ちから', 'さんた', 'となかい', 'くのいち', 'はんたい'];
+        const options = ['あお', 'あか', 'まえ', 'うしろ', 'つか', 'かいと', 'ないよう'];
 
         // セレクトボックスに選択肢を追加する関数
         function populateSelect(id) {
@@ -122,10 +122,12 @@
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
-            const combined = word1
+            const word2 = document.getElementById('word2').value;
+            const word3 = document.getElementById('word3').value;
+            const combined = word1 + word2 + word3
 
-            if (combined === 'となかい') {
-                window.location.href = 'https://tankouideal.github.io/seikai4/maiko/';
+            if (combined === 'あおあおあか') {
+                window.location.href = 'https://tankouideal.github.io/seikai5/arrow/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
 
@@ -135,7 +137,7 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '画像の熟語は「せとないかい」と読みます。この謎では、この6文字から指定された文字だけを読んでいます。';
+                        hintMessage.innerText = '画像の動物は「あしか」と「おっとせい」です。';
                         break;
                 }
             } else {
