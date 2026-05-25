@@ -82,8 +82,7 @@
     <p>正解です！第10問です！</p>
     <div class="rule-box">
         <p>
-          画像の<select id="word1"></select>の2文字を、五十音の順番で<select id="word2"></select>にずらした画像をそうぞ<select id="word3"></select>。
-      　　その上で、その画像の上半分にあるひらがなを左から読んだ言葉が答え。ただし、上半分の8文字のうち<select id="word4"></select>の文字は読ま<select id="word5"></select>にすること。
+          画像の<select id="word1"></select>の2文字を、五十音の順番で<select id="word2"></select>にずらしてから、画像の上半分にあるひらがなを左から読んだ言葉が答え。ただし、上半分の8文字のうち<select id="word3"></select>の文字は読ま<select id="word4"></select>にすること。
         </p>
     </div>
     <div class="image-container">
@@ -124,7 +123,6 @@
             populateSelect('word2');
             populateSelect('word3');
             populateSelect('word4');
-            populateSelect('word5');
         };
 
         function checkAnswer() {
@@ -132,10 +130,9 @@
             const word2 = document.getElementById('word2').value;
             const word3 = document.getElementById('word3').value;
             const word4 = document.getElementById('word4').value;
-            const word5 = document.getElementById('word5').value;
-            const combined = word1 + word2 + word3 + word4 +word5
+            const combined = word1 + word2 + word3 + word4
 
-            if (combined === 'あかまえうしろあおないよう') {
+            if (combined === 'あかまえあおないよう') {
                 window.location.href = 'https://tankouideal.github.io/seikai5/wonderful/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
