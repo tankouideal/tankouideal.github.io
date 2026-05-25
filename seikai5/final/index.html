@@ -82,10 +82,8 @@
     <p>正解です！第10問です！</p>
     <div class="rule-box">
         <p>
-          4色のピースを組み合わせて正方形を作り、できた文章を読もう。ただし、正方形を作るときに
-      <select id="word1"></select><select id="word2"></select>のピースは
-      <select id="word3"></select>のピースと
-      <select id="word4"></select><select id="word5"></select>にすること。
+          画像の<select id="word1"></select>の2文字を、五十音の順番で<select id="word2"></select>にずらした画像をそうぞ<select id="word3"></select>。
+      　　その上で、その画像の上半分にあるひらがなを左から読んだ言葉が答え。ただし、上半分の8文字のうち<select id="word4"></select>の文字は読ま<select id="word5"></select>にすること。
         </p>
     </div>
     <div class="image-container">
@@ -137,8 +135,8 @@
             const word5 = document.getElementById('word5').value;
             const combined = word1 + word2 + word3 + word4 +word5
 
-            if (combined === 'つかうしろあかつかないよう') {
-                window.location.href = 'https://tankouideal.github.io/seikai5/final/';
+            if (combined === 'あかまえうしろあおないよう') {
+                window.location.href = 'https://tankouideal.github.io/seikai5/wonderful/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
 
@@ -148,13 +146,13 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '4色のピースで正方形を作ると、「このもんだいのせいかいは『かいせい』」あるいは「このもんだいのせいかいは『せいかい』」のどちらかの文章になります。';
+                        hintMessage.innerText = '答えを「せいかい」にするためには、「あか」と「あお」の文字を読まないようにしたいですね。';
                         break;
                     case 'hint2':
-                        hintMessage.innerText = '答えを「せいかい」だと特定するように、ある2色のピースを離れて配置するように指示する文章にしましょう。';
+                        hintMessage.innerText = 'たとえば画像の「あか」の文字をずらす場合、画像の下半分にも影響しそうですね。';
                         break;
                     case 'hint3':
-                        hintMessage.innerText = '正方形を作るときに「使用するしろ」のピースと「あか」のピースが「接触しないよう」にしましょう。';
+                        hintMessage.innerText = '画像内の色の定義をうまく変更することで、2色の文字を同時に読まないようにできないでしょうか。';
                         break;
                     
                 }
