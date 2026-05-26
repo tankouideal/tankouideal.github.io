@@ -76,6 +76,10 @@
         .hint-message {
             margin-top: 5px;
         }
+        .roman-num {
+        font-family: "Times New Roman", serif; /* ローマ数字が綺麗に見えやすいフォント */
+        font-weight: bold; /* 必要に応じて太さを調整 */
+        }
     </style>
 </head>
 <body>
@@ -83,7 +87,7 @@
     <div class="rule-box">
         <p>
            丸にはひらがなが、四角には漢字が入る。（特に、同じ数字の丸には同じひらがなが、同じ数字の四角には同じ漢字が入る。）
-           Ⅰの四角には<select id="word1"></select>が、Ⅳの四角には<select id="word2"></select>と<select id="word3"></select>を混ぜた色が入るとき、
+           <span class="roman-num">Ⅰ</span>の四角には<select id="word1"></select>が、<span class="roman-num">Ⅳ</span>の四角には<select id="word2"></select>と<select id="word3"></select>を混ぜた色が入るとき、
            ①②③②が答え。
         </p>
     </div>
