@@ -82,8 +82,7 @@
     <p>正解です！　第10問です！</p>
     <div class="rule-box">
         <p>
-          画像の<select id="word1"></select>の2文字を、五十音の順番で<select id="word2"></select>にずらした画像を想像しよう。その画像の下線部のひらがなを左から読んだ言葉が答え。
-         ただし、下線部の<select id="word3"></select>の文字は読ま<select id="word4"></select>にすること。
+          画像の<select id="word1"></select>の2文字を、五十音の順番で<select id="word2"></select>にずらそう。その上で、<select id="word3"></select>の丸の中のひらがなを左から読んだ言葉が答え。
         </p>
     </div>
     <div class="image-container">
@@ -123,17 +122,15 @@
             populateSelect('word1');
             populateSelect('word2');
             populateSelect('word3');
-            populateSelect('word4');
         };
 
         function checkAnswer() {
             const word1 = document.getElementById('word1').value;
             const word2 = document.getElementById('word2').value;
             const word3 = document.getElementById('word3').value;
-            const word4 = document.getElementById('word4').value;
-            const combined = word1 + word2 + word3 + word4
+            const combined = word1 + word2 + word3
 
-            if (combined === 'あかまえあおないよう') {
+            if (combined === 'あかまえあお') {
                 window.location.href = 'https://tankouideal.github.io/seikai5/wonderful/';
             } else document.getElementById('result-message').innerText = '不正解です';
         }
