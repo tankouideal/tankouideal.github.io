@@ -77,8 +77,15 @@
             margin-top: 5px;
         }
         .roman-num {
-        /* WindowsのMSゴシック、Mac/スマホ用の標準ゴシックを両方指定 */
-        font-family: "MS Gothic", "ＭＳ ゴシック", sans-serif;
+        /* 1. まず優先的に明朝体・セリフ体にすることで、スマホでも確実に「上下の横線」を出します */
+        /* 2. 最後に MS Gothic を入れることで、Windowsでのバグを防ぎます */
+        font-family: "Times New Roman", Georgia, "Yu Mincho", "游明朝", "MS Gothic", "ＭＳ ゴシック", serif;
+            
+        /* 3. 文字を太くすることで、PCでの「異様な細さ」を解消します */
+        font-weight: bold;
+            
+        /* 補正：文字が大きく見えすぎないように少しだけ調整 */
+        font-size: 1.05em;
         }
     </style>
 </head>
