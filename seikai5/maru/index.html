@@ -77,15 +77,13 @@
             margin-top: 5px;
         }
         .roman-num {
-        /* 1. まず優先的に明朝体・セリフ体にすることで、スマホでも確実に「上下の横線」を出します */
-        /* 2. 最後に MS Gothic を入れることで、Windowsでのバグを防ぎます */
-        font-family: "Times New Roman", Georgia, "Yu Mincho", "游明朝", "MS Gothic", "ＭＳ ゴシック", serif;
+        /* 1. フォント指定は「ＭＳ ゴシック」を最優先にします */
+        font-family: "MS Gothic", "ＭＳ ゴシック", sans-serif;
+        font-weight: 400; 
             
-        /* 3. 文字を太くすることで、PCでの「異様な細さ」を解消します */
-        font-weight: 400;
-            
-        /* 補正：文字が大きく見えすぎないように少しだけ調整 */
-        font-size: 1.05em;
+        /* 3. 【スマホ用の裏ワザ】文字の向きの解釈を強制変更して、ゴシック体のまま横線を出します */
+        text-combine-upright: all;
+        text-orientation: upright;
         }
     </style>
 </head>
