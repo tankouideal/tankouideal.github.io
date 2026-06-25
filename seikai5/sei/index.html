@@ -82,7 +82,7 @@
     <p>正解です！　第3問です！</p>
     <div class="rule-box">
         <p>
-           画像の言葉に対して、<select id="word1"></select><select id="word2"></select>につけた言葉を<select id="word3"></select><select id="word4"></select>
+           画像の2文字の<select id="word1"></select>に<select id="word2"></select>つけた言葉を<select id="word3"></select><select id="word4"></select>
         </p>
     </div>
     <div class="image-container">
@@ -141,7 +141,7 @@
             if (hintMessage.innerText === '') {
                 switch(hintId) {
                     case 'hint1':
-                        hintMessage.innerText = '画像の「せい」に対して、「かい」と後ろに付けたいですね。';
+                        hintMessage.innerText = '画像の「せい」の後ろに「かい」と付けたいですね。';
                         break;
                     case 'hint2':
                         hintMessage.innerText = 'この問題では、２種類の選択肢を２個ずつ使います。';
