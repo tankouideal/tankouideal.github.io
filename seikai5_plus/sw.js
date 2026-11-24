@@ -1,4 +1,4 @@
-const CACHE = 'seikai5_plus-offline-v4';
+const CACHE = 'seikai5_plus-offline-v8';
 const FILES = ['./', './index.html', './preview.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting()));
